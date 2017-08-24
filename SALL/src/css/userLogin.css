@@ -1,0 +1,91 @@
+@charset "UTF-8";
+/*
+    ! 字体方面相关
+      背景颜色方面相关
+      颜色方面相关
+*/
+/*字体*/
+/*背景*/
+/*
+    ! 用户登录的模块
+*/
+/*颜色*/
+.g-header img {
+  width: 100%;
+}
+
+.g-main {
+  background-color: #ebebeb;
+}
+.g-main .m-login {
+  padding-top: 90px;
+  padding-bottom: 120px;
+}
+.g-main .m-login .u-title {
+  font-size: 36px;
+}
+.g-main .m-login .u-area {
+  padding-top: 54px;
+  display: flex;
+  justify-content: space-between;
+}
+.g-main .m-login .u-area .u-slide {
+  width: 820px;
+}
+.g-main .m-login .u-area .u-logins {
+  width: 350px;
+}
+.g-main .m-login .u-area .u-logins .login-area {
+  padding: 24px;
+  background-color: #fff;
+  width: 100%;
+  height: 412px;
+  border: 1px solid #ccc;
+}
+.g-main .m-login .u-area .u-logins .login-area h1 {
+  font-size: 22px;
+  color: #DB0011;
+  border-bottom: 1px solid #BFBFBF;
+  padding-bottom: 10px;
+}
+.g-main .m-login .u-area .u-logins .login-area h1 i {
+  font-size: 34px;
+  vertical-align: -4px;
+  margin-right: 4px;
+}
+.g-main .m-login .u-area .u-logins .login-area #login > div {
+  display: flex;
+}
+.g-main .m-login .u-area .u-logins .login-area #login > div p:first-child {
+  width: 60px;
+  font-size: 14px;
+  align-self: center;
+  color: #AAACB0;
+  margin-top: 18px;
+}
+.g-main .m-login .u-area .u-logins .login-area #login > div p:last-child {
+  margin-top: 22px;
+  flex: 1;
+}
+.g-main .m-login .u-area .u-logins .login-area #login > div p:last-child input {
+  width: 100%;
+  height: 40px;
+  border-radius: 2px;
+  padding-left: 24px;
+}
+.g-main .m-login .u-area .u-logins .login-area #login > p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 42px;
+}
+.g-main .m-login .u-area .u-logins .login-area #login > p a:last-child {
+  font-size: 14px;
+  text-decoration: underline;
+  letter-spacing: 1px;
+}
+
+.g-footer {
+  margin-top: 24px;
+  text-align: center;
+}

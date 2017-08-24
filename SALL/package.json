@@ -1,0 +1,15 @@
+{
+  "name": "SALL",
+  "version": "1.0.0",
+  "description": "* 使用px适配终端 \r * css 使用sass\r * js 使用jquery.js\r * skins 包括字体图标 、活动主题、按钮样式\r ## 样式方面的问题\r * 按钮的样式使用的是 buttons 类库 \r    [buttons](http://www.bootcss.com/p/buttons/)\r * 动画的样式使用的是 annimate 类库\r    [annimate](https://daneden.github.io/animate.css/)\r * 弹框的样式使用的 layer 类库\r     [layer](http://layer.layui.com/mobile/)\r * 网页图标 用的是 icomoon 工具\r     [icomoon](https://icomoon.io/app/#/select/font)",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
