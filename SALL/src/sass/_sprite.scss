@@ -1,0 +1,6 @@
+@import 'compass';
+$newGoodsLogo-sprite-dimensions:true;
+@import "newGoodsLogo/*.png";
+@include all-newGoodsLogo-sprites();
+
+

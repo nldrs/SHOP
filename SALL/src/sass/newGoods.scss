@@ -1,0 +1,143 @@
+@import "compass","skinsActive","tollMixin","sprite";
+
+.g-newGoods{
+    @include component-header();
+    @include component-footer();
+    @include component-kind();
+}
+
+.g-main{
+    background-color: $newGoods-bj;
+    .g-content{
+        .g-search{
+            display: flex;
+            justify-content: space-around;
+            .m-search{
+                width: 534px;
+                display: flex;
+                justify-content: flex-start;
+                input{
+                    width: 432px;
+                    height:38px;
+                    border:2px solid $newGoods-noMain;
+                    border-radius: 2px 0 0 2px;
+                    padding-left:24px;
+                    background-color: transparent;
+                }
+                p{
+                    width:104px;
+                    height:38px;
+                    text-align: center;
+                    background-color: $newGoods-noMain;
+                    color:#fff;
+                    padding:10px 0;
+                    i{
+                        font-size: 20px;
+                        color:#fff;
+                    }
+                    span{
+                        font-size: 16px;
+                        letter-spacing:4px;
+                       position: relative;
+                        top:-4px;
+                        left:4px;
+                    }
+                }
+            }
+            .m-shopping{
+                width: 144px;
+                height:38px;
+                line-height: 38px;
+                font-size: $fs14;
+                i,.u-num-box{
+                    color: $newGoods-noMain;
+                }
+                i{
+                    font-size: 20px;
+                }
+                .u-shopping{
+                    margin:0 12px;
+                }
+            }
+            .m-histroy{
+                width: 96px;
+                font-size: $fs22;
+            }
+        }
+        .g-newsShow{
+            margin-top:24px;
+            .m-newsShow{
+                background-color: #fff;
+                border:1px solid #DADADB;
+                h1{
+                    font-size: $fs18;
+                    font-weight: 500;
+                    line-height: 64px;
+                }
+                .u-goodShow{
+                    >.u-goodsArea{
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 24px;
+                        >div{
+                            width:286px;
+                            height:270px;
+                            border:2px solid $newGoods-main;
+                            position: relative;
+                            cursor: pointer;
+                            .u-singleGood-box{
+                                text-align: center;
+                                img{
+                                    margin:0 -100%;
+                                }
+                            }
+                            .u-desc{
+                                padding:10px;
+                                width: 100%;
+                                position: absolute;
+                                bottom:0;
+                                left:0;
+                                height:68px;
+                                background-color: $newGoods-main;
+                                color:#fff;
+                                display: flex;
+                                justify-content: space-around;
+                                align-items: center;
+                                .u-title{
+                                    width:160px;
+                                    p:first-child{
+                                        padding: 4px 0;
+                                        font-size: $fs14;
+                                        border-bottom: 1px solid #866B26;
+                                        color:#000;
+                                    }
+                                    p:last-child{
+                                        margin-top:-6px;
+                                        i{
+                                            font-size:$fs28;
+                                        }
+                                        b{
+                                            font-size: $fs26;
+                                            margin-left: 10px;
+                                        }
+                                    }
+                                }
+                                .u-buy,.u-addGwc{
+                                   line-height: 68px;
+                                    margin-left: 6px;
+                                }
+                                .u-addGwc{
+                                    margin-left:10px ;
+                                }
+
+                            }
+                        }
+                    }
+                }
+                .g-fenye{
+                    padding:4% 20% 10% 20%;
+                }
+            }
+        }
+    }
+}

@@ -75,44 +75,18 @@
      * 5-1.1  IMG_adapt 保证图片在div中等比例显示剪裁图片
      * 5-2.2 IMG_auto 图片的动态展示
      * .......
+     *
+ 六. 、异步加载页面
+     * 6-1.1 AjaxPage()
+     *
      * */
+
 
 var MS=(function (win,doc,$) {
     var MS={};
     MS.CommonFlag=false;//是否正在执行的标记
     MS.CurrentPage=1;//当前页数 用于isscroll 的滚动刷新
     MS.loadingIndex=0;//loading页面的索引值
-    /*MS.popAboutI=function (content,btn1,btn2,fn1,fn2) {
-        layer.open({
-            content: content,
-            btn: [btn1,btn2],
-            shadeClose:false,
-            yes:fn1||function(index){
-                 location.reload();
-                 layer.close(index);
-            },
-            no:fn2||null
-        });
-    };
-    MS.popInfoI=function(content,time){
-        layer.open({
-            content:content,
-            skin: 'msg',
-            time: 2||time
-        });
-    };
-    MS.popLoadingStartI=function(flag){
-        var index=layer.open({
-            type: 2,
-            shadeClose:false||flag,
-            content: "加載中..."
-        });
-       return index;
-    };
-    MS.popLoadingEndI=function(index){
-        layer.close(index);
-    };*/
-
     MS.popAbout=function(title,content,icon,btn_suc,btn_err,suc,error){
         layer.confirm(content,{
             icon: icon||3,
@@ -457,6 +431,11 @@ var MS=(function (win,doc,$) {
             }
         }
     };
+    /* 6 异步加载页面*/
+    MS.Ajax_page=function(dom,url,fn) {
+        $(dom).load(url,fn||null);
+    };
+
     return MS;
 })(window,document,jQuery);
 

@@ -1,0 +1,129 @@
+/*
+    !组件的抽象样式
+    1.公共的header   component-header
+    2.公共的footer   component-footer
+    3.新品上架 的种类 component-kind
+*/
+
+@mixin component-header(){
+    .m-header{
+        position: relative;
+        width:100%;
+        .logo{
+            width:100%;
+        }
+        .reset-auto{
+            position: absolute;
+            bottom:14%;
+            left:50%;
+            transform: translateX(-50%);
+            text-align:right;
+            font-size: $fs24;
+            color:#fff;
+            .u-username,.u-user-out{
+                color:#fff;
+                text-decoration: underline;
+            }
+            i{
+                vertical-align:-4px;
+            }
+            .u-user-out{
+                margin-left: 10px;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+@mixin component-footer($top:24px){
+    .m-footer{
+        margin-top:$top;
+        text-align: center;
+    }
+}
+
+@mixin component-kind(){
+    .g-area{
+        padding-top:20px;
+        display:flex;
+        .g-list{
+            width:274px;
+            background-color: #fff;
+            border:1px solid #DADADB;
+            ul li{
+                padding:0 20px;
+                .newGoodsLogo-xh{
+                    margin-left: 4px;
+                }
+                &:hover .newGoodsLogo-bh{
+                    background-position: 0 -46px;
+                }
+                &:hover .newGoodsLogo-bj{
+                    background-position: 0 -111px;
+                }
+                &:hover .newGoodsLogo-cf{
+                    background-position: 0 -180px;
+                }
+                &:hover .newGoodsLogo-jj{
+                    background-position: 0 -246px;
+                }
+                &:hover .newGoodsLogo-ly{
+                    background-position: 0 -354px;
+                }
+                &:hover .newGoodsLogo-ny{
+                    background-position: 0 -453px;
+                }
+                &:hover .newGoodsLogo-xh{
+                    background-position: 0 -558px;
+                }
+                &:hover .newGoodsLogo-yl{
+                    background-position: 0 -624px;
+                }
+                &:hover .newGoodsLogo-zf{
+                    background-position: 0 -690px;
+                }
+                &:hover .newGoodsLogo-zh{
+                    background-position: 0 -758px;
+                }
+
+                a{
+                    position: relative;
+                    i{
+                        display: inline-block;
+                    }
+                    span{
+                        position: absolute;
+                        left:36px;
+                        top:13px;
+                    }
+                    border-top: 1px solid #c2c2c2;
+                    display:block;
+                    font-size: $fs14;
+                    padding: 10px 0;
+                    font-weight: 600;
+                }
+                &:first-child a{
+                    border:none;
+                }
+            }
+            .newsj a span{
+                top: 20px;
+                left: 50px;
+                color:$newGoods-noMain;
+            }
+            .newsj~li:hover{
+                background-color: $newGoods-noMain;
+            }
+            .newsj~li:hover a{
+                color:#fff;
+                border-top-color:$newGoods-noMain;
+            }
+            .newsj~li:hover +li a{
+                border-top-color:transparent;
+            }
+        }
+        .g-content{
+            margin-left: 14px;
+            flex: 1;
+        }
+    }
+}
