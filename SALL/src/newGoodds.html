@@ -187,16 +187,14 @@
 </div>
 <script>
     $(function(){
-        MS.Ajax_page(".Ajax-header","tpl/tplHeader.html");
-        MS.Ajax_page(".Ajax-footer","tpl/tplFooter.html");
+        MS.Ajax_page();
         var GG = {
             "kk":function(mm){
                 alert(mm);
                 //window.location.href="test.html?page="+mm;
             }
-        }
+        };
         $("#page").initPage(100,4,GG.kk);
-
     })
 
 

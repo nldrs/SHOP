@@ -5,7 +5,7 @@
     }
 }
 .g-main{
-    background-color: $userLogin-bj;
+    background-color: $page-bj;
     .m-login{
       padding-top:90px;
       padding-bottom:120px;
@@ -76,4 +76,33 @@
 .g-footer{
     margin-top: 24px;
     text-align: center;
+}
+.m-find-pwd{
+    margin-top: 80px;
+    >div{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom:20px;
+        p:first-child{
+            width:84px;
+            font-size: $fs20;
+        }
+        p:nth-child(2){
+            input{
+                width:230px;
+                height:38px;
+                padding-left: 12px;
+            }
+        }
+        p:last-child{
+            width:300px;
+            margin-left: 20px;
+        }
+    }
+    .findPwd-info{
+        margin-top:40px;
+        font-size: $fs16;
+        color:$newGoods-noMain;
+    }
 }

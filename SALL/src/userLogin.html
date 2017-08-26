@@ -78,7 +78,7 @@
                             </div>
                             <p class="forgetLogin">
                                 <a href="javascript:;" class="button button-highlight button-rounded button-large">立即登录</a>
-                                <a href="javascript:;">忘记密码>></a>
+                                <a href="javascript:;" class="m-forget-pwd">忘记密码>></a>
                             </p>
                         </form>
                     </div>
@@ -90,7 +90,26 @@
     </footer>
 </div>
 <script>
-    MS.Ajax_page(".Ajax-footer","tpl/tplFooter.html")
+    $(".Ajax-footer").load("tpl/tplFooter.html");
+    $(function(){
+        var str='<div class="m-find-pwd reset-lay-padding">'
+                +'<div>'
+                +'<p>账号:</p>'
+                +'<p><input type="text" placeholder="请输入手机号码"></p>'
+                +'<p><a href="javascript:;" class="button button-caution  button-rounded">点击获取验证码&nbsp;<i>60</i>s</a></p>'
+                +'</div>'
+                +'<div>'
+                +'<p>验证码:</p>'
+                +'<p><input type="text" placeholder="请输入验证码"></p>'
+                +'<p><a href="javascript:;" class="button button-highlight button-rounded">提交</a></p>'
+                +'</div>'
+                +'<h2 class="findPwd-info">地方哈吉发顺丰货到付款撒大家回复看撒娇</h2>'
+                +'</div>';
+        $(".m-forget-pwd").on("click",function (e) {
+            MS.popAlert(str,"找回密码","640px","400px");
+        })
+    })
+
 </script>
 </body>
 </html>

@@ -102,7 +102,14 @@ var MS=(function (win,doc,$) {
             time: time||2000
         },fn)
     };
-
+    MS.popAlert=function(html,title,width,height){
+        layer.open({
+            type: 1,
+            title:title,
+            area: [width,height],
+            content: html
+        });
+    };
     MS.popLoadingStart=function(icon){
         var index = layer.load(0, {
             shade: [0.2, '#393D49']
@@ -432,8 +439,9 @@ var MS=(function (win,doc,$) {
         }
     };
     /* 6 异步加载页面*/
-    MS.Ajax_page=function(dom,url,fn) {
-        $(dom).load(url,fn||null);
+    MS.Ajax_page=function() {
+        $(".Ajax-header").load("tpl/tplHeader.html");
+        $(".Ajax-footer").load("tpl/tplFooter.html");
     };
 
     return MS;

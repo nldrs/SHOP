@@ -63,6 +63,7 @@ a img {
 a {
     text-decoration: none;
     color: #000;
+    cursor: pointer;
 }
 article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
   display: block;
@@ -86,7 +87,7 @@ input[type="password"],
 button, select {
   -webkit-appearance: none !important;
   outline: none;
-    border:1px solid #ccc;
+  border:1px solid #ccc;
 }
 /*!*placeholder文本颜色*!*/
 input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{

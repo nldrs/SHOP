@@ -19,15 +19,19 @@ $fs34:34px;
 $fs36:36px;
 $fs38:38px;
 
-/*背景*/
+/*背景(网页的基础色调是浅灰 #ebebeb)*/
+    $page-bj:#ebebeb;
+    $page-mainColor:#CB1F46;
 /*
     ! 用户登录的模块
 */
-$userLogin-bj:#ebebeb;
-/*颜色*/
 /*
     !新品上架的模块
 */
-$newGoods-bj:#ebebeb;
 $newGoods-main:#E6A804;
 $newGoods-noMain:#CB1D46;
+/*
+    !购物车结算模块
+*/
+
+$account-bj:#F2F2F2;

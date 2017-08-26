@@ -20,6 +20,7 @@
             text-align:right;
             font-size: $fs24;
             color:#fff;
+            cursor: pointer;
             .u-username,.u-user-out{
                 color:#fff;
                 text-decoration: underline;
@@ -38,6 +39,7 @@
     .m-footer{
         margin-top:$top;
         text-align: center;
+        padding-bottom: 30px;
     }
 }
 

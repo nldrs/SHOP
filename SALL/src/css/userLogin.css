@@ -5,13 +5,15 @@
       颜色方面相关
 */
 /*字体*/
-/*背景*/
+/*背景(网页的基础色调是浅灰 #ebebeb)*/
 /*
     ! 用户登录的模块
 */
-/*颜色*/
 /*
     !新品上架的模块
+*/
+/*
+    !购物车结算模块
 */
 .g-header img {
   width: 100%;
@@ -91,4 +93,32 @@
 .g-footer {
   margin-top: 24px;
   text-align: center;
+}
+
+.m-find-pwd {
+  margin-top: 80px;
+}
+.m-find-pwd > div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.m-find-pwd > div p:first-child {
+  width: 84px;
+  font-size: 20px;
+}
+.m-find-pwd > div p:nth-child(2) input {
+  width: 230px;
+  height: 38px;
+  padding-left: 12px;
+}
+.m-find-pwd > div p:last-child {
+  width: 300px;
+  margin-left: 20px;
+}
+.m-find-pwd .findPwd-info {
+  margin-top: 40px;
+  font-size: 16px;
+  color: #CB1D46;
 }

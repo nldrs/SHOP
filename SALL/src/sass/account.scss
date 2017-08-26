@@ -1,0 +1,260 @@
+@import "compass","tollMixin","skinsActive";
+.g-account{
+    @include component-header();
+    @include component-footer();
+}
+.g-main{
+    background-color:$page-bj;
+    padding:20px 0;
+    .g-area{
+        background-color: #fff;
+        border:1px solid #DBDBDB;
+        padding:14px;
+        .m-account{
+           .u-good-title{
+               font-size: $fs28;
+               span{
+                   color:$page-mainColor;
+               }
+           }
+            .u-good-action{
+                height:54px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                font-size:$fs20;
+                border:1px solid #DBDBDB;
+                background-color:$account-bj;
+                margin-top: 32px;
+                padding-left:14px;
+                p:nth-child(1){
+                    width:50px;
+                }
+                p:nth-child(2){
+                    width:70px;
+                }
+                p:nth-child(3){
+                    width:730px;
+                }
+                p:nth-child(4){
+                    width:222px;
+                }
+                p:nth-child(5){
+                    width:88px;
+                }
+            }
+            .u-good-detail{
+               margin-top:46px;
+                .u-good-detail-single{
+                    border:1px solid #DBDBDB;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items:center;
+                    padding:22px 14px;
+                }
+                .f-border-none~ .u-good-detail-single{
+                    border-top: none;
+                }
+                .u-icon{
+                    width:120px;
+                }
+                .u-imgShow{
+                    width:730px;
+                    display: flex;
+                    justify-content: flex-start;
+                    .u-imgShow-box{
+                        width:184px;
+                        height:184px;
+                        border:1px solid #dbdbdb;
+                        padding:4px;
+                        img{
+                            width:100%;
+                            height:100%;
+                        }
+                    }
+                    .u-imgShow-detail{
+                        margin-left: 32px;
+                        h1{
+                            font-size:$fs18;
+                            margin-top:10px;
+                            margin-bottom:6px;
+                        }
+                        .u-imgShow-area{
+                            >div{
+                                display:flex;
+                                justify-content: flex-start;
+                                font-size: 14px;
+                                color:#707070;
+                                margin-bottom:4px;
+                                p:first-child{
+                                    width:86px;
+                                }
+                                .icon-rmb{
+                                    font-size: $fs16;
+                                    margin-right:2px;
+                                }
+                                .u-changAmount{
+                                    display: flex;
+                                    background-color:$account-bj;
+                                    span{
+                                        display:inline-block;
+                                        width:32px;
+                                        height:22px;
+                                        text-align: center;
+                                    }
+                                    .minus{
+                                        border:1px solid #dbdbdb;
+                                        border-right:none;
+                                    }
+                                    .plus{
+                                        border:1px solid #dbdbdb;
+                                        border-left:none;
+                                    }
+                                    input{
+                                        width:52px;
+                                        border:1px solid #dbdbdb;
+                                        text-align: center;
+                                        background-color:$account-bj;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .u-money{
+                    width:222px;
+                    align-self: flex-start;
+                    font-size:$fs28;
+                    color:$page-mainColor;
+                    padding-left:10px;
+                }
+                .u-del{
+                    width:88px;
+                   align-self: flex-start;
+                    i{
+                        font-size: $fs28;
+                        color:#000000;
+                        font-weight:bold;
+                        padding-left:20px;
+                        position: relative;
+                        top:4px;
+                    }
+                }
+            }
+            .u-good-submit{
+                height:76px;
+                margin:12px 0;
+                border:1px solid #DBDBDB;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-left:54px;
+                background-color: $account-bj;
+                .u-good-seled{
+                    font-size: $fs22;
+                }
+                .u-good-total{
+                    display:flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    flex:1;
+                    p:first-child{
+                        padding-right:74px;
+                        span:first-child{
+
+                        }
+                        b,span:last-child{
+                            margin-left:2px;
+                            font-size: $fs30;
+                            color:$page-mainColor;
+                        }
+                    }
+                    .submit-btn{
+                        width:168px;
+                        flex:0 0 168px;
+                        height:76px;
+                        line-height: 76px;
+                    }
+                }
+            }
+            .u-good-address{
+                padding:12px 52px;
+                padding-right: 0;
+                border:1px solid #DBDBDB;
+                font-size: $fs14;
+                .u-sendPay{
+                    display: flex;
+                    h1{
+                        font-size: 16px;
+                    }
+                    .u-sendPay-detail{
+                        >div{
+                            display:flex;
+                            margin-bottom: 32px;
+                            >p:first-child{
+                                padding-left: 20px;
+                               img{
+                                   width:20px;
+                               }
+                            }
+                            .u-sendPay-common{
+                                padding-left: 18px;
+                                margin-top: 2px;
+                            }
+                            .u-free,.u-unfree{
+                                p:last-child{
+                                    color:$page-mainColor;
+                                    margin-top:2px;
+                                }
+                                .u-sendPay-sign{
+                                    color:$page-mainColor;
+                                }
+                            }
+                        }
+                    }
+                }
+                .u-adress-sel{
+                    ul{
+                        width:654px;
+                        margin:0 auto;
+                        border:1px solid #DBDBDB;
+                        border-bottom: none;
+                        font-size:$fs14;
+                        li{
+                            line-height: 40px;
+                            height:40px;
+                            border-bottom: 1px solid #DBDBDB;
+                            &:first-child,&:last-child{
+                                text-align: center;
+                                font-size:$fs20;
+                                background-color: $account-bj;
+                            }
+                            span{
+                                margin-left: 12px;
+                            }
+                            button{
+                                width: 20px;
+                                height:20px;
+                                line-height: 20px;
+                                margin:0 12px;
+                                position: relative;
+                                top:4px;
+                            }
+                            .u-addAddress{
+                                position: relative;
+                                top:-2px;
+                                left:-6px;
+                            }
+                        }
+                    }
+                }
+                .u-consultation{
+                    width:640px;
+                    margin: 10px auto;
+                    display:flex;
+                    justify-content: space-around;
+                }
+            }
+        }
+    }
+}

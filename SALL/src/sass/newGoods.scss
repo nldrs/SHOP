@@ -7,11 +7,12 @@
 }
 
 .g-main{
-    background-color: $newGoods-bj;
+    background-color: $page-bj;
     .g-content{
         .g-search{
             display: flex;
             justify-content: space-around;
+            cursor: pointer;
             .m-search{
                 width: 534px;
                 display: flex;
