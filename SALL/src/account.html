@@ -258,7 +258,7 @@
                                 <p><img src="images/before.png" alt="选择"></p>
                                 <div class="u-unfree u-sendPay-common">
                                     <p>快递配送,点击查看 <span> ( <b class="u-sendPay-sign">温馨提示</b>：选择快递配送的亲，别忘了在支付订单后 　通过支付宝转账形式支付快递费用哦！详情请见 <b class="u-sendPay-sign">配送说明及收费标准</b>)</span></p>
-                                    <p>配送说明及收费标准
+                                    <p class="send-desc">配送说明及收费标准
                                     </p>
                                 </div>
                             </div>
@@ -304,6 +304,30 @@
 </div>
 <script>
     $(function(){
+        var str= '<div class="m-alert-send">'
+                 +'<span>供货商配送说明</span>'
+                 +'<p>1.本订单由达达快递配送。请您在刷卡支付订单后，通过支付宝转账形式将快递费用支付到指定账户。</p>'
+                 +'<div class="m-alert-info">'
+                 +'<p>'
+                +'<span>支付宝账户:</span>'
+                +'<span class="order-account">5646546546546</span>'
+                +'</p>'
+                +'<p>'
+                +'<span>姓名:</span>'
+                +'<span class="order-user">小李</span>'
+                +'</p>'
+                +'<p>'
+                +'<span>联系电话:</span>'
+                +'<span class="order-tel">54564654654654</span>'
+                +'</p>'
+                +'<p>注:转账时,务必将 <span>订单编号</span> 填入备注信息中,否则无法派发。</p>'
+                +'</div>'
+                +'<p>2.快递支付费用，默认以系统参考价为准。</p>'
+                +'<p>3.因包裹实际情况不同，如商品包装盒质量较大而产生快递费用偏差，届时会由专人与您联系。多退少补。</p>'
+                +'</div>';
+        $(".send-desc").on("click",function (e) {
+            MS.popAlert(str,"友情提示","800px","400px");
+        });
         MS.Ajax_page();
     })
 </script>

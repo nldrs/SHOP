@@ -1,73 +1,413 @@
+@charset "UTF-8";
 /*
-Error: Invalid CSS after "$newGoods-main": expected selector or at-rule, was ":#E6A804;"
-        on line 31 of D:/project/SHOP/SALL/src/sass/_skinsActive.scss
-        from line 1 of D:/project/SHOP/SALL/src/sass/newGoods.scss
-
-26:     ! 用户登录的模块
-27: *\/
-28: /*
-29:     !新品上架的模块
-30: *\/
-31: $newGoods-main:#E6A804;
-32: $newGoods-noMain:#CB1D46;
-33: /*
-34:     !购物车结算模块
-35: *\/
-36: 
-
-Backtrace:
-D:/project/SHOP/SALL/src/sass/_skinsActive.scss:31
-D:/project/SHOP/SALL/src/sass/newGoods.scss:1
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1207:in `expected'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1137:in `expected'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:42:in `parse'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/engine.rb:406:in `_to_tree'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/engine.rb:312:in `to_tree'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:326:in `block in visit_import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/stack.rb:88:in `block in with_import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/stack.rb:88:in `with_import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:325:in `visit_import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:159:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:8:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/root_node.rb:20:in `render'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/engine.rb:281:in `render'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:17:in `block in render'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:29:in `with_import_scope'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:16:in `render'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:494:in `update_stylesheet'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `each'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/lib/compass/sass_compiler.rb:40:in `compile!'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/lib/compass/commands/update_project.rb:49:in `perform'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/lib/compass/commands/base.rb:18:in `execute'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/lib/compass/commands/project_base.rb:19:in `execute'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/lib/compass/exec/sub_command_ui.rb:15:in `run!'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/bin/compass:30:in `block in <top (required)>'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/bin/compass:44:in `call'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/bin/compass:44:in `<top (required)>'
-C:/Ruby22-x64/bin/compass:23:in `load'
-C:/Ruby22-x64/bin/compass:23:in `<main>'
+    ! 字体方面相关
+      背景颜色方面相关
+      颜色方面相关
 */
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"$newGoods-main\": expected selector or at-rule, was \":#E6A804;\"\A         on line 31 of D:/project/SHOP/SALL/src/sass/_skinsActive.scss\A         from line 1 of D:/project/SHOP/SALL/src/sass/newGoods.scss\A \A 26:     ! 用户登录的模块\A 27: */\A 28: /*\A 29:     !新品上架的模块\A 30: */\A 31: $newGoods-main:#E6A804;\A 32: $newGoods-noMain:#CB1D46;\A 33: /*\A 34:     !购物车结算模块\A 35: */\A 36: "; }
+/*字体*/
+/*背景(网页的基础色调是浅灰 #ebebeb)*/
+/*
+    !新品上架的模块
+*/
+/*
+    !购物车结算模块
+*/
+/*
+    !组件的抽象样式
+    1.公共的header   component-header
+    2.公共的footer   component-footer
+    3.新品上架 的种类 component-kind
+*/
+.newGoodsLogo-sprite, .newGoodsLogo-bh, .newGoodsLogo-bj, .newGoodsLogo-cf, .newGoodsLogo-jj, .newGoodsLogo-ljgm, .newGoodsLogo-ly, .newGoodsLogo-new, .newGoodsLogo-ny, .newGoodsLogo-tjgwc, .newGoodsLogo-xh, .newGoodsLogo-yl, .newGoodsLogo-zf, .newGoodsLogo-zh {
+  background-image: url('../images/newGoodsLogo-sda1a02d7ac.png');
+  background-repeat: no-repeat;
+}
+
+.newGoodsLogo-bh {
+  background-position: 0 0;
+  height: 23px;
+  width: 25px;
+}
+.newGoodsLogo-bh:hover, .newGoodsLogo-bh.bh-hover {
+  background-position: 0 -46px;
+}
+.newGoodsLogo-bh:active, .newGoodsLogo-bh.bh-active {
+  background-position: 0 -23px;
+}
+
+.newGoodsLogo-bj {
+  background-position: 0 -69px;
+  height: 21px;
+  width: 21px;
+}
+.newGoodsLogo-bj:hover, .newGoodsLogo-bj.bj-hover {
+  background-position: 0 -111px;
+}
+.newGoodsLogo-bj:active, .newGoodsLogo-bj.bj-active {
+  background-position: 0 -90px;
+}
+
+.newGoodsLogo-cf {
+  background-position: 0 -132px;
+  height: 24px;
+  width: 24px;
+}
+.newGoodsLogo-cf:hover, .newGoodsLogo-cf.cf-hover {
+  background-position: 0 -180px;
+}
+.newGoodsLogo-cf:active, .newGoodsLogo-cf.cf-active {
+  background-position: 0 -156px;
+}
+
+.newGoodsLogo-jj {
+  background-position: 0 -204px;
+  height: 21px;
+  width: 21px;
+}
+.newGoodsLogo-jj:hover, .newGoodsLogo-jj.jj-hover {
+  background-position: 0 -246px;
+}
+.newGoodsLogo-jj:active, .newGoodsLogo-jj.jj-active {
+  background-position: 0 -225px;
+}
+
+.newGoodsLogo-ljgm {
+  background-position: 0 -267px;
+  height: 39px;
+  width: 37px;
+}
+
+.newGoodsLogo-ly {
+  background-position: 0 -306px;
+  height: 24px;
+  width: 20px;
+}
+.newGoodsLogo-ly:hover, .newGoodsLogo-ly.ly-hover {
+  background-position: 0 -354px;
+}
+.newGoodsLogo-ly:active, .newGoodsLogo-ly.ly-active {
+  background-position: 0 -330px;
+}
+
+.newGoodsLogo-new {
+  background-position: 0 -378px;
+  height: 31px;
+  width: 33px;
+}
+
+.newGoodsLogo-ny {
+  background-position: 0 -409px;
+  height: 22px;
+  width: 23px;
+}
+.newGoodsLogo-ny:hover, .newGoodsLogo-ny.ny-hover {
+  background-position: 0 -453px;
+}
+.newGoodsLogo-ny:active, .newGoodsLogo-ny.ny-active {
+  background-position: 0 -431px;
+}
+
+.newGoodsLogo-tjgwc {
+  background-position: 0 -475px;
+  height: 39px;
+  width: 37px;
+}
+
+.newGoodsLogo-xh {
+  background-position: 0 -514px;
+  height: 22px;
+  width: 12px;
+}
+.newGoodsLogo-xh:hover, .newGoodsLogo-xh.xh-hover {
+  background-position: 0 -558px;
+}
+.newGoodsLogo-xh:active, .newGoodsLogo-xh.xh-active {
+  background-position: 0 -536px;
+}
+
+.newGoodsLogo-yl {
+  background-position: 0 -580px;
+  height: 22px;
+  width: 15px;
+}
+.newGoodsLogo-yl:hover, .newGoodsLogo-yl.yl-hover {
+  background-position: 0 -624px;
+}
+.newGoodsLogo-yl:active, .newGoodsLogo-yl.yl-active {
+  background-position: 0 -602px;
+}
+
+.newGoodsLogo-zf {
+  background-position: 0 -646px;
+  height: 22px;
+  width: 26px;
+}
+.newGoodsLogo-zf:hover, .newGoodsLogo-zf.zf-hover {
+  background-position: 0 -690px;
+}
+.newGoodsLogo-zf:active, .newGoodsLogo-zf.zf-active {
+  background-position: 0 -668px;
+}
+
+.newGoodsLogo-zh {
+  background-position: 0 -712px;
+  height: 23px;
+  width: 21px;
+}
+.newGoodsLogo-zh:hover, .newGoodsLogo-zh.zh-hover {
+  background-position: 0 -758px;
+}
+.newGoodsLogo-zh:active, .newGoodsLogo-zh.zh-active {
+  background-position: 0 -735px;
+}
+
+.g-newGoods .m-header {
+  position: relative;
+  width: 100%;
+}
+.g-newGoods .m-header .logo {
+  width: 100%;
+}
+.g-newGoods .m-header .reset-auto {
+  position: absolute;
+  bottom: 14%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: right;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+.g-newGoods .m-header .reset-auto .u-username, .g-newGoods .m-header .reset-auto .u-user-out {
+  color: #fff;
+  text-decoration: underline;
+}
+.g-newGoods .m-header .reset-auto i {
+  vertical-align: -4px;
+}
+.g-newGoods .m-header .reset-auto .u-user-out {
+  margin-left: 10px;
+  text-decoration: underline;
+}
+.g-newGoods .m-footer {
+  margin-top: 24px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+.g-newGoods .g-area {
+  padding-top: 20px;
+  display: flex;
+}
+.g-newGoods .g-area .g-list {
+  width: 274px;
+  background-color: #fff;
+  border: 1px solid #DADADB;
+}
+.g-newGoods .g-area .g-list ul li {
+  padding: 0 20px;
+}
+.g-newGoods .g-area .g-list ul li .newGoodsLogo-xh {
+  margin-left: 4px;
+}
+.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-bh {
+  background-position: 0 -46px;
+}
+.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-bj {
+  background-position: 0 -111px;
+}
+.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-cf {
+  background-position: 0 -180px;
+}
+.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-jj {
+  background-position: 0 -246px;
+}
+.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-ly {
+  background-position: 0 -354px;
+}
+.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-ny {
+  background-position: 0 -453px;
+}
+.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-xh {
+  background-position: 0 -558px;
+}
+.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-yl {
+  background-position: 0 -624px;
+}
+.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-zf {
+  background-position: 0 -690px;
+}
+.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-zh {
+  background-position: 0 -758px;
+}
+.g-newGoods .g-area .g-list ul li a {
+  position: relative;
+  border-top: 1px solid #c2c2c2;
+  display: block;
+  font-size: 14px;
+  padding: 10px 0;
+  font-weight: 600;
+}
+.g-newGoods .g-area .g-list ul li a i {
+  display: inline-block;
+}
+.g-newGoods .g-area .g-list ul li a span {
+  position: absolute;
+  left: 36px;
+  top: 13px;
+}
+.g-newGoods .g-area .g-list ul li:first-child a {
+  border: none;
+}
+.g-newGoods .g-area .g-list .newsj a span {
+  top: 20px;
+  left: 50px;
+  color: #CB1D46;
+}
+.g-newGoods .g-area .g-list .newsj ~ li:hover {
+  background-color: #CB1D46;
+}
+.g-newGoods .g-area .g-list .newsj ~ li:hover a {
+  color: #fff;
+  border-top-color: #CB1D46;
+}
+.g-newGoods .g-area .g-list .newsj ~ li:hover + li a {
+  border-top-color: transparent;
+}
+.g-newGoods .g-area .g-content {
+  margin-left: 14px;
+  flex: 1;
+}
+
+.g-main {
+  background-color: #ebebeb;
+}
+.g-main .g-content .g-search {
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+}
+.g-main .g-content .g-search .m-search {
+  width: 534px;
+  display: flex;
+  justify-content: flex-start;
+}
+.g-main .g-content .g-search .m-search input {
+  width: 432px;
+  height: 38px;
+  border: 2px solid #CB1D46;
+  border-radius: 2px 0 0 2px;
+  padding-left: 24px;
+  background-color: transparent;
+}
+.g-main .g-content .g-search .m-search p {
+  width: 104px;
+  height: 38px;
+  text-align: center;
+  background-color: #CB1D46;
+  color: #fff;
+  padding: 10px 0;
+}
+.g-main .g-content .g-search .m-search p i {
+  font-size: 20px;
+  color: #fff;
+}
+.g-main .g-content .g-search .m-search p span {
+  font-size: 16px;
+  letter-spacing: 4px;
+  position: relative;
+  top: -4px;
+  left: 4px;
+}
+.g-main .g-content .g-search .m-shopping {
+  width: 144px;
+  height: 38px;
+  line-height: 38px;
+  font-size: 14px;
+}
+.g-main .g-content .g-search .m-shopping i, .g-main .g-content .g-search .m-shopping .u-num-box {
+  color: #CB1D46;
+}
+.g-main .g-content .g-search .m-shopping i {
+  font-size: 20px;
+  font-weight: bold;
+  vertical-align: -4px;
+}
+.g-main .g-content .g-search .m-shopping .u-shopping {
+  margin: 0 12px;
+}
+.g-main .g-content .g-search .m-histroy {
+  width: 96px;
+  font-size: 22px;
+}
+.g-main .g-content .g-newsShow {
+  margin-top: 24px;
+}
+.g-main .g-content .g-newsShow .m-newsShow {
+  background-color: #fff;
+  border: 1px solid #DADADB;
+}
+.g-main .g-content .g-newsShow .m-newsShow h1 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 64px;
+}
+.g-main .g-content .g-newsShow .m-newsShow .u-goodShow > .u-goodsArea {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.g-main .g-content .g-newsShow .m-newsShow .u-goodShow > .u-goodsArea > div {
+  width: 286px;
+  height: 270px;
+  border: 2px solid #E6A804;
+  position: relative;
+  cursor: pointer;
+}
+.g-main .g-content .g-newsShow .m-newsShow .u-goodShow > .u-goodsArea > div .u-singleGood-box {
+  text-align: center;
+}
+.g-main .g-content .g-newsShow .m-newsShow .u-goodShow > .u-goodsArea > div .u-singleGood-box img {
+  margin: 0 -100%;
+}
+.g-main .g-content .g-newsShow .m-newsShow .u-goodShow > .u-goodsArea > div .u-desc {
+  padding: 10px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 68px;
+  background-color: #E6A804;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.g-main .g-content .g-newsShow .m-newsShow .u-goodShow > .u-goodsArea > div .u-desc .u-title {
+  width: 160px;
+}
+.g-main .g-content .g-newsShow .m-newsShow .u-goodShow > .u-goodsArea > div .u-desc .u-title p:first-child {
+  padding: 4px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #866B26;
+  color: #000;
+}
+.g-main .g-content .g-newsShow .m-newsShow .u-goodShow > .u-goodsArea > div .u-desc .u-title p:last-child {
+  margin-top: -6px;
+}
+.g-main .g-content .g-newsShow .m-newsShow .u-goodShow > .u-goodsArea > div .u-desc .u-title p:last-child i {
+  font-size: 28px;
+}
+.g-main .g-content .g-newsShow .m-newsShow .u-goodShow > .u-goodsArea > div .u-desc .u-title p:last-child b {
+  font-size: 26px;
+  margin-left: 10px;
+}
+.g-main .g-content .g-newsShow .m-newsShow .u-goodShow > .u-goodsArea > div .u-desc .u-buy, .g-main .g-content .g-newsShow .m-newsShow .u-goodShow > .u-goodsArea > div .u-desc .u-addGwc {
+  line-height: 68px;
+  margin-left: 6px;
+}
+.g-main .g-content .g-newsShow .m-newsShow .u-goodShow > .u-goodsArea > div .u-desc .u-addGwc {
+  margin-left: 10px;
+}
+.g-main .g-content .g-newsShow .m-newsShow .g-fenye {
+  padding: 4% 20% 10% 20%;
+}
