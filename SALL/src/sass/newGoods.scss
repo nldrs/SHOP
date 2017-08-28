@@ -46,12 +46,16 @@
                 }
             }
             .m-shopping{
-                width: 144px;
+                width: 184px;
                 height:38px;
                 line-height: 38px;
                 font-size: $fs14;
                 i,.u-num-box{
                     color: $newGoods-noMain;
+                }
+                .u-num-box{
+                    font-size: 18px;
+                    font-weight: 600;
                 }
                 i{
                     font-size: 20px;
@@ -74,7 +78,7 @@
                 border:1px solid #DADADB;
                 h1{
                     font-size: $fs18;
-                    font-weight: 500;
+                    font-weight: 600;
                     line-height: 64px;
                 }
                 .u-goodShow{
@@ -142,5 +146,31 @@
                 }
             }
         }
+    }
+}
+
+.top_back{
+    display: block;
+    width: 52px;
+    height: 52px;
+    position: fixed;
+    right:30px;
+    bottom: 120px;
+    z-index: 99999;
+    background-image: url(../images/top.png);
+    background-repeat: no-repeat;
+    -webkit-transition: background-position 1s linear;
+    -moz-transition: background-position 1s linear;
+    -o-transition: background-position 1s linear;
+    -ms-transition: background-position 1s linear;
+    transition: background-position 1s linear;
+    -webkit-transition: background-position 1s;
+    -moz-transition: background-position 1s;
+    -ms-transition: background-position 1s;
+    -o-transition: background-position 1s;
+    transition: background-position 1s;
+    background-position: 0 -266px;
+    &:hover{
+        background-position: 0 -328px;
     }
 }

@@ -81,10 +81,19 @@
   align-items: center;
   margin-top: 42px;
 }
+.g-main .m-login .u-area .u-logins .login-area #login > p .button-width-small {
+  padding: 0 !important;
+  border: none;
+}
 .g-main .m-login .u-area .u-logins .login-area #login > p a:last-child {
   font-size: 14px;
   text-decoration: underline;
   letter-spacing: 1px;
+}
+.g-main .m-login .u-area h2 {
+  font-size: 14px;
+  color: #CB1F46;
+  margin: 20px 0 10px 0;
 }
 
 .g-footer {
@@ -95,27 +104,30 @@
 .m-find-pwd {
   margin-top: 80px;
 }
-.m-find-pwd > div {
+.m-find-pwd form > div {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 20px;
 }
-.m-find-pwd > div p:first-child {
-  width: 84px;
+.m-find-pwd form > div p:first-child {
+  width: 94px;
   font-size: 20px;
 }
-.m-find-pwd > div p:nth-child(2) input {
+.m-find-pwd form > div p:nth-child(2) input {
   width: 230px;
   height: 38px;
   padding-left: 12px;
 }
-.m-find-pwd > div p:last-child {
-  width: 300px;
+.m-find-pwd form > div .button-caution {
   margin-left: 20px;
 }
-.m-find-pwd .findPwd-info {
+.m-find-pwd form .m-find-submit {
+  text-align: right;
+}
+.m-find-pwd form .findPwd-info {
   margin-top: 40px;
   font-size: 16px;
   color: #CB1D46;
+  display: none;
 }

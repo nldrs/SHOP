@@ -202,6 +202,7 @@
   width: 274px;
   background-color: #fff;
   border: 1px solid #DADADB;
+  position: fixed;
 }
 .g-newGoods .g-area .g-list ul li {
   padding: 0 20px;
@@ -274,7 +275,7 @@
   border-top-color: transparent;
 }
 .g-newGoods .g-area .g-content {
-  margin-left: 14px;
+  margin-left: 288px;
   flex: 1;
 }
 
@@ -319,13 +320,17 @@
   left: 4px;
 }
 .g-main .g-content .g-search .m-shopping {
-  width: 144px;
+  width: 184px;
   height: 38px;
   line-height: 38px;
   font-size: 14px;
 }
 .g-main .g-content .g-search .m-shopping i, .g-main .g-content .g-search .m-shopping .u-num-box {
   color: #CB1D46;
+}
+.g-main .g-content .g-search .m-shopping .u-num-box {
+  font-size: 18px;
+  font-weight: 600;
 }
 .g-main .g-content .g-search .m-shopping i {
   font-size: 20px;
@@ -348,7 +353,7 @@
 }
 .g-main .g-content .g-newsShow .m-newsShow h1 {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 64px;
 }
 .g-main .g-content .g-newsShow .m-newsShow .u-goodShow > .u-goodsArea {
@@ -410,4 +415,30 @@
 }
 .g-main .g-content .g-newsShow .m-newsShow .g-fenye {
   padding: 4% 20% 10% 20%;
+}
+
+.top_back {
+  display: block;
+  width: 52px;
+  height: 52px;
+  position: fixed;
+  right: 30px;
+  bottom: 120px;
+  z-index: 99999;
+  background-image: url(../images/top.png);
+  background-repeat: no-repeat;
+  -webkit-transition: background-position 1s linear;
+  -moz-transition: background-position 1s linear;
+  -o-transition: background-position 1s linear;
+  -ms-transition: background-position 1s linear;
+  transition: background-position 1s linear;
+  -webkit-transition: background-position 1s;
+  -moz-transition: background-position 1s;
+  -ms-transition: background-position 1s;
+  -o-transition: background-position 1s;
+  transition: background-position 1s;
+  background-position: 0 -266px;
+}
+.top_back:hover {
+  background-position: 0 -328px;
 }

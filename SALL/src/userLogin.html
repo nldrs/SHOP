@@ -16,12 +16,14 @@
     <!--插件的css-->
     <link rel="stylesheet" href="plugins/animate.min.css">
     <link rel="stylesheet" href="plugins/slide/slide.css">
+    <link rel="stylesheet" href="plugins/easyForm/easyform.css">
     <!--插件的js-->
     <script src="js/jquery.min.js"></script>
     <script src="js/fastclick.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/store.js/1.3.20/store.min.js"></script>
     <script src="plugins/layer/layer.js"></script>
    <script src="plugins/slide/ZoomPic.js"></script>
+    <script src="plugins/easyForm/easyform.js"></script>
     <!--[if lte IE 8]>
     <script  src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -67,17 +69,24 @@
                 <div class="u-logins">
                     <div class="login-area">
                         <h1><i class="icon icon-index"></i>用户登录</h1>
-                        <form action="" id="login">
+                        <form action="" id="login" method="post">
                             <div>
                                 <p>手机号:</p>
-                                <p><input type="text" placeholder="请输入手机号码" required></p>
+                                <p><input type="text" placeholder="请输入手机号码"  id="tel"
+                                          data-easyform="regex:^1(3|4|5|7|8)\d{9}$;real-time;"
+                                          data-message="请输入正确的手机号码"
+                                          data-easytip="position:right;class:easy-blue;"></p>
                             </div>
                             <div>
                                 <p>密&nbsp;&nbsp;&nbsp;码:</p>
-                                <p><input type="password" placeholder="请输入密码" required></p>
+                                <p><input type="password" placeholder="请输入密码" id="pwd"
+                                          data-easyform="length:6 16;real-time;"
+                                          data-message="密码必须为6—16位"
+                                          data-easytip="position:right;class:easy-blue;"></p>
                             </div>
+                            <h2 class="error-info"></h2>
                             <p class="forgetLogin">
-                                <a href="javascript:;" class="button button-highlight button-rounded button-large">立即登录</a>
+                                <input type="submit" class="button button-highlight button-rounded button-large" value="立即登录">
                                 <a href="javascript:;" class="m-forget-pwd">忘记密码>></a>
                             </p>
                         </form>
@@ -92,23 +101,102 @@
 <script>
     $(".Ajax-footer").load("tpl/tplFooter.html");
     $(function(){
+// 1.单机忘记密码弹框
         var str='<div class="m-find-pwd reset-lay-padding">'
+                +'<form  action=""  method="post" id="alert-form">'
                 +'<div>'
                 +'<p>账&nbsp;&nbsp;&nbsp;&nbsp;号:</p>'
-                +'<p><input type="text" placeholder="请输入手机号码"></p>'
-                +'<p><a href="javascript:;" class="button button-caution  button-rounded">点击获取验证码&nbsp;<i>60</i>s</a></p>'
+                +'<p><input type="text" placeholder="请输入手机号码" id="alert-user"></p>'
+                +'<p><a  class="button button-caution  button-rounded" id="getPwd">点击获取验证码&nbsp;<i>60</i>s</a></p>'
                 +'</div>'
                 +'<div>'
                 +'<p>验证码:</p>'
-                +'<p><input type="text" placeholder="请输入验证码"></p>'
-                +'<p><a href="javascript:;" class="button button-highlight button-rounded">提交</a></p>'
+                +'<p><input type="text" placeholder="请输入验证码" id="alert-reg"></p>'
+                +'<p><a  class="button button-caution  button-rounded" id="alert-regBut">验证</a></p>'
+                +'</div>'
+                +'<div>'
+                +'<p>新密码:</p>'
+                +'<p><input type="password" disabled placeholder="请输入新密码" id="alert-newPwd" data-easyform="length:6 16;char-normal;real-time;" data-message="密码必须为6—16位数字字母或下划线" data-easytip="position:right;class:easy-blue;"></p>'
+                +'</div>'
+                +'<div>'
+                +'<p>确认密码:</p>'
+                +'<p><input type="password" disabled placeholder="请重新输入新密码" id="alert-newPwd2" data-easyform="length:6 16;char-normal;real-time;equal:#alert-newPwd;" data-message="两次密码输入要一致" data-easytip="class:easy-blue;""></p>'
                 +'</div>'
                 +'<h2 class="findPwd-info">地方哈吉发顺丰货到付款撒大家回复看撒娇</h2>'
+                +'<h3 class="m-find-submit"><input type="button" class="button button-action button-rounded disabled" value="提交"></h3>'
+                +'</form>'
                 +'</div>';
         $(".m-forget-pwd").on("click",function (e) {
-            MS.popAlert(str,"找回密码","640px","400px");
+            //如果已近输入了手机号则保存到变量 rel_tel
+            var reg=$("#tel").val();
+            if(MS.TL_RegExp(reg,'mobile')){
+                $(".error-info").text("");
+                MS.popAlert(str,"找回密码","640px","460px");
+                $("#alert-form").easyform();
+                $("#alert-user").val(reg).attr("disabled","true");
+            }else{
+                $(".error-info").text("手机号码有误,请重新输入!");
+            }
+        });
+
+// 2.对表单进行验证
+        $("#login").easyform( );
+// 3.点击获取验证码
+           var playing=false;//判断标示
+        $("body").on("click","#getPwd",function(e){
+            e.preventDefault();
+            $(this).addClass("disabled");
+            var targetDom=$(this).find('i');
+            if(playing) return;
+            playing=true;
+           var timeNum=60;
+           var timemr=null;
+           timer=setInterval(function(){
+               timeNum>0?targetDom.text(timeNum--):targetDom.text("0");
+               if(timeNum==0){
+                   $("#getPwd").removeClass("disabled");
+                   $("#getPwd").html("点击重新获取验证码 <i>60</i>s");
+                   timeNum=60;
+                   playing=false;
+                   clearInterval(timer);
+               }
+           },300);
+        })
+// 4.激活提交按钮
+        //公共事件
+        function active(){
+            var newPwd_v=$("#alert-newPwd").val();
+            var newPwd_v2=$("#alert-newPwd2").val();
+            if(newPwd_v&&newPwd_v2&&newPwd_v==newPwd_v2){
+                $(".button-action").removeClass("disabled");
+                $(".button-action").attr("disabled",false);
+            }else{
+                $(".button-action").addClass("disabled");
+                $(".button-action").attr("disabled",true);
+            }
+        }
+        $("body").on("blur","#alert-reg,#alert-user,#alert-newPwd,#alert-newPwd2",function(e){
+            active();
+       });
+//  5. 点击验证的时候激活下面的按钮
+        $("body").on("click","#alert-regBut",function(){
+            var reg_v=$("#alert-reg").val();
+            var target="123";
+            if(target==reg_v){
+                $("#alert-newPwd,#alert-newPwd2").attr("disabled",false);
+            }
+        })
+//  6.手机失去焦点隐藏提示文字
+        $("#tel").on("blur",function (e) {
+            $(".error-info").text("");
+        })
+//    立即登录跳转页面
+        $(".forgetLogin input").on("click",function(){
+            var name="张三"
+            MS.PG_jump("newGoods.html?user="+name)
         })
     })
+
 
 </script>
 </body>

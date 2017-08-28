@@ -200,5 +200,5 @@ window.onload = function ()
 {
 	new ZoomPic("focus_Box");
 };
-function stopError() {  return true; }
-window.onerror = stopError;
+// function stopError() {  return true; }
+// window.onerror = stopError;

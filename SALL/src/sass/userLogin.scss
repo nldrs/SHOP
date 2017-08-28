@@ -61,6 +61,10 @@
                             justify-content: space-between;
                             align-items: center;
                             margin-top:42px;
+                            .button-width-small {
+                                padding:0 !important;
+                                border:none;
+                            }
                             a:last-child{
                                 font-size: $fs14;
                                 text-decoration: underline;
@@ -69,6 +73,11 @@
                         }
                     }
                 }
+            }
+            h2{
+                font-size: $fs14;
+                color:$page-mainColor;
+                margin:20px 0 10px 0;
             }
         }
     }
@@ -79,30 +88,35 @@
 }
 .m-find-pwd{
     margin-top: 80px;
-    >div{
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        margin-bottom:20px;
-        p:first-child{
-            width:84px;
-            font-size: $fs20;
-        }
-        p:nth-child(2){
-            input{
-                width:230px;
-                height:38px;
-                padding-left: 12px;
+    form{
+        >div{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom:20px;
+            p:first-child{
+                width:94px;
+                font-size: $fs20;
+            }
+            p:nth-child(2){
+                input{
+                    width:230px;
+                    height:38px;
+                    padding-left: 12px;
+                }
+            }
+            .button-caution {
+                margin-left: 20px;
             }
         }
-        p:last-child{
-            width:300px;
-            margin-left: 20px;
+        .m-find-submit{
+            text-align: right;
         }
-    }
-    .findPwd-info{
-        margin-top:40px;
-        font-size: $fs16;
-        color:$newGoods-noMain;
+        .findPwd-info{
+            margin-top:40px;
+            font-size: $fs16;
+            color:$newGoods-noMain;
+            display:none;
+        }
     }
 }
