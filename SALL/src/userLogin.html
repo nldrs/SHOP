@@ -20,7 +20,6 @@
     <!--插件的js-->
     <script src="js/jquery.min.js"></script>
     <script src="js/fastclick.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/store.js/1.3.20/store.min.js"></script>
     <script src="plugins/layer/layer.js"></script>
    <script src="plugins/slide/ZoomPic.js"></script>
     <script src="plugins/easyForm/easyform.js"></script>
@@ -161,7 +160,7 @@
                    clearInterval(timer);
                }
            },300);
-        })
+        });
 // 4.激活提交按钮
         //公共事件
         function active(){
@@ -185,14 +184,14 @@
             if(target==reg_v){
                 $("#alert-newPwd,#alert-newPwd2").attr("disabled",false);
             }
-        })
+        });
 //  6.手机失去焦点隐藏提示文字
         $("#tel").on("blur",function (e) {
             $(".error-info").text("");
-        })
+        });
 //    立即登录跳转页面
         $(".forgetLogin input").on("click",function(){
-            var name="张三"
+            var name="张三";
             MS.PG_jump("newGoods.html?user="+name)
         })
     })

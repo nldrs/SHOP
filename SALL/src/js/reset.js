@@ -95,10 +95,15 @@ var MS=(function (win,doc,$) {
             btn:[btn_suc,btn_err]
         },suc,error)
     };
-
+    MS.popTip=function (content,sel,time) {
+        layer.tips(content,sel, {
+            tips: [1, '#CB1F46'],
+            time: 1000||time
+        });
+    };
     MS.popInfo=function (content,icon,time,fn) {
         layer.msg(content, {
-            icon: icon||0,
+            icon: icon||6,
             time: time||2000
         },fn)
     };
@@ -370,10 +375,10 @@ var MS=(function (win,doc,$) {
                 break;
         }
     };
-    MS.TL_ajax=function(reqUrl,reqType,resType,reqData,contentType,reqTime){
+    MS.TL_ajax=function(reqUrl,reqData,reqType,resType,contentType,reqTime){
       var AJAX=$.ajax({
           url:reqUrl,
-          type:reqType||"POST",
+          type:reqType||"GET",
           dataType:resType||"json",
           data:reqData||{},
           crossDomain: true,
@@ -439,12 +444,31 @@ var MS=(function (win,doc,$) {
             }
         }
     };
-    /* 6 异步加载页面*/
+/* 6 异步加载页面*/
     MS.Ajax_page=function() {
-        $(".Ajax-header").load("tpl/tplHeader.html");
+        $(".Ajax-header").load("tpl/tplHeader.html",function () {
+            MS.userEdit();
+        });
         $(".Ajax-footer").load("tpl/tplFooter.html");
     };
-
+/* 7.定义模板函数*/
+    MS.template=function(templateSel,htmlSel,data){
+        var source = $(templateSel).html();
+        var template = Handlebars.compile(source);
+        var context = data;
+        var html    = template(context);
+        $(htmlSel).html(html);
+    };
+/* 8.点击用户列表跳转到用户编辑的页面*/
+    MS.userEdit=function(){
+        $(".u-username").click(function(){
+            if($(this).parents(".g-header").data("title")!="edit"){
+                MS.PG_jump("userInfo.html","blank");
+            }else{
+                MS.PG_jump("userInfo.html");
+            }
+        })
+    };
     return MS;
 })(window,document,jQuery);
 

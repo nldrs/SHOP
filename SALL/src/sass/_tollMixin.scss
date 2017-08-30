@@ -58,34 +58,37 @@
                 .newGoodsLogo-xh {
                     margin-left: 4px;
                 }
-                &:hover .newGoodsLogo-bh {
+                &:hover .newGoodsLogo-new,&.active .newGoodsLogo-new{
+                        background:url(../images/newIMG.png) no-repeat;
+                    }
+                &:hover .newGoodsLogo-bh,&.active .newGoodsLogo-bh{
                     background-position: 0 -46px;
                 }
-                &:hover .newGoodsLogo-bj {
+                &:hover .newGoodsLogo-bj,&.active .newGoodsLogo-bj{
                     background-position: 0 -111px;
                 }
-                &:hover .newGoodsLogo-cf {
+                &:hover .newGoodsLogo-cf,&.active .newGoodsLogo-cf{
                     background-position: 0 -180px;
                 }
-                &:hover .newGoodsLogo-jj {
+                &:hover .newGoodsLogo-jj,&.active .newGoodsLogo-jj{
                     background-position: 0 -246px;
                 }
-                &:hover .newGoodsLogo-ly {
+                &:hover .newGoodsLogo-ly,&.active .newGoodsLogo-ly{
                     background-position: 0 -354px;
                 }
-                &:hover .newGoodsLogo-ny {
+                &:hover .newGoodsLogo-ny,&.active .newGoodsLogo-ny{
                     background-position: 0 -453px;
                 }
-                &:hover .newGoodsLogo-xh {
+                &:hover .newGoodsLogo-xh,&.active .newGoodsLogo-xh{
                     background-position: 0 -558px;
                 }
-                &:hover .newGoodsLogo-yl {
+                &:hover .newGoodsLogo-yl,&.active .newGoodsLogo-yl{
                     background-position: 0 -624px;
                 }
-                &:hover .newGoodsLogo-zf {
+                &:hover .newGoodsLogo-zf,&.active .newGoodsLogo-zf{
                     background-position: 0 -690px;
                 }
-                &:hover .newGoodsLogo-zh {
+                &:hover .newGoodsLogo-zh,&.active .newGoodsLogo-zh{
                     background-position: 0 -758px;
                 }
 
@@ -113,16 +116,15 @@
             .newsj a span{
                 top: 20px;
                 left: 50px;
-                color:$newGoods-noMain;
             }
-            .newsj~li:hover{
+            li:hover,li.active{
                 background-color: $newGoods-noMain;
             }
-            .newsj~li:hover a{
+            li:hover a,li.active a{
                 color:#fff;
                 border-top-color:$newGoods-noMain;
             }
-            .newsj~li:hover +li a{
+            li:hover +li a,li.active +li a{
                 border-top-color:transparent;
             }
         }

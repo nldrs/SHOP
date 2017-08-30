@@ -210,34 +210,37 @@
 .g-newGoods .g-area .g-list ul li .newGoodsLogo-xh {
   margin-left: 4px;
 }
-.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-bh {
+.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-new, .g-newGoods .g-area .g-list ul li.active .newGoodsLogo-new {
+  background: url(../images/newIMG.png) no-repeat;
+}
+.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-bh, .g-newGoods .g-area .g-list ul li.active .newGoodsLogo-bh {
   background-position: 0 -46px;
 }
-.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-bj {
+.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-bj, .g-newGoods .g-area .g-list ul li.active .newGoodsLogo-bj {
   background-position: 0 -111px;
 }
-.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-cf {
+.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-cf, .g-newGoods .g-area .g-list ul li.active .newGoodsLogo-cf {
   background-position: 0 -180px;
 }
-.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-jj {
+.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-jj, .g-newGoods .g-area .g-list ul li.active .newGoodsLogo-jj {
   background-position: 0 -246px;
 }
-.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-ly {
+.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-ly, .g-newGoods .g-area .g-list ul li.active .newGoodsLogo-ly {
   background-position: 0 -354px;
 }
-.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-ny {
+.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-ny, .g-newGoods .g-area .g-list ul li.active .newGoodsLogo-ny {
   background-position: 0 -453px;
 }
-.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-xh {
+.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-xh, .g-newGoods .g-area .g-list ul li.active .newGoodsLogo-xh {
   background-position: 0 -558px;
 }
-.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-yl {
+.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-yl, .g-newGoods .g-area .g-list ul li.active .newGoodsLogo-yl {
   background-position: 0 -624px;
 }
-.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-zf {
+.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-zf, .g-newGoods .g-area .g-list ul li.active .newGoodsLogo-zf {
   background-position: 0 -690px;
 }
-.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-zh {
+.g-newGoods .g-area .g-list ul li:hover .newGoodsLogo-zh, .g-newGoods .g-area .g-list ul li.active .newGoodsLogo-zh {
   background-position: 0 -758px;
 }
 .g-newGoods .g-area .g-list ul li a {
@@ -262,16 +265,15 @@
 .g-newGoods .g-area .g-list .newsj a span {
   top: 20px;
   left: 50px;
-  color: #CB1D46;
 }
-.g-newGoods .g-area .g-list .newsj ~ li:hover {
+.g-newGoods .g-area .g-list li:hover, .g-newGoods .g-area .g-list li.active {
   background-color: #CB1D46;
 }
-.g-newGoods .g-area .g-list .newsj ~ li:hover a {
+.g-newGoods .g-area .g-list li:hover a, .g-newGoods .g-area .g-list li.active a {
   color: #fff;
   border-top-color: #CB1D46;
 }
-.g-newGoods .g-area .g-list .newsj ~ li:hover + li a {
+.g-newGoods .g-area .g-list li:hover + li a, .g-newGoods .g-area .g-list li.active + li a {
   border-top-color: transparent;
 }
 .g-newGoods .g-area .g-content {
@@ -355,24 +357,29 @@
   font-size: 18px;
   font-weight: 600;
   line-height: 64px;
+  padding-left: 12px;
 }
 .g-main .g-content .g-newsShow .m-newsShow .u-goodShow > .u-goodsArea {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 24px;
+  flex-flow: wrap;
+  justify-content: flex-start;
 }
 .g-main .g-content .g-newsShow .m-newsShow .u-goodShow > .u-goodsArea > div {
-  width: 286px;
-  height: 270px;
+  width: 290px;
+  height: 354px;
   border: 2px solid #E6A804;
   position: relative;
   cursor: pointer;
+  margin-bottom: 24px;
+  margin-left: 10px;
 }
 .g-main .g-content .g-newsShow .m-newsShow .u-goodShow > .u-goodsArea > div .u-singleGood-box {
   text-align: center;
+  height: 286px;
 }
 .g-main .g-content .g-newsShow .m-newsShow .u-goodShow > .u-goodsArea > div .u-singleGood-box img {
-  margin: 0 -100%;
+  width: 100%;
+  height: 100%;
 }
 .g-main .g-content .g-newsShow .m-newsShow .u-goodShow > .u-goodsArea > div .u-desc {
   padding: 10px;
@@ -380,7 +387,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 68px;
+  height: 64px;
   background-color: #E6A804;
   color: #fff;
   display: flex;

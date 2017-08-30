@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单信息</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="description" content="享受购物的乐趣"/>
+    <meta name="aplus-xplug" content="NONE">
+    <meta name="keyword" content="网上买,网上卖,购物网站,团购,网上贸易,安全购物,电子商务,放心买,"/>
+    <!-- 浏览网站时的小图标 -->
+    <link rel="shortcut icon" href="../store.ico" type="/image/x-icon">
+    <link rel="stylesheet" href="css/pcReset.css">
+    <link rel="stylesheet" href="css/skins.css">
+    <link rel="stylesheet" href="css/orderInfo.css">
+    <!--插件的css-->
+    <link rel="stylesheet" href="plugins/animate.min.css">
+    <!--插件的js-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script src="plugins/layer/layer.js"></script>
+    <script src="plugins/handlebars.min.js"></script>
+    <!--[if lte IE 8]>
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--公用的js-->
+    <script src="js/reset.js"></script>
+</head>
+<body>
+<!--[if lte IE 8]>
+<p class="browserupgrade">您的浏览器版本老的可笑, 请到 <a href="http://browsehappy.com/">这里</a> 更新, 以获取最佳的体验</p>
+<![endif]-->
+<div class="g-orderInfo">
+<header class="g-header Ajax-header">
+
+</header>
+<section class="g-main">
+    <div class="u-orderInfoBox">
+    <div class="u-title">
+        <span>订单信息</span>
+    </div>
+    <div class="u-wrapper">
+        <ul class="u-tab">
+            <li class="u-tabItem active" data-orderStatus="0">待支付订单</li>
+            <li class="u-tabItem" data-orderStatus="1">待配送订单</li>
+            <li class="u-tabItem" data-orderStatus="2">配送中订单</li>
+            <li class="u-tabItem" data-orderStatus="3">已送达订单</li>
+        </ul>
+        <div class="u-orders">
+            <div class="u-ordersTitle">
+                <span class="u-orderNo">NO</span>
+                <span class="u-orderRef">订单编号</span>
+                <span class="u-orderSub">订单时间</span>
+                <span class="u-orderPay">支付时间</span>
+                <span class="u-orderSum">金额</span>
+                <span class="u-orderGet">收件人</span>
+                <span class="u-orderPhone">联系方式</span>
+                <span class="u-orderDistrib">配送方式</span>
+                <span class="u-orderProducts">商品信息</span>
+            </div>
+            <ul class="u-tabCon selected" id="u-tabCon">
+                <!--模板渲染-->
+                <!--<li class="u-ordersItems">
+                    <span class="u-orderNo">1</span>
+                    <span class="u-orderRef">17081234</span>
+                    <span class="u-orderSub">2017年8月25日&nbsp;00:24:27</span>
+                    <span class="u-orderPay">2017年8月25日&nbsp;00:24:27</span>
+                    <span class="u-orderSum">¥23.00</span>
+                    <span class="u-orderGet">廖中委</span>
+                    <span class="u-orderPhone">15757127240</span>
+                    <span class="u-orderDistrib">供货商配送</span>
+                    <span class="u-orderProducts">可乐*1、雀巢咖啡1+2*1、薯片*2、袜子*5、杯子*4、话梅*5</span>
+                </li>-->
+            </ul>
+        </div>
+    </div>
+</div>
+</section>
+<footer class="g-footer Ajax-footer"></footer>
+</div>
+</body>
+<script id="order-template" type="text/x-handlebars-template">
+    {{#each result}}
+    <li class="u-ordersItems">
+        <span class="u-orderNo">{{@index}}</span>
+        <span class="u-orderRef">{{orderNumbe}}</span>
+        <span class="u-orderSub">{{orderTime}}</span>
+        <span class="u-orderPay">{{completeTime}}</span>
+        <span class="u-orderSum"><b>¥</b>{{totalPrice}}</span>
+        <span class="u-orderGet">{{collect}}</span>
+        <span class="u-orderPhone">{{phone}}</span>
+        <span class="u-orderDistrib">{{disType}}</span>
+        {{#with goods}}
+        <span class="u-orderProducts">
+            {{#each this}}
+                <b>{{this}}</b>
+            {{/each}}
+        </span>
+       {{/with}}
+    </li>
+    {{/each}}
+</script>
+<script>
+   $(function(){
+       MS.Ajax_page();
+       $(".u-tabItem").on("click",function(){
+           $(this).addClass("active").siblings("li").removeClass("active");
+           var orderStatus=$(this).data("orderstatus");
+           var url="../test/data7.json";
+           MS.TL_ajax(url,{"orderStatus":orderStatus})
+               .done(function(data){
+                   if(data.status){
+                       MS.template("#order-template","#u-tabCon",data);
+                   }
+               })
+               .fail(function () {
+                   MS.popInfo("发生错误");
+               })
+       });
+       $(".u-tabItem:first").trigger("click");
+   })
+</script>
+
+</html>

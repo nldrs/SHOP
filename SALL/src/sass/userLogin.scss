@@ -69,6 +69,10 @@
                                 font-size: $fs14;
                                 text-decoration: underline;
                                 letter-spacing: 1px;
+                                color:#666;
+                                &:hover{
+                                    color:$page-mainColor;
+                                }
                             }
                         }
                     }
@@ -118,5 +122,6 @@
             color:$newGoods-noMain;
             display:none;
         }
+
     }
 }

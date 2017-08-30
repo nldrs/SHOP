@@ -22,6 +22,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/store.js/1.3.20/store.min.js"></script>
     <script src="plugins/layer/layer.js"></script>
     <script src="plugins/fenye/page.js"></script>
+    <script src="plugins/handlebars.min.js"></script>
     <!--[if lte IE 8]>
     <script  src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -41,17 +42,17 @@
         <div class="g-area reset-auto">
             <div class="g-list m-kind">
                 <ul>
-                    <li class="newsj"><a href="javascript:;"><i class="newGoodsLogo-new"></i><span >新品上架</span></a></li>
-                    <li><a href="javascript:;"><i class="newGoodsLogo-yl"></i><span>饮料、酒水</span></a></li>
-                    <li><a href="javascript:;"><i class="newGoodsLogo-bj"></i><span>休闲、冲饮保健</span></a></li>
-                    <li><a href="javascript:;"><i class="newGoodsLogo-ly"></i><span>粮油食杂</span></a></li>
-                    <li><a href="javascript:;"><i class="newGoodsLogo-jj"></i><span>居家清洁</span></a></li>
-                    <li><a href="javascript:;"><i class="newGoodsLogo-xh"></i><span>个人洗护</span></a></li>
-                    <li><a href="javascript:;"><i class="newGoodsLogo-cf"></i><span>厨房用品</span></a></li>
-                    <li><a href="javascript:;"><i class="newGoodsLogo-bh"></i><span>居家百货</span></a></li>
-                    <li><a href="javascript:;"><i class="newGoodsLogo-zf"></i><span>针纺</span></a></li>
-                    <li><a href="javascript:;"><i class="newGoodsLogo-zh"></i><span>日配、南北货</span></a></li>
-                    <li><a href="javascript:;"><i class="newGoodsLogo-ny"></i><span>婴童</span></a></li>
+                    <li class="newsj active" data-catalogCode ="isNew"><a href="javascript:;"><i class="newGoodsLogo-new"></i><span >新品上架</span></a></li>
+                    <li data-catalogCode="1"><a href="javascript:;"><i class="newGoodsLogo-yl"></i><span>饮料、酒水</span></a></li>
+                    <li data-catalogCode="2"><a href="javascript:;"><i class="newGoodsLogo-bj"></i><span>休闲、冲饮保健</span></a></li>
+                    <li data-catalogCode="3"><a href="javascript:;"><i class="newGoodsLogo-ly"></i><span>粮油食杂</span></a></li>
+                    <li data-catalogCode="4"><a href="javascript:;"><i class="newGoodsLogo-jj"></i><span>居家清洁</span></a></li>
+                    <li data-catalogCode="5"><a href="javascript:;"><i class="newGoodsLogo-xh"></i><span>个人洗护</span></a></li>
+                    <li data-catalogCode="6"><a href="javascript:;"><i class="newGoodsLogo-cf"></i><span>厨房用品</span></a></li>
+                    <li data-catalogCode="7"><a href="javascript:;"><i class="newGoodsLogo-bh"></i><span>居家百货</span></a></li>
+                    <li data-catalogCode="8"><a href="javascript:;"><i class="newGoodsLogo-zf"></i><span>针纺</span></a></li>
+                    <li data-catalogCode="9"><a href="javascript:;"><i class="newGoodsLogo-zh"></i><span>日配、南北货</span></a></li>
+                    <li data-catalogCode="10"><a href="javascript:;"><i class="newGoodsLogo-ny"></i><span>婴童</span></a></li>
                 </ul>
             </div>
             <div class="g-content">
@@ -71,107 +72,139 @@
                     <div class="m-histroy">订单历史</div>
                 </div>
                 <div class="g-newsShow">
-                    <div class="m-newsShow reset-lay-padding">
-                        <h1 class="show-text">发打发时间</h1>
-                        <div class="u-goodShow">
-                            <div class="u-goodsArea">
-                                <div class="u-singleGood" data-id="no1">
-                                    <div class="u-singleGood-box">
-                                        <img src="../test/show1.png" alt="商品">
-                                    </div>
-                                    <div class="u-desc">
-                                        <div class="u-title">
-                                            <p class="reset-limit-line1" title="hfsahfkashfkahf">发货撒交话费点发货速度快</p>
-                                            <p>
-                                                <i>¥</i>
-                                                <b>98.89</b>
-                                            </p>
-                                        </div>
-                                        <p class="u-buy newGoodsLogo-ljgm"></p>
-                                        <p class="u-addGwc newGoodsLogo-tjgwc"></p>
-                                    </div>
-                                </div>
-                                <div class="u-singleGood" data-id="no2">
-                                    <div class="u-singleGood-box">
-                                        <img src="../test/show1.png" alt="商品">
-                                    </div>
-                                    <div class="u-desc">
-                                        <div class="u-title">
-                                            <p class="reset-limit-line1">发货撒交话费点发货速度快</p>
-                                            <p>
-                                                <i>¥</i>
-                                                <b>98.89</b>
-                                            </p>
-                                        </div>
-                                        <p class="u-buy newGoodsLogo-ljgm"></p>
-                                        <p class="u-addGwc newGoodsLogo-tjgwc"></p>
-                                    </div>
-                                </div>
-                                <div class="u-singleGood" data-id="no3">
-                                    <div class="u-singleGood-box">
-                                        <img src="../test/show1.png" alt="商品">
-                                    </div>
-                                    <div class="u-desc">
-                                        <div class="u-title">
-                                            <p class="reset-limit-line1">发货撒交话费点发货速度快</p>
-                                            <p>
-                                                <i>¥</i>
-                                                <b>98.89</b>
-                                            </p>
-                                        </div>
-                                        <p class="u-buy newGoodsLogo-ljgm"></p>
-                                        <p class="u-addGwc newGoodsLogo-tjgwc"></p>
-                                    </div>
+                    <div class="m-newsShow">
+                        <h1 class="show-text">新品上架</h1>
+                            <div class="u-goodShow">
+                                <div class="u-goodsArea">
+                                    <!--模板文件-->
                                 </div>
                             </div>
-                        </div>
                         <div class="g-fenye">
-                            <ul class="page reset-lay-clear" maxshowpageitem="5" pagelistcount="6"  id="page"></ul>
+                            <ul class="page reset-lay-clear" maxshowpageitem="5" pagelistcount="20"  id="page"></ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <footer class="g-footer Ajax-footer"></footer>
+<footer class="g-footer Ajax-footer"></footer>
     <i class="top_back go-top"></i>
 </div>
+<script id="goods-template" type="text/x-handlebars-template">
+    {{#each result}}
+    <div class="u-singleGood" data-id="{{goodsCode}}">
+        <div class="u-singleGood-box">
+            <img src="{{url}}" alt="商品" class="J-dx animated">
+        </div>
+        <div class="u-desc">
+            <div class="u-title">
+                <p class="reset-limit-line1 tip" title="{{goodsName}}">{{goodsName}}</p>
+                <p>
+                    <i>¥</i>
+                    <b>{{price}}</b>
+                </p>
+            </div>
+            <p class="u-buy newGoodsLogo-ljgm animated"></p>
+            <p class="u-addGwc newGoodsLogo-tjgwc"></p>
+        </div>
+    </div>
+    {{/each}}
+</script>
 <script>
     $(function(){
+        MS.Ajax_page();
+//        声明单品的总数
+        var isInt=false;
 //   1.返回顶部
         MS.TL_scroll();
 //   2.分页（总条数，当前页，点击以后的回调）；
-        MS.Ajax_page();
-        var GG = {
-            "kk":function(mm){
-                alert(mm);
-                //window.location.href="test.html?page="+mm;
-            }
-        };
-        $("#page").initPage(100,1,GG.kk);
 //    3.切换商品目录
         $(".m-kind li").click(function(){
             var text=$(this).find("span").text().trim();
             $(".show-text").text(text);
-        })
+        });
 //    4.点击搜索框的购物车图标跳转页面（未完成)
-        $(".jump-gwc,.newGoodsLogo-ljgm").on("click",function (e) {
+        $("body").on("click",".jump-gwc,.newGoodsLogo-ljgm",function (e) {
             if($(this).attr("class").indexOf("newGoodsLogo-ljgm")!=-1){
              var goodsId=$(this).parents(".u-singleGood").data("id");
                 MS.PG_jump("account.html?goodsId="+goodsId);
             }else{
                 MS.PG_jump("account.html");
             }
-        })
+        });
 //     5.点击购物车图标增加商品数量 （未完成)
         $(".u-goodShow").on("click",".u-addGwc.newGoodsLogo-tjgwc",function(){
             var goodsId=$(this).parents(".u-singleGood").data("id");
-            $(".u-num").text((Number($(".u-num").text()))+1)
+            $(".u-num").text((Number($(".u-num").text()))+1);
             MS.popInfo("商品添加成功!",1)
-        })
+        });
 //    6.点击搜索按钮渲染商品列表(未完成)
         $(".m-search p").on("click",function(){
            var searchValue=$(this).prev("input").val().trim();
+        });
+//        7.1 后台请求渲染模板
+        function refTemplate(obj) {
+            var url="../test/data.json";
+            MS.TL_ajax(url,obj)
+                .done(function(data){
+                    if(data.status){
+                       var  singleTotal=data.total;
+                        MS.template("#goods-template",".u-goodsArea",data);
+                        if(!isInt){
+                            $("#page").initPage(singleTotal,1,jumpPage);
+                            isInt=true;
+                        }
+                    }else{
+                        MS.popInfo("暂无商品",5);
+                    }
+                })
+                .fail(function(){
+                    MS.popInfo("发生错误");
+                })
+        }
+//        7.2 定义分页的逻辑函数
+        function jumpPage(mm){
+           var catalogCode =$(".m-kind li.active").data("catalogcode");
+           var curPage=mm;
+           refTemplate({catalogCode:catalogCode,curPage:curPage});
+        }
+       refTemplate({
+                catalogCode:"isNew",
+                curPage:1
+        });
+//    8.点击li 添加样式并且发送请求
+        $(".m-kind").on("click","li",function (e) {
+           $(".m-kind li").removeClass("active");
+           $(this).addClass("active");
+           var catalogCode=$(this).data("catalogcode");
+           var sendObj={
+               catalogCode:catalogCode,
+               curPage:1
+           };
+            isInt=false;
+            refTemplate(sendObj);
+
+        });
+//    9.点击订单历史跳转到订单页面
+        $(".m-histroy").on("click",function(){
+            MS.PG_jump("orderInfo.html","blank");
+        });
+//     10.商品的title提示
+        $(".u-goodShow").on("click",".tip",function(){
+            var content=$(this).text();
+            var that=this;
+            MS.popTip(content,that);
+        });
+//     11.订单历史
+        $(".m-histroy").on("click",function (e) {
+            MS.PG_jump("orderInfo.html","blank");
+        });
+//     12.鼠标移入图片的动态效果
+        $(".u-goodShow").on("mouseenter mouseleave",".J-dx",function (e) {
+            $(this).toggleClass("pulse")
+        });
+        $(".u-goodShow").on("mouseenter mouseleave",".newGoodsLogo-ljgm",function (e) {
+            $(this).toggleClass("tada")
         })
     })
 </script>

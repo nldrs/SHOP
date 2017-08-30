@@ -89,6 +89,10 @@
   font-size: 14px;
   text-decoration: underline;
   letter-spacing: 1px;
+  color: #666;
+}
+.g-main .m-login .u-area .u-logins .login-area #login > p a:last-child:hover {
+  color: #CB1F46;
 }
 .g-main .m-login .u-area h2 {
   font-size: 14px;

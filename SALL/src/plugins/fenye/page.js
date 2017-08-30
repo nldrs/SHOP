@@ -26,7 +26,7 @@ $.fn.extend({
 });
 var  page = {
     "maxshowpageitem":5,//最多显示的页码个数
-    "pagelistcount":6,//每一页显示的内容条数
+    "pagelistcount":20,//每一页显示的内容条数
     /**
      * 初始化分页界面
      * @param listCount 列表总量

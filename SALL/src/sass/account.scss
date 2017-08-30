@@ -54,7 +54,7 @@
                     align-items:center;
                     padding:22px 14px;
                 }
-                .f-border-none~ .u-good-detail-single{
+                .u-good-detail-single:first-child~ .u-good-detail-single{
                     border-top: none;
                 }
                 .u-icon{
@@ -181,6 +181,7 @@
                         flex:0 0 168px;
                         height:76px;
                         line-height: 76px;
+                       font-size: $fs24;
                     }
                 }
             }
@@ -214,17 +215,18 @@
                             }
                             .u-free,.u-unfree{
                                 p:last-child{
-                                    color:$page-mainColor;
                                     margin-top:2px;
                                 }
                                 .u-sendPay-sign{
                                     color:$page-mainColor;
+                                   cursor: pointer;
                                 }
                             }
                         }
                     }
                 }
                 .u-adress-sel{
+                    display: none;
                     ul{
                         width:654px;
                         margin:0 auto;
@@ -235,7 +237,7 @@
                             line-height: 40px;
                             height:40px;
                             border-bottom: 1px solid #DBDBDB;
-                            &:first-child,&:last-child{
+                            &:first-child{
                                 text-align: center;
                                 font-size:$fs20;
                                 background-color: $account-bj;
@@ -251,14 +253,24 @@
                                 position: relative;
                                 top:4px;
                             }
-                            .u-addAddress{
-                                position: relative;
-                                top:-2px;
-                                left:-6px;
-                            }
                         }
-                        li:last-child{
-                            cursor: pointer;
+                    }
+                    #address{
+                        position: relative;
+                        width:654px;
+                        height:40px;
+                        line-height:40px;
+                        margin:0 auto;
+                        cursor: pointer;
+                        text-align: center;
+                        font-size:$fs20;
+                        background-color: $account-bj;
+                        border:1px solid #DBDBDB;
+                        border-top: none;
+                        .u-addAddress{
+                            position: absolute;
+                            top:5px;
+                            left:220px;
                         }
                     }
                 }
@@ -300,4 +312,55 @@
             }
         }
     }
+}
+.address-alert{
+    width: 900px;
+    padding:20px;
+    background-color: #fff;
+    .address-title{
+        font-size: $fs22;
+        border-bottom: 1px solid #000;
+        padding-bottom: 2px;
+        color:$page-mainColor;
+    }
+    .address-tx{
+        padding:20px;
+        >div{
+            display:flex;
+            margin-top: 20px;
+            font-size: 14px;
+           align-items: center;
+            input{
+               padding-left:24px;
+            }
+            p:first-child{
+                width:86px;
+            }
+            .address-user,.address-tel{
+                width:266px;
+                height:36px;
+            }
+            .address-hz{
+                vertical-align: -3px;
+            }
+            .address-xq{
+                width:400px;
+                height:36px;
+                margin-left:24px;
+             }
+            .address-ld{
+                width:200px;
+                height: 36px;
+                margin-left:12px;
+            }
+        }
+    }
+    h2{
+        text-align: right;
+        margin-top: 10px;
+    }
+
+}
+.tangram-suggestion-main{
+    z-index: 99999999999999999;
 }

@@ -1,0 +1,18 @@
+{
+    "total":80,
+    "status":true,
+    "result":[
+        {"orderNumbe":"11111111","orderTime":"2017年8月12日 00:12:12","completeTime":"2017年8月12日 00:12:12","totalPrice":"77","collect":"小李","phone":"15967114542","disType":"供货商配送","goods":["鞋子dsfdf","袜子sdfsdf","被子fsdfsdfdsf"]},
+        {"orderNumbe":"2222222","orderTime":"2017年8月12日 00:12:12","completeTime":"2017年8月12日 00:12:12","totalPrice":"77","collect":"小李","phone":"15967114542","disType":"供货商配送","goods":["鞋子","袜子","被子"]},
+        {"orderNumbe":"3333333","orderTime":"2017年8月12日 00:12:12","completeTime":"2017年8月12日 00:12:12","totalPrice":"77","collect":"小李","phone":"15967114542","disType":"供货商配送","goods":["鞋子","袜子","被子"]},
+        {"orderNumbe":"44444444","orderTime":"2017年8月12日 00:12:12","completeTime":"2017年8月12日 00:12:12","totalPrice":"77","collect":"小李","phone":"15967114542","disType":"供货商配送","goods":["鞋子","袜子","被子"]},
+        {"orderNumbe":"55555555","orderTime":"2017年8月12日 00:12:12","completeTime":"2017年8月12日 00:12:12","totalPrice":"77","collect":"小李","phone":"15967114542","disType":"供货商配送","goods":["鞋子","袜子","被子"]},
+        {"orderNumbe":"66666666","orderTime":"2017年8月12日 00:12:12","completeTime":"2017年8月12日 00:12:12","totalPrice":"77","collect":"小李","phone":"15967114542","disType":"供货商配送","goods":["鞋子","袜子","被子"]},
+        {"orderNumbe":"77777777","orderTime":"2017年8月12日 00:12:12","completeTime":"2017年8月12日 00:12:12","totalPrice":"77","collect":"小李","phone":"15967114542","disType":"供货商配送","goods":["鞋子","袜子","被子"]},
+        {"orderNumbe":"88888888","orderTime":"2017年8月12日 00:12:12","completeTime":"2017年8月12日 00:12:12","totalPrice":"77","collect":"小李","phone":"15967114542","disType":"供货商配送","goods":["鞋子","袜子","被子"]},
+        {"orderNumbe":"99999999","orderTime":"2017年8月12日 00:12:12","completeTime":"2017年8月12日 00:12:12","totalPrice":"77","collect":"小李","phone":"15967114542","disType":"供货商配送","goods":["鞋子","袜子","被子"]},
+        {"orderNumbe":"00000000","orderTime":"2017年8月12日 00:12:12","completeTime":"2017年8月12日 00:12:12","totalPrice":"77","collect":"小李","phone":"15967114542","disType":"供货商配送","goods":["鞋子","袜子","被子"]},
+        {"orderNumbe":"14465456","orderTime":"2017年8月12日 00:12:12","completeTime":"2017年8月12日 00:12:12","totalPrice":"77","collect":"小李","phone":"15967114542","disType":"供货商配送","goods":["鞋子","袜子","被子"]},
+        {"orderNumbe":"14465456","orderTime":"2017年8月12日 00:12:12","completeTime":"2017年8月12日 00:12:12","totalPrice":"77","collect":"小李","phone":"15967114542","disType":"供货商配送","goods":["鞋子","袜子","被子"]}
+    ]
+}

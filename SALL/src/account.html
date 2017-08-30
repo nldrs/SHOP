@@ -15,11 +15,14 @@
     <link rel="stylesheet" href="css/account.css">
     <!--插件的css-->
     <link rel="stylesheet" href="plugins/animate.min.css">
+    <link rel="stylesheet" href="plugins/easyForm/easyform.css">
     <!--插件的js-->
     <script src="js/jquery.min.js"></script>
     <script src="js/fastclick.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/store.js/1.3.20/store.min.js"></script>
     <script src="plugins/layer/layer.js"></script>
+    <script src="plugins/handlebars.min.js"></script>
+    <script src="plugins/easyForm/easyform.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=Yvpgy9pigKUrGoG8pSdcGucGZ0fNnOwO&services=&t=20170803155555"></script>
     <!--[if lte IE 8]>
     <script  src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -44,203 +47,29 @@
                 </div>
                 <div class="u-good-action">
                     <p>
-                        <img src="images/before.png" alt="全选">
+                        <img src="images/before.png" alt="全选" class="J-checeOrImg">
                     </p>
-                    <p>全选</p>
+                    <p class="J-checeOr">全选</p>
                     <p>详情</p>
                     <p>金额</p>
                     <p>操作</p>
                 </div>
+                <input type="hidden" class="weightStore" value="0">
                 <div class="u-good-detail">
-                    <div class="u-good-detail-single f-border-none">
-                        <div class="u-icon"><img src="images/after.png" alt="选择商品"></div>
-                        <div class="u-imgShow">
-                            <div class="u-imgShow-box">
-                                <img src="../test/1.jpg" alt="商品">
-                            </div>
-                            <div class="u-imgShow-detail">
-                                <h1 class="u-imgShow-title">了打飞机阿道夫就</h1>
-                                <div class="u-imgShow-area">
-                                    <div>
-                                        <p>产&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地:</p>
-                                        <p>中国</p>
-                                    </div>
-                                    <div>
-                                        <p>规&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格:</p>
-                                        <p>600g</p>
-                                    </div>
-                                    <div>
-                                        <p>计量单位:</p>
-                                        <p>盒</p>
-                                    </div>
-                                    <div>
-                                        <p>售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价:</p>
-                                        <p><b class="icon-rmb">¥</b>29.9</p>
-                                    </div>
-                                    <div>
-                                        <p>数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;量:</p>
-                                        <p class="u-changAmount">
-                                            <span class="minus">－</span>
-                                            <input type="text" value="1">
-                                            <span class="plus">＋</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="u-money">
-                            <i>¥</i>
-                            <span>80.989898</span>
-                        </div>
-                        <div class="u-del">
-                            <i class="icon icon-ljx"></i>
-                        </div>
-                    </div>
-                    <div class="u-good-detail-single">
-                        <div class="u-icon"><img src="images/after.png" alt="选择商品"></div>
-                        <div class="u-imgShow">
-                            <div class="u-imgShow-box">
-                                <img src="../test/1.jpg" alt="商品">
-                            </div>
-                            <div class="u-imgShow-detail">
-                                <h1 class="u-imgShow-title">了打飞机阿道夫就</h1>
-                                <div class="u-imgShow-area">
-                                    <div>
-                                        <p>产&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地:</p>
-                                        <p>中国</p>
-                                    </div>
-                                    <div>
-                                        <p>规&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格:</p>
-                                        <p>600g</p>
-                                    </div>
-                                    <div>
-                                        <p>计量单位:</p>
-                                        <p>盒</p>
-                                    </div>
-                                    <div>
-                                        <p>售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价:</p>
-                                        <p><b class="icon-rmb">¥</b>29.9</p>
-                                    </div>
-                                    <div>
-                                        <p>数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;量:</p>
-                                        <p class="u-changAmount">
-                                            <span class="minus">－</span>
-                                            <input type="text" value="1">
-                                            <span class="plus">＋</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="u-money">
-                            <i>¥</i>
-                            <span>80.989898</span>
-                        </div>
-                        <div class="u-del">
-                            <i class="icon icon-ljx"></i>
-                        </div>
-                    </div>
-                    <div class="u-good-detail-single">
-                        <div class="u-icon"><img src="images/after.png" alt="选择商品"></div>
-                        <div class="u-imgShow">
-                            <div class="u-imgShow-box">
-                                <img src="../test/1.jpg" alt="商品">
-                            </div>
-                            <div class="u-imgShow-detail">
-                                <h1 class="u-imgShow-title">了打飞机阿道夫就</h1>
-                                <div class="u-imgShow-area">
-                                    <div>
-                                        <p>产&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地:</p>
-                                        <p>中国</p>
-                                    </div>
-                                    <div>
-                                        <p>规&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格:</p>
-                                        <p>600g</p>
-                                    </div>
-                                    <div>
-                                        <p>计量单位:</p>
-                                        <p>盒</p>
-                                    </div>
-                                    <div>
-                                        <p>售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价:</p>
-                                        <p><b class="icon-rmb">¥</b>29.9</p>
-                                    </div>
-                                    <div>
-                                        <p>数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;量:</p>
-                                        <p class="u-changAmount">
-                                            <span class="minus">－</span>
-                                            <input type="text" value="1">
-                                            <span class="plus">＋</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="u-money">
-                            <i>¥</i>
-                            <span>80.989898</span>
-                        </div>
-                        <div class="u-del">
-                            <i class="icon icon-ljx"></i>
-                        </div>
-                    </div>
-                    <div class="u-good-detail-single">
-                        <div class="u-icon"><img src="images/after.png" alt="选择商品"></div>
-                        <div class="u-imgShow">
-                            <div class="u-imgShow-box">
-                                <img src="../test/1.jpg" alt="商品">
-                            </div>
-                            <div class="u-imgShow-detail">
-                                <h1 class="u-imgShow-title">了打飞机阿道夫就</h1>
-                                <div class="u-imgShow-area">
-                                    <div>
-                                        <p>产&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地:</p>
-                                        <p>中国</p>
-                                    </div>
-                                    <div>
-                                        <p>规&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格:</p>
-                                        <p>600g</p>
-                                    </div>
-                                    <div>
-                                        <p>计量单位:</p>
-                                        <p>盒</p>
-                                    </div>
-                                    <div>
-                                        <p>售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价:</p>
-                                        <p><b class="icon-rmb">¥</b>29.9</p>
-                                    </div>
-                                    <div>
-                                        <p>数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;量:</p>
-                                        <p class="u-changAmount">
-                                            <span class="minus">－</span>
-                                            <input type="text" value="1">
-                                            <span class="plus">＋</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="u-money">
-                            <i>¥</i>
-                            <span>80.989898</span>
-                        </div>
-                        <div class="u-del">
-                            <i class="icon icon-ljx"></i>
-                        </div>
-                    </div>
+                    <!--加载模板-->
                 </div>
                 <div class="u-good-submit">
                     <div class="u-good-seled">
                         已选购商品
-                        <span>(<b>2</b>)</span>
+                        <span>(<b class="J-totalMount">2</b>)</span>
                     </div>
                     <div class="u-good-total">
                         <p>
                             <span>合计:</span>
                             <b>¥</b>
-                            <span>123.78fdsfasdf</span>
+                            <span class="J-result"></span>
                         </p>
-                        <p class="submit-btn button button-caution button-jumbo">提交</p>
+                        <p class="submit-btn button button-tiny button-jumbo">提交</p>
                     </div>
                 </div>
                 <div class="u-good-address">
@@ -248,18 +77,18 @@
                         <h1>配送方式:</h1>
                         <div class="u-sendPay-detail">
                             <div>
-                                <p><img src="images/before.png" alt="选择"></p>
+                                <p><img src="images/before.png" alt="选择" class="J-selImg" ></p>
                                 <div class="u-free u-sendPay-common">
                                     <p>供货商配送</p>
                                     <p>免运费</p>
                                 </div>
                             </div>
                             <div>
-                                <p><img src="images/before.png" alt="选择"></p>
+                                <p><img src="images/before.png" alt="选择"  class="J-selImg" id="J-self"></p>
                                 <div class="u-unfree u-sendPay-common">
                                     <p>快递配送,点击查看 <span> ( <b class="u-sendPay-sign">温馨提示</b>：选择快递配送的亲，别忘了在支付订单后 　通过支付宝转账形式支付快递费用哦！详情请见 <b class="u-sendPay-sign">配送说明及收费标准</b>)</span></p>
-                                    <p class="send-desc">配送说明及收费标准
-                                    </p>
+                                    <!--<p class="send-desc">配送说明及收费标准
+                                    </p>-->
                                 </div>
                             </div>
                         </div>
@@ -270,25 +99,25 @@
                             <li>
                                 <button class="button button-circle button-tiny"><i class="fa fa-plus"></i></button>
                                 <span>分哈哈发很大方会计师</span>
-                                <span>地方撒回复</span>
-                                <span>发的复活节</span>
+                                <span>小王</span>
+                                <span>15967144445</span>
                             </li>
                             <li>
                                 <button class="button button-circle button-tiny button-action"><i class="fa fa-plus"></i></button>
                                 <span>发生的机会发生束带结发</span>
-                                <span>士大夫健身房</span>
-                                <span>收费的华盛顿</span>
+                                <span>小李</span>
+                                <span>15946546545</span>
                             </li>
-                            <li><img src="images/plus.png" alt="添加新地址" class="u-addAddress">添加收货地址</li>
                         </ul>
+                        <div id="address"><img src="images/plus.png" alt="添加新地址" class="u-addAddress">请添加收货地址</div>
                         <div class="u-consultation">
                             <p>
-                                <span>商品质量(参考)</span>
-                                <span>5.0<b>kg</b></span>
+                                <span>商品重量(参考)</span>
+                                <span><b class="J-weigth">5.0</b><b>kg</b></span>
                             </p>
                             <p>
                                 <span>配送距离</span>
-                                <span>8.0<b>km</b></span>
+                                <span><b id="J-dist"></b><b>km</b></span>
                             </p>
                             <p>
                                 <span>商品费用(参考价)</span>
@@ -302,8 +131,58 @@
     </section>
     <footer class="g-footer Ajax-footer"></footer>
 </div>
+<script id="total-template" type="text/x-handlebars-template">
+    {{#each result}}
+    <div class="u-good-detail-single" data-weight="{{weight}}" data-id="{{id}}" data-weightTotal="{{weight}}">
+        <div class="u-icon"><img src="images/before.png" alt="选择商品" class="J-judge-img"></div>
+        <div class="u-imgShow">
+            <div class="u-imgShow-box">
+                <img src="{{url}}" alt="商品">
+            </div>
+            <div class="u-imgShow-detail">
+                <h1 class="u-imgShow-title">{{goodsName}}</h1>
+                <div class="u-imgShow-area">
+                    <div>
+                        <p>产&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地:</p>
+                        <p>{{origin}}</p>
+                    </div>
+                    <div>
+                        <p>规&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格:</p>
+                        <p>{{spec}}</p>
+                    </div>
+                    <div>
+                        <p>计量单位:</p>
+                        <p>{{unit}}</p>
+                    </div>
+                    <div>
+                        <p>售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价:</p>
+                        <p><b class="icon-rmb">¥</b><span class="J-price">{{price}}</span></p>
+                    </div>
+                    <div>
+                        <p>数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;量:</p>
+                        <p class="u-changAmount">
+                            <span class="minus">－</span>
+                            <input type="text" value="{{number}}" class="J-amount">
+                            <span class="plus">＋</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="u-money">
+            <i>¥</i>
+            <span class="J-moneyTotal">{{amount}}</span>
+        </div>
+        <div class="u-del">
+            <i class="icon icon-ljx goods-del"></i>
+        </div>
+    </div>
+    {{/each}}
+</script>
 <script>
     $(function(){
+        MS.Ajax_page();
+//        1.单机配送说明弹框
         var str= '<div class="m-alert-send">'
                  +'<span>供货商配送说明</span>'
                  +'<p>1.本订单由达达快递配送。请您在刷卡支付订单后，通过支付宝转账形式将快递费用支付到指定账户。</p>'
@@ -325,11 +204,352 @@
                 +'<p>2.快递支付费用，默认以系统参考价为准。</p>'
                 +'<p>3.因包裹实际情况不同，如商品包装盒质量较大而产生快递费用偏差，届时会由专人与您联系。多退少补。</p>'
                 +'</div>';
-        $(".send-desc").on("click",function (e) {
+        $(".u-sendPay-sign").on("click",function (e) {
             MS.popAlert(str,"友情提示","800px","400px");
         });
-        MS.Ajax_page();
-    })
+//       2.单机添加地址弹框
+        var str2= '<div class="address-alert" id="address-alert">'
+            +'<div id="allmap"></div>'
+            +'<div>'
+            +'<span class="address-title">添加收货地址</span>'
+            +'</div>'
+            +'<div class="address-tx">'
+            +'<div>'
+            +'<p>姓名:</p>'
+            +'<p><input type="text" class="address-user" id="address-use" placeholder="请输入姓名" data-easyform="length:4 16;char-normal;real-time;" data-message="用户名必须为4—16位的英文字母或数字" data-easytip="position:right;class:easy-blue;"></p>'
+            +' </div>'
+            +' <div>'
+            +' <p>联系方式:</p>'
+            +'<p><input type="tel" class="address-tel" placeholder="请输入联系方式" id="address-tel" data-easyform="regex:^1(3|4|5|7|8)\\d{9}$;real-time;"  data-message="请输入正确的手机号码" data-easytip="position:right;class:easy-blue;"></p>'
+            +'</div>'
+            +'<div>'
+            +'<p>收货地址:</p>'
+            +'<p>'
+            +'<span class="address-hz">杭州市</span>'
+            +'<input type="text" class="address-xq" placeholder="小区或街道">'
+            +'<div class="address-pannel" style="display:none"></div>'
+            +'<input type="hidden" class="addressDis">'
+            +'<input type="text" class="address-ld" placeholder="详细地址,如楼号门牌号">'
+            +'</p>'
+            +'</div>'
+            +'</div>'
+            +'<h2>'
+            +'<input disabled readonly unselectable="on" class="button button-action button-rounded disabled" id="save" value="保存">'
+            +'</h2>'
+            +'</div>';
+        $("#address").on("click",function(){
+            MS.popAlert(str2,"新增","900px","400px");
+            $("#address-alert").easyform( );
+            var addressXq = document.getElementsByClassName("address-xq")[0];
+            var addressPannel = document.getElementsByClassName("address-pannel")[0];
+            var addressDis = document.getElementsByClassName("addressDis")[0];
+            caculDis(addressXq,addressPannel,addressDis);
+
+        });
+/* 重要的购物车逻辑*/
+        var after_src="images/after.png";
+        var before_src="images/before.png";
+        var Ginput;
+//   1.后台请求渲染模板
+        function refTemplate() {
+            MS.TL_ajax("../test/data2.json")
+                .done(function(data){
+                    if(data.status){
+                        MS.template("#total-template",".u-good-detail",data);
+                        dataInit();
+                    }else{
+                        MS.popInfo("暂无商品",5);
+                    }
+                })
+                .fail(function(){
+                    MS.popInfo("发生错误");
+                })
+        }
+        refTemplate();
+//   2. 初始化列表的数据
+        function dataInit(){
+            $(".J-moneyTotal").each(function(i,v){
+                var inputVal=$(v).parents(".u-good-detail-single").find(".J-amount").val().trim();
+                var priceVal=$(v).parents(".u-good-detail-single").find(".J-price").text().trim();
+                var totalP=MS.TL_money(MS.TL_multiplication(inputVal,priceVal));
+                $(v).text(totalP);
+            })
+        }
+//   3.结算按钮的样式联动
+        function btnChangeColor(){
+            $(".J-judge-img").each(function(i,v){
+                if($(v).hasClass("check_flag")){
+                    $(".submit-btn").removeClass("button-tiny").addClass("button-caution");
+                    return false;
+                }
+                $(".submit-btn").removeClass("button-caution");
+            })
+        }
+//   4. 全选样式的联动
+        function judgesel(domself,domimg){
+            if(domself.hasClass("sel_flag")){
+                domself.attr("src",before_src).removeClass("sel_flag");
+                domimg.attr("src",before_src).removeClass("check_flag");
+            }else{
+                domself.attr("src",after_src).addClass("sel_flag");
+                domimg.attr("src",after_src).addClass("check_flag");
+            }
+            btnChangeColor();
+        }
+//     5.显示实时计算的结果
+        function showTotal(){
+            var amount=0,sum=0,weightSum=0;
+// 这是以单笔统计的数量
+            $(".u-good-detail-single").each(function (i,v) {
+                var num=parseFloat($(this).find(".J-amount").val());
+                var total=parseFloat($(this).find(".J-moneyTotal").text().trim());
+                var imgsign=$(this).find(".J-judge-img");
+                var weightTotal=$(this).data("weighttotal");
+                if(imgsign.hasClass("check_flag")){
+                    sum+=total;
+                    amount+=num;
+                    weightSum+=Number(weightTotal);
+                }
+            });
+            $(".weightStore").val(weightSum);
+            $(".J-weigth").text(weightSum);
+            $(".J-result").text(MS.TL_money(sum));
+            $(".J-totalMount").text(amount);
+            console.log($(".weightStore").val())
+        }
+//    6. 点击全选 和  点击单个列表的选择按钮
+        $(".J-checeOrImg,.J-checeOr").on("click",function () {
+            var $img=  $(".J-judge-img");
+            var $judge=$(".J-checeOrImg");
+            judgesel($judge,$img);
+            showTotal();
+        });
+        $(".u-good-detail").on("click",".J-judge-img",function(e){
+            var sumImg=$(".J-judge-img").size();
+            if($(this).hasClass("check_flag")){
+                $(this).attr("src",before_src).removeClass("check_flag");
+            }else{
+                $(this).attr("src",after_src).addClass("check_flag");
+            }
+            if($(".J-judge-img.check_flag").size()==sumImg){
+                $(".J-checeOrImg").attr("src",after_src).addClass("sel_flag");
+            }else{
+                $(".J-checeOrImg").attr("src",before_src).removeClass("sel_flag");
+            }
+            btnChangeColor();
+            showTotal();
+        });
+//    7. 单机加减联动
+        $(".u-good-detail").on("click",".u-changAmount span",function () {
+            var $input=$(this).parent().find("input");
+            var $price=$(this).parents(".u-good-detail-single").find(".J-price").text().trim();
+            var $totalPrice=$(this).parents(".u-good-detail-single").find(".J-moneyTotal");
+            var $inputVal= $input.val().trim();
+            var $weight=$(this).parents(".u-good-detail-single").data("weight");
+            if($(this).attr("class").trim()=="plus"){
+                $input.val(++$inputVal);
+                $totalPrice.text(MS.TL_money(MS.TL_multiplication($inputVal,$price)));
+               $(this).parents(".u-good-detail-single").data("weighttotal",$inputVal*$weight);
+                showTotal();
+            }else if($(this).attr("class").trim()=="minus"){
+                $inputVal>1?$input.val(--$inputVal):1;
+                $totalPrice.text(MS.TL_money(MS.TL_multiplication($inputVal,$price)));
+                $(this).parents(".u-good-detail-single").data("weighttotal",$inputVal*$weight);
+                showTotal();
+            }
+        });
+//     8.删除逻辑
+        $(".u-good-detail").on("click",".goods-del",function () {
+            var me=$(this);
+            var _sort="确认删除";
+            var _html="您确定要删除吗?";
+            MS.popAbout(_sort,_html,3,"确定","取消",suc);
+            function suc(_close) {
+                var url="../test/data.json";
+                var id=me.parents(".u-good-detail-single").data("id");
+                MS.TL_ajax(url,{id:id})
+                    .done(function(){
+                        layer.close(_close);
+                        me.parents(".u-good-detail-single").remove();
+                        btnChangeColor();
+                        MS.popInfo("删除成功!");
+                        showTotal();
+                    })
+                    .fail(function(){
+                        MS.popInfo("删除失败!",5);
+                    })
+            }
+        });
+//     9.失去焦点联动变化
+        $(".u-good-detail").on("focus",".J-amount",function () {
+            Ginput=$(this).val();
+        }).on("keyup",".J-amount",function(){
+            $(this).val($(this).val().replace(/\D/gi,''));
+        }).on("blur",".J-amount",function () {
+            if($(this).val()==""||$(this).val()==null){
+                $(this).val(Ginput);
+            }
+            var $inputVal=$(this).val();
+            var $price=$(this).parents(".u-good-detail-single").find(".J-price").text().trim();
+            var $totalPrice=$(this).parents(".u-good-detail-single").find(".J-moneyTotal");
+            $totalPrice.text(MS.TL_money(MS.TL_multiplication($inputVal,$price)));
+            var $weight=$(this).parents(".u-good-detail-single").data("weight");
+            $(this).parents(".u-good-detail-single").data("weighttotal",$inputVal*$weight);
+            showTotal();
+        });
+//      10.配送方式切换
+        $(".J-selImg").on("click",function(){
+           if($(this).hasClass("selected")){
+                $(this).removeClass("selected").attr("src",before_src);
+            }else{
+               $(".J-selImg").removeClass("selected").attr("src",before_src);
+               $(this).attr("src",after_src).addClass("selected");
+            }
+            if($("#J-self").hasClass("selected")){
+               $(".u-adress-sel").show();
+            }else{
+                $(".u-adress-sel").hide();
+            }
+        });
+//     11.切换详细地址
+        $(".u-adress-sel").on("click","li",function(){
+            $(".u-adress-sel li").find("button").removeClass("button-action");
+            $(this).find("button").addClass("button-action");
+        });
+//     12.自动激活保存按钮
+        function active(){
+           var userVal=$("#address-use").val().trim();
+           var telVal=$("#address-tel").val().trim();
+           var xqVal=$(".address-xq").val().trim();
+           var xqVal=$(".address-ld").val().trim();
+            if((userVal!="")&&(telVal!="")&&(xqVal!="")&&(xqVal!="")){
+                $("#save").removeClass("disabled");
+                $("#save").attr("disabled",false);
+            }else{
+                $("#save").addClass("disabled");
+            }
+        }
+        $("body").on("blur","#address-use,#address-tel,.address-xq,.address-ld",function(e){
+            active();
+        });
+//      13.点击保存按钮添加一行  要做验证 (没有写) 发送后台
+            //13.1  渲染模板
+        function refAddTemplate(newAdr){
+            if(newAdr){
+                var tpl='<li data-newObj="'+newAdr.dist+'" id="'+newAdr.id+'">'
+                    +'<textarea  id="domObj" style="display: none;">'+JSON.stringify(newAdr)+'</textarea>'
+                    +'<button class="button button-circle button-tiny"><i class="fa fa-plus"></i></button>'
+                    +' <span>'+newAdr.userAdr+'</span>'
+                    +'<span>'+newAdr.userName+'</span>'
+                    +'<span>'+newAdr.userTel+'</span>'
+                    +'</li>';
+                $(".u-adress-sel ul").append(tpl);
+                $("#"+newAdr.id).trigger("click");
+                $("#J-dist").text($("#"+newAdr.id).data("newobj"));
+               console.log(JSON.parse($("#domObj").val()))
+                //console.log($("#domObj").val().trim())
+            }
+        }
+        var saveingFalg=false;//判断标示
+        $("body").on("click","#save",function(){
+            if(saveingFalg) return;
+            saveingFalg=true;
+            var userVal=$("#address-use").val().trim();
+            var telVal=$("#address-tel").val().trim();
+            var xqVal=$(".address-xq").val().trim();
+            var ldVal=$(".address-ld").val().trim();
+            var distance=$(".addressDis").val().trim();
+            var addressDeatail=xqVal+","+ldVal;
+            var newAddAddress={
+                 "id":"newsId_"+MS.TL_getrandom(1,100),
+                 "userName":userVal,
+                 "userTel":telVal,
+                 "userAdr":addressDeatail,
+                 "dist":distance
+            };
+
+            var url="../test/data.json";
+            MS.TL_ajax(url,newAddAddress,"POST")
+                .done(function(data){
+                    refAddTemplate(newAddAddress);
+                    saveingFalg=false;
+                    layer.closeAll();
+                    MS.popInfo("添加成功");
+                })
+                .fail(function(){
+                    MS.popInfo("添加失败!",5);
+                });
+           // console.log(JSON.stringify(newAddAddress))
+        })
+    });
+</script>
+<script>
+    /*
+     * baidu api
+     * */
+    function caculDis(suggestId,pannel,distance){
+        var map = new BMap.Map("allmap");
+        var ps;
+        var myValue;
+        // 创建地址解析器实例
+        var myGeo = new BMap.Geocoder();
+        myGeo.getPoint("杭州市紫荆花路386号", function(point){
+            ps = new BMap.Point(point.lng,point.lat);
+        }, "杭州市");
+
+        //建立一个自动完成的对象
+        var ac = new BMap.Autocomplete(
+            {
+                "input" : suggestId,
+                "location" : "杭州"
+            });
+        //鼠标放在下拉列表上的事件
+        ac.addEventListener("onhighlight",function (e){
+            onhighlight(e);
+        });
+        function onhighlight(e){
+            var str = "";
+            var _value = e.fromitem.value;
+            var value = "";
+            if (e.fromitem.index > -1) {
+                value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+            }
+            str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
+
+            value = "";
+            if (e.toitem.index > -1) {
+                _value = e.toitem.value;
+                value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+            }
+            str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
+            pannel.innerHTML = str;
+        }
+        //鼠标点击下拉列表后的事件
+        ac.addEventListener("onconfirm", function (e){
+            onconfirm(e);
+        });
+        function onconfirm(e){
+            var _value = e.item.value;
+            myValue = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+            pannel.innerHTML ="onconfirm<br />index = " + e.item.index + "<br />myValue = " + myValue;
+
+            setPlace();
+        }
+        function setPlace(){
+            map.clearOverlays();
+            function myFun(){
+                var pp = local.getResults().getPoi(0).point;
+                // console.log(ps);    //获取第一个智能搜索的结果
+                var distance1 = map.getDistance(ps,pp);
+                distance.value = (distance1/1000).toFixed(2);
+            }
+            var local = new BMap.LocalSearch(map, { //智能搜索
+                onSearchComplete: myFun
+            });
+            local.search(myValue);
+        }
+    }
+
 </script>
 </body>
 </html>
