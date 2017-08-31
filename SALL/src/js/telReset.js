@@ -1,6 +1,6 @@
 /*！！-------------------------------------------------------（一）平台公用的方法介绍--------------------------------------------------*/
 /*
-*   ！采用闭包的形式封装公共函数>>>>>>>>>针对PC
+*   ！采用闭包的形式封装公共函数>>>>>>>>>针对移动端
 *  0 实例化必要的插件
 *  1 封装 弹框插件有关公用方法
 *  2 js字体 (移动端动态改变字体的大小)
@@ -22,10 +22,10 @@
 /*
     一、插件相关：
 ！1-1弹框插件相关
-     * 1-1.1   //弹出确认框 title:标题（例如警告）content:内容，icon:(0-6),btn_suc/btn_err(自定义的按钮 如确定/取消) succ/error:点击相应按钮的回调
-     * 1-1.2  //信息提示框 conntent:提示的内容 icon：图标（0-6)time:显示的时间 fn:成功的回掉
-     * 1-1.3  //loading层 icon:图标（0-2）time:loading时间(2秒直接time=2) index是创建每一个loading的编号标识
-     * 1-1.4
+     * 1-1.1 popBtn 用于提示用户的弹框 包括提示按钮选择 parms (content:string 提示内容  | btn1(yes) btn2(no) :string 用户自定义的按钮 | fn :function 成功的回调）
+     * 1-1.2 autoHide 用于自动提示 自动消失  parms (content:string 提示内容 time: num 几秒钟关闭 ）
+     * 1-1.3 LoadingStart 用于loading层的显示隐藏 parms ( flag: bolen||num||string 默认不允许点击遮罩层关闭 )
+     * 1-1.4 LoadingEnd 用于loading层的显示隐藏 parms ( index: num 当前loading页面的索引值 )
      * 1-1.4..........
  1-2 轮播插件的初始化
      * 1-2.1 轮播插件的初始化  parms (dom time)
@@ -75,53 +75,41 @@
      * 5-1.1  IMG_adapt 保证图片在div中等比例显示剪裁图片
      * 5-2.2 IMG_auto 图片的动态展示
      * .......
-     *
- 六. 、异步加载页面
-     * 6-1.1 AjaxPage()
-     *
      * */
-
 
 var MS=(function (win,doc,$) {
     var MS={};
     MS.CommonFlag=false;//是否正在执行的标记
     MS.CurrentPage=1;//当前页数 用于isscroll 的滚动刷新
     MS.loadingIndex=0;//loading页面的索引值
-    MS.popAbout=function(title,content,icon,btn_suc,btn_err,suc,error){
-        layer.confirm(content,{
-            icon: icon||3,
-            title: title,
-            shade: !1,
-            btn:[btn_suc,btn_err]
-        },suc,error)
-    };
-    MS.popTip=function (content,sel,time) {
-        layer.tips(content,sel, {
-            tips: [1, '#CB1F46'],
-            time: 1000||time
-        });
-    };
-    MS.popInfo=function (content,icon,time,fn) {
-        layer.msg(content, {
-            icon: icon||6,
-            time: time||2000
-        },fn)
-    };
-    MS.popAlert=function(html,title,width,height){
+    MS.popBtn=function (content,btn1,btn2,fn1,fn2) {
         layer.open({
-            type: 1,
-            title:title,
-            area: [width,height],
-            content: html
+            content: content,
+            btn: [btn1,btn2],
+            shadeClose:false,
+            yes:fn1||function(index){
+                 location.reload();
+                 layer.close(index);
+            },
+            no:fn2||null
         });
     };
-    MS.popLoadingStart=function(icon){
-        var index = layer.load(0, {
-            shade: [0.2, '#393D49']
+    MS.autoHide=function(content,time){
+        layer.open({
+            content:content,
+            skin: 'msg',
+            time: 2||time
         });
-        return index;
     };
-    MS.popLoadingEnd=function(index){
+    MS.LoadingStart=function(flag){
+        var index=layer.open({
+            type: 2,
+            shadeClose:false||flag,
+            content: "加載中..."
+        });
+       return index;
+    };
+    MS.LoadingEnd=function(index){
         layer.close(index);
     };
     MS.swiper=function (domContainer,time) {
@@ -145,7 +133,21 @@ var MS=(function (win,doc,$) {
             container: $(domContainer)||"wrapper"
         });
     };
-
+/* 2字体变化*/
+    var docEl = doc.documentElement,
+        resizeEvt = 'onorientationchange' in window ? 'onorientationchange' : 'resize',
+        recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            if(clientWidth>=750){
+                docEl.style.fontSize = '100px';
+            }else{
+                docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+            }
+        };
+    if (!doc.addEventListener) return;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
 /* 3 链接地址跳转相关*/
     MS.PG_jump=function (href,flag) {
        if(MS.CommonFlag) return;
@@ -223,8 +225,7 @@ var MS=(function (win,doc,$) {
                 objexp = /^((\(\d{2,3}\))|(\d{3}\-))?(\(0\d{2,3}\)|0\d{2,3}-)?[1-9]\d{6,7}(\-\d{1,4})?$/;
                 break;
             case 'mobile': //手机号码
-                objexp = "^1[3|4|5|7|8][0-9]{9}$";
-                // objexp = "^1[0-9]{10}$";
+                objexp = "^(13[0-9]|15[0-9]|18[0-9])([0-9]{8})$";
                 break;
             case 'decimal': //浮点数
                 objexp = "^[0-9]+([.][0-9]+)?$";
@@ -316,15 +317,7 @@ var MS=(function (win,doc,$) {
                 objValue = $.trim($("#" + controlID).attr("value")); //取值去左右空格
                 break;
             case 'radio': //单选框
-                //objValue = $("input[data-name='" + controlID + "']").attr("value");
-                var radio=$("input[data-name='" + controlID + "']");
-                var objValue=null;   //  selectvalue为radio中选中的值
-                for(var i=0;i<radio.length;i++){
-                if(radio[i].checked==true) {
-                    objValue=radio[i].value;
-                    break;
-                }
-            }
+                objValue = $("input[data-name='" + controlID + "']").attr("value");
                 break;
             case 'select': //下拉列表
                 objValue = $("#" + controlID + "").val();
@@ -357,40 +350,40 @@ var MS=(function (win,doc,$) {
             case 'search': //文本输入框
                 $("#" + controlID + "").attr("value", controlvalue); //填充内容
                 break;
-           /* case 'radio': //单选框
+            case 'radio': //单选框
                 $("input[data-name='" + controlID + "'][value='" + controlvalue + "']").attr("checked", true);
-                break;*/
+                break;
             case 'select': //下拉列表
                 $("#" + controlID + "").val(controlvalue);
                 break;
-            /*case 'checkbox': //多选框
+            case 'checkbox': //多选框
               var ForDom=$("input[data-name='"+controlID+"']");
                 if(ForDom.size()==controlvalue.length){
                     ForDom.each(function(i,v){
                         $(v).val(controlvalue[i]);
                     });
                 }
-                break;*/
+                break;
             default:
                 break;
         }
     };
     MS.TL_ajax=function(reqUrl,reqData,reqType,resType,contentType,reqTime){
-      var AJAX=$.ajax({
-          url:reqUrl,
-          type:reqType||"GET",
-          dataType:resType||"json",
-          data:reqData||{},
-          crossDomain: true,
-          contentType:contentType||"application/x-www-form-urlencoded",
-          timeout:reqTime||3000,
-          beforeSend:function (XHR) {
-              MS.loadingIndex=MS.popLoadingStart();
-          },
-          complete:function(XHR, TS){
-              MS.popLoadingEnd(MS.loadingIndex);
-          }
-      });
+        var AJAX=$.ajax({
+            url:reqUrl,
+            type:reqType||"GET",
+            dataType:resType||"json",
+            data:reqData||{},
+            crossDomain: true,
+            contentType:contentType||"application/x-www-form-urlencoded",
+            timeout:reqTime||3000,
+            beforeSend:function (XHR) {
+                MS.loadingIndex=MS.LoadingStart();
+            },
+            complete:function(XHR, TS){
+                MS.LoadingEnd(MS.loadingIndex);
+            }
+        });
         return AJAX;
     };
     MS.TL_scroll=function(){
@@ -444,30 +437,12 @@ var MS=(function (win,doc,$) {
             }
         }
     };
-/* 6 异步加载页面*/
-    MS.Ajax_page=function() {
-        $(".Ajax-header").load("tpl/tplHeader.html",function () {
-            MS.userEdit();
-        });
-        $(".Ajax-footer").load("tpl/tplFooter.html");
-    };
-/* 7.定义模板函数*/
     MS.template=function(templateSel,htmlSel,data){
         var source = $(templateSel).html();
         var template = Handlebars.compile(source);
         var context = data;
         var html    = template(context);
         $(htmlSel).html(html);
-    };
-/* 8.点击用户列表跳转到用户编辑的页面*/
-    MS.userEdit=function(){
-        $(".u-username").click(function(){
-            if($(this).parents(".g-header").data("title")!="edit"){
-                MS.PG_jump("userInfo.html","blank");
-            }else{
-                MS.PG_jump("userInfo.html");
-            }
-        })
     };
     return MS;
 })(window,document,jQuery);

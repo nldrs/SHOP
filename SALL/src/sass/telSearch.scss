@@ -1,0 +1,117 @@
+@import "skinsActive","tollMixin";
+
+.g-telSearch{
+    @include component-telHeader();
+}
+
+.g-main{
+    background-color:#f2f2f2;
+    padding-top:.1rem;
+    padding-bottom:.3rem;
+    .u-com-search{
+        padding: 0 .2rem;
+        background-color: #fff;
+        form{
+             display: flex;
+            align-items: center;
+            height:1.04rem;
+            .u-com-id{
+               width:2.34rem;
+            }
+            .u-com-input{
+                position: relative;
+                width:2.8rem;
+                border: 1px solid #DBDBDB;
+                border-radius: .08rem;
+                background: #f7f7f7;
+                .u-ph{
+                    position: absolute;
+                    left: 0.1rem;
+                    top: .2rem;
+                    width: .24rem;
+                }
+                input{
+                    width: 2.4rem;
+                    height:.74rem;
+                    font-size: .22rem;
+                    padding-left:.4rem;
+                    background-color: #f7f7f7;
+                    border:none;
+                }
+                i{
+                    position: absolute;
+                    top:.22rem;
+                    right:.16rem;
+                    z-index: 10;
+                    color:#666;
+                }
+            }
+            .u-com-btn{
+                width:1.68rem;
+                padding-left: .28rem;
+                a{
+                    width:1.64rem;
+                    height:.7rem;
+                    line-height: .7rem;
+                    font-size: .28rem;
+                    padding:0;
+                }
+            }
+        }
+    }
+    .u-order{
+        background-color:#fff;
+        height:.78rem;
+        padding-left:.2rem;
+        line-height: .78rem;
+    }
+    .u-com-result{
+        font-size:.32rem;
+        li{
+            margin-bottom: .14rem;
+            background-color: #fff;
+        }
+        .u-com-msg{
+            padding-top: .28rem;
+            padding-bottom: .28rem;
+            >div{
+                display: flex;
+                align-items: center;
+                p:first-child{
+                    width:1.44rem;
+                }
+                p:last-child{
+                    margin-left: .4rem;
+                }
+            }
+            .u-price{
+                margin: .28rem 0;
+            }
+        }
+        .u-com-state{
+            display:flex;
+            align-items: center;
+            padding:.3rem 0.2rem;
+            .u-changeState{
+                margin-left:.22rem;
+                span:first-child{
+                    border-right:2px solid #000;
+                    padding-right:.16rem;
+                }
+                .activeRed{
+                    color:$page-mainColor;
+                }
+                .activeGreen{
+                    color:#0cb70a;
+                }
+                button:last-child{
+                    font-size:.32rem;
+                    height:.5rem;
+                    line-height:.5rem;
+                    padding: 0 .3rem;
+                    margin-left: .06rem;
+                }
+            }
+        }
+    }
+}

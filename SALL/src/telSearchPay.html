@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小卖铺支付核对系统</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <!-- 删除默认的苹果工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 在web app应用下状态条（屏幕顶部条）的颜色 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <!-- 禁止了把数字转化为拨号链接 -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="网上买,网上卖,购物网站,团购,网上贸易,安全购物,电子商务,放心买,">
+    <meta name="description" content="享受购物的乐趣!">
+
+    <!-- 浏览网站时的小图标 -->
+    <link rel="shortcut icon" href="../store.ico" type="/image/x-icon">
+    <link rel="stylesheet" href="css/telReset.css">
+    <link rel="stylesheet" href="css/skins.css">
+    <link rel="stylesheet" href="css/telSearch.css">
+    <!--插件的css-->
+    <link rel="stylesheet" href="plugins/animate.min.css">
+    <!--插件的js-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script src="plugins/layer/mobile/layer.js"></script>
+    <script src="plugins/handlebars.min.js"></script>
+    <!--公用的js-->
+    <script src="js/telReset.js"></script>
+</head>
+<body>
+<div class="g-telSearch">
+    <header class="g-header reset-lay-width Ajax-header">
+        <div class="m-com-header">小卖铺支付核对</div>
+    </header>
+    <section class="g-main reset-lay-width">
+        <div class="u-com-search">
+            <form action="">
+                <p class="u-com-id">请输入订单编号</p>
+                <p class="u-com-input">
+                    <input type="text" placeholder="输入查询编号">
+                    <i class="icon icon-wrong"></i>
+                </p>
+                <p class="u-com-btn"><a href="javascript:;" class="button button-highlight button-rounded search-btn">搜&nbsp;&nbsp;索</a></p>
+            </form>
+        </div>
+        <div class="u-com-result">
+            <ul class="order-template">
+
+            </ul>
+        </div>
+    </section>
+    <footer class="g-footer reset-lay-width Ajax-footer">
+
+    </footer>
+</div>
+<script id="search-template" type="text/x-handlebars-template">
+    {{#each result}}
+    <li  class="reset-border-1px-bottom">
+        <div class="u-com-msg reset-border-1px-bottom reset-border-1px-top reset-lay-padding">
+            <div>
+                <p>订单编号:</p>
+                <p>{{orderCode}}</p>
+            </div>
+            <div class="u-price">
+                <p>应付金额:</p>
+                <p>
+                    <b>¥</b>
+                    <span>{{price}}</span>
+                </p>
+            </div>
+            <div>
+                <p>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:</p>
+                <p>{{user}}</p>
+            </div>
+        </div>
+        <div class="u-com-state">
+            <p>支付状态:</p>
+            <p class="u-changeState">
+                <span  class="{{ispay payState}}">{{payState}}</span>
+                <button  class="button button-action button-pill button-small {{isactive payState}}">刷卡支付</button>
+            </p>
+        </div>
+    </li>
+    {{/each}}
+</script>
+<script>
+
+    $(function(){
+//    渲染模板
+      function render(url,req){
+          MS.TL_ajax(url,req)
+              .done(function(data){
+                  MS.template("#search-template",".order-template",data);
+                  $(".disabled").attr("disabled",true);
+              })
+              .fail(function(){
+                  MS.popInfo("搜索失败!")
+              })
+      }
+
+      $(".search-btn").on("click",function(){
+         render("../test/8888.json");
+      });
+        //模板helper
+        Handlebars.registerHelper("ispay",function(value){
+            if(value=="未支付"||value=="未验收"){
+                return "activeRed";
+            }else{
+                return "activeGreen";
+            }
+        });
+        Handlebars.registerHelper("isactive",function(value){
+            if(value=="已支付"||value=="已验收"){
+                return "disabled";
+            }
+        });
+        //      点击按钮切换状态
+        $(".order-template").on("click",".button-action",function(){
+           $(this).attr("disabled",true);
+           $(this).prev().text("已支付").removeClass("activeRed").addClass("activeGreen");
+        });
+
+
+    })
+</script>
+</body>
+</html>

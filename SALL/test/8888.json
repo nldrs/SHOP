@@ -1,0 +1,12 @@
+{
+    "status":true,
+    "judge":"zhifu",
+    "result":[
+        {"orderCode":"17878780","user":"小浣熊","price":"15.9","payState":"未支付"},
+        {"orderCode":"17878780","user":"小浣熊1","price":"15.9","payState":"未支付"},
+        {"orderCode":"17878780","user":"小浣熊2","price":"15.9","payState":"未支付"},
+        {"orderCode":"17878780","user":"小浣熊3","price":"15.9","payState":"已支付"},
+        {"orderCode":"17878780","user":"小浣熊4","price":"15.9","payState":"已支付"},
+        {"orderCode":"17878780","user":"小浣熊5","price":"15.9","payState":"已支付"}
+    ]
+}

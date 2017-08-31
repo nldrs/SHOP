@@ -134,3 +134,17 @@
         }
     }
 }
+
+
+@mixin component-telHeader(){
+    .m-com-header{
+        text-align: center;
+        height:1.12rem;
+        width:100%;
+        position: relative;
+        line-height:1.12rem;
+        font-size: .44rem;
+        background-color: $page-mainColor;
+        color:#fff;
+    }
+}

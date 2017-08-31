@@ -1,0 +1,14 @@
+{
+    "total":3,
+    "status":true,
+    "result":[
+        {"orderCode":"17878780","sendUser":"小李","tel":"15967114714","payState":"已验收"},
+        {"orderCode":"17878780","sendUser":"小李0","tel":"15967114714","payState":"已验收"},
+        {"orderCode":"17878780","sendUser":"小李1","tel":"15967114714","payState":"已验收"},
+        {"orderCode":"17878780","sendUser":"小李2","tel":"15967114714","payState":"已验收"},
+        {"orderCode":"17878780","sendUser":"小李3","tel":"15967114714","payState":"未验收"},
+        {"orderCode":"17878780","sendUser":"小李4","tel":"15967114714","payState":"未验收"},
+        {"orderCode":"17878780","sendUser":"小李5","tel":"15967114714","payState":"未验收"},
+        {"orderCode":"17878780","sendUser":"小李6","tel":"15967114714","payState":"未验收"}
+    ]
+}

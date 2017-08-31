@@ -28,7 +28,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!--公用的js-->
-    <script src="js/reset.js"></script>
+    <script src="js/pcReset.js"></script>
 </head>
 <body>
 <div class="g-userInfo">
@@ -122,7 +122,7 @@
             var reBasicInfo = document.getElementsByClassName("u-reBasicInfo")[0];
             var reBasicInfoBtn = reBasicInfo.getElementsByTagName("span")[0];
             var basicIcon = document.getElementsByClassName("u-basicIcon")[0].getElementsByTagName("input");
-            reBasicInfoBtn.onclick = function(){
+            reBasicInfoBtn.addEventListener("onclick",function(){
                 if(reBasicInfoBtn.innerHTML ==="编辑"){
                     reBasicInfoBtn.innerHTML = "完成";
                     for(var i = 0;i<basicIcon.length;i++){
@@ -137,9 +137,27 @@
                         basicIcon[i].style.border = "none";
                     }
                 }
-            }
+            })
+            /*reBasicInfoBtn.onclick = function(){
+                if(reBasicInfoBtn.innerHTML ==="编辑"){
+                    reBasicInfoBtn.innerHTML = "完成";
+                    for(var i = 0;i<basicIcon.length;i++){
+                        basicIcon[i].removeAttribute("disabled");
+                        basicIcon[i].style.border = "1px solid #666";
+                    }
+                }
+                else{
+                    reBasicInfoBtn.innerHTML = "编辑";
+                    for(var i = 0;i<basicIcon.length;i++){
+                        basicIcon[i].setAttribute("disabled","disabled");
+                        basicIcon[i].style.border = "none";
+                    }
+                }
+            }*/
         }
         editBasicInfo();
+
+
 
         //地址操作事件绑定
         function editAddress(item){

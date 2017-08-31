@@ -28,7 +28,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!--公用的js-->
-    <script src="js/reset.js"></script>
+    <script src="js/pcReset.js"></script>
 </head>
 <body>
 <!--[if lte IE 8]>
@@ -87,8 +87,6 @@
                                 <p><img src="images/before.png" alt="选择"  class="J-selImg" id="J-self"></p>
                                 <div class="u-unfree u-sendPay-common">
                                     <p>快递配送,点击查看 <span> ( <b class="u-sendPay-sign">温馨提示</b>：选择快递配送的亲，别忘了在支付订单后 　通过支付宝转账形式支付快递费用哦！详情请见 <b class="u-sendPay-sign">配送说明及收费标准</b>)</span></p>
-                                    <!--<p class="send-desc">配送说明及收费标准
-                                    </p>-->
                                 </div>
                             </div>
                         </div>
@@ -96,7 +94,7 @@
                     <div class="u-adress-sel">
                         <ul>
                             <li>请选择收货地址</li>
-                            <li>
+                           <!-- <li>
                                 <button class="button button-circle button-tiny"><i class="fa fa-plus"></i></button>
                                 <span>分哈哈发很大方会计师</span>
                                 <span>小王</span>
@@ -107,21 +105,21 @@
                                 <span>发生的机会发生束带结发</span>
                                 <span>小李</span>
                                 <span>15946546545</span>
-                            </li>
+                            </li>-->
                         </ul>
                         <div id="address"><img src="images/plus.png" alt="添加新地址" class="u-addAddress">请添加收货地址</div>
                         <div class="u-consultation">
                             <p>
                                 <span>商品重量(参考)</span>
-                                <span><b class="J-weigth">5.0</b><b>kg</b></span>
+                                <span><b class="J-weigth">0.0</b><b>kg</b></span>
                             </p>
                             <p>
                                 <span>配送距离</span>
-                                <span><b id="J-dist"></b><b>km</b></span>
+                                <span><b id="J-dist">0</b><b>km</b></span>
                             </p>
                             <p>
-                                <span>商品费用(参考价)</span>
-                                <span><b>¥</b>5.0</span>
+                                <span>配送费用(参考价)</span>
+                                <span><b>¥</b>0.00</span>
                             </p>
                         </div>
                     </div>
@@ -302,7 +300,7 @@
 // 这是以单笔统计的数量
             $(".u-good-detail-single").each(function (i,v) {
                 var num=parseFloat($(this).find(".J-amount").val());
-                var total=parseFloat($(this).find(".J-moneyTotal").text().trim());
+                var total=MS.TL_trans($(this).find(".J-moneyTotal").text().trim());
                 var imgsign=$(this).find(".J-judge-img");
                 var weightTotal=$(this).data("weighttotal");
                 if(imgsign.hasClass("check_flag")){
@@ -315,7 +313,6 @@
             $(".J-weigth").text(weightSum);
             $(".J-result").text(MS.TL_money(sum));
             $(".J-totalMount").text(amount);
-            console.log($(".weightStore").val())
         }
 //    6. 点击全选 和  点击单个列表的选择按钮
         $(".J-checeOrImg,.J-checeOr").on("click",function () {
@@ -415,6 +412,7 @@
         $(".u-adress-sel").on("click","li",function(){
             $(".u-adress-sel li").find("button").removeClass("button-action");
             $(this).find("button").addClass("button-action");
+            $("#J-dist").text(JSON.parse($(this).find("textarea").val()).dist);
         });
 //     12.自动激活保存按钮
         function active(){
@@ -437,7 +435,7 @@
         function refAddTemplate(newAdr){
             if(newAdr){
                 var tpl='<li data-newObj="'+newAdr.dist+'" id="'+newAdr.id+'">'
-                    +'<textarea  id="domObj" style="display: none;">'+JSON.stringify(newAdr)+'</textarea>'
+                    +'<textarea  class="domObj" style="display: none;">'+JSON.stringify(newAdr)+'</textarea>'
                     +'<button class="button button-circle button-tiny"><i class="fa fa-plus"></i></button>'
                     +' <span>'+newAdr.userAdr+'</span>'
                     +'<span>'+newAdr.userName+'</span>'
@@ -446,8 +444,6 @@
                 $(".u-adress-sel ul").append(tpl);
                 $("#"+newAdr.id).trigger("click");
                 $("#J-dist").text($("#"+newAdr.id).data("newobj"));
-               console.log(JSON.parse($("#domObj").val()))
-                //console.log($("#domObj").val().trim())
             }
         }
         var saveingFalg=false;//判断标示
@@ -549,7 +545,6 @@
             local.search(myValue);
         }
     }
-
 </script>
 </body>
 </html>
