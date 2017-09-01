@@ -165,6 +165,16 @@
   position: relative;
   width: 100%;
 }
+.g-newGoods .m-header .click {
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  background-color: transparent;
+  top: 0;
+  left: 20%;
+  z-index: 200;
+  cursor: pointer;
+}
 .g-newGoods .m-header .logo {
   width: 100%;
 }
@@ -176,11 +186,11 @@
   text-align: right;
   font-size: 24px;
   color: #fff;
-  cursor: pointer;
 }
 .g-newGoods .m-header .reset-auto .u-username, .g-newGoods .m-header .reset-auto .u-user-out {
   color: #fff;
   text-decoration: underline;
+  cursor: pointer;
 }
 .g-newGoods .m-header .reset-auto i {
   vertical-align: -4px;
@@ -352,6 +362,7 @@
 .g-main .g-content .g-newsShow .m-newsShow {
   background-color: #fff;
   border: 1px solid #DADADB;
+  min-height: 600px;
 }
 .g-main .g-content .g-newsShow .m-newsShow h1 {
   font-size: 18px;
@@ -421,7 +432,17 @@
   margin-left: 10px;
 }
 .g-main .g-content .g-newsShow .m-newsShow .g-fenye {
+  position: relative;
   padding: 4% 20% 10% 20%;
+}
+.g-main .g-content .g-newsShow .m-newsShow .g-fenye > ul {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .top_back {

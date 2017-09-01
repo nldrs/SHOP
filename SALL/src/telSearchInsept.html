@@ -40,41 +40,17 @@
                 <p class="u-com-id">请输入订单编号</p>
                 <p class="u-com-input">
                     <img src="images/ip1.png" alt="批号" class="u-ph">
-                    <input type="text" placeholder="输入查询编号">
+                    <input type="tel" placeholder="输入查询编号" class="searchCode">
                     <i class="icon icon-wrong"></i>
                 </p>
-                <p class="u-com-btn"><a href="javascript:;" class="button button-highlight button-rounded search-btn">搜&nbsp;&nbsp;索</a></p>
+                <p class="u-com-btn">
+                    <button type="button" disabled class="button button-highlight button-rounded search-btn">搜&nbsp;&nbsp;索</button>
+                </p>
             </form>
         </div>
         <div class="u-com-result">
             <ul class="order-template">
-               <!-- <h1 class="u-order reset-border-1px-top">本批次共 <span>三</span>笔订单</h1>
-                <li>
-                    <div class="u-com-msg reset-border-1px-bottom reset-border-1px-top reset-lay-padding">
-                        <div>
-                            <p>订单编号:</p>
-                            <p>464654645</p>
-                        </div>
-                        <div class="u-price">
-                            <p>接收人:</p>
-                            <p>
-                                <b>¥</b>
-                                <span>456</span>
-                            </p>
-                        </div>
-                        <div>
-                            <p>手机号码:</p>
-                            <p>小加好</p>
-                        </div>
-                    </div>
-                    <div class="u-com-state">
-                        <p>支付状态:</p>
-                        <p class="u-changeState">
-                            <span class="activeRed">未支付</span>
-                            <button  class="button button-action button-pill button-small">刷卡支付</button>
-                        </p>
-                    </div>
-                </li>-->
+
             </ul>
         </div>
     </section>
@@ -85,7 +61,7 @@
 <script id="search-template" type="text/x-handlebars-template">
     <h1 class="u-order reset-border-1px-top">本批次共 <span>{{total}}</span>笔订单</h1>
     {{#each result}}
-    <li  class="reset-border-1px-bottom">
+    <li  class="reset-border-1px-bottom" data-code="{{orderCode}}">
         <div class="u-com-msg reset-border-1px-bottom reset-border-1px-top reset-lay-padding">
             <div class="u-price">
                 <p>接收人:</p>
@@ -112,7 +88,7 @@
 <script>
     $(function(){
 
-//    渲染模板
+//    1.渲染模板
       function render(url,req){
           MS.TL_ajax(url,req)
               .done(function(data){
@@ -124,10 +100,8 @@
               })
       }
 
-      $(".search-btn").on("click",function(){
-         render("../test/7777.json");
-      })
-        //模板helper
+//    2.模板helper
+
         Handlebars.registerHelper("ispay",function(value){
             if(value=="未支付"||value=="未验收"){
                 return "activeRed";
@@ -140,9 +114,43 @@
                 return "disabled";
             }
         });
+
+//    3.点击完成切换状态
+
         $(".order-template").on("click",".button-action",function(){
-            $(this).attr("disabled",true);
-            $(this).prev().text("已验收").removeClass("activeRed").addClass("activeGreen");
+            var me=$(this);
+           me.attr("disabled",true);
+                //    和后台交互改变状态
+            var url="../test/8888.json";
+            var code=$(this).parents("li").data("code");
+            MS.TL_ajax(url,{id:code})
+                .done(function(){
+                    me.prev("span").text("已验收").removeClass("activeRed").addClass("activeGreen");
+                    MS.autoHide("验收成功");
+                })
+                .fail(function(){
+                    MS.autoHide("验收失败");
+                });
+        });
+//     4.激活搜索的按钮
+        $(".searchCode").on("input",function(){
+          var input=$(this).val().trim();
+          if(input.length=="7"){
+             $(".search-btn").attr("disabled",false);
+          }else{
+              $(".search-btn").attr("disabled",true);
+          }
+        });
+//    5. 点击搜索显示搜索结果
+        $(".search-btn").on("click",function(){
+           /* var yanVal=$(".searchCode").val();
+            if(yanVal.length!="7"){
+                MS.autoHide("查询批号必须是7位数字")
+            }
+            var code="P"+yanVal.trim();
+            */
+          render("../test/7777.json",5);
+
         });
     })
 </script>

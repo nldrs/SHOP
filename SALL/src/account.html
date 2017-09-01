@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>购物车结算</title>
+    <title>小卖部 | 购物车结算</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="renderer" content="webkit"/>
     <meta name="description" content="享受购物的乐趣"/>
@@ -69,7 +69,7 @@
                             <b>¥</b>
                             <span class="J-result"></span>
                         </p>
-                        <p class="submit-btn button button-tiny button-jumbo">提交</p>
+                        <button disabled class="submit-btn button button-tiny button-jumbo">提交</button>
                     </div>
                 </div>
                 <div class="u-good-address">
@@ -182,12 +182,12 @@
         MS.Ajax_page();
 //        1.单机配送说明弹框
         var str= '<div class="m-alert-send">'
-                 +'<span>供货商配送说明</span>'
+                 +'<span>快递配送说明</span>'
                  +'<p>1.本订单由达达快递配送。请您在刷卡支付订单后，通过支付宝转账形式将快递费用支付到指定账户。</p>'
                  +'<div class="m-alert-info">'
                  +'<p>'
                 +'<span>支付宝账户:</span>'
-                +'<span class="order-account">5646546546546</span>'
+                +'<span class="order-account">13777470671</span>'
                 +'</p>'
                 +'<p>'
                 +'<span>姓名:</span>'
@@ -195,7 +195,7 @@
                 +'</p>'
                 +'<p>'
                 +'<span>联系电话:</span>'
-                +'<span class="order-tel">54564654654654</span>'
+                +'<span class="order-tel">13777470671</span>'
                 +'</p>'
                 +'<p>注:转账时,务必将 <span>订单编号</span> 填入备注信息中,否则无法派发。</p>'
                 +'</div>'
@@ -275,13 +275,17 @@
         }
 //   3.结算按钮的样式联动
         function btnChangeColor(){
-            $(".J-judge-img").each(function(i,v){
-                if($(v).hasClass("check_flag")){
-                    $(".submit-btn").removeClass("button-tiny").addClass("button-caution");
-                    return false;
-                }
-                $(".submit-btn").removeClass("button-caution");
-            })
+            if($(".J-selImg").hasClass("selected")){
+                $(".J-judge-img").each(function(i,v){
+                    if($(v).hasClass("check_flag")){
+                        $(".submit-btn").removeClass("button-tiny").addClass("button-caution");
+                        $(".submit-btn").attr("disabled",false);
+                        return false;
+                    }
+                    $(".submit-btn").attr("disabled",true);
+                    $(".submit-btn").removeClass("button-caution");
+                })
+            }
         }
 //   4. 全选样式的联动
         function judgesel(domself,domimg){
@@ -396,17 +400,14 @@
         });
 //      10.配送方式切换
         $(".J-selImg").on("click",function(){
-           if($(this).hasClass("selected")){
-                $(this).removeClass("selected").attr("src",before_src);
-            }else{
-               $(".J-selImg").removeClass("selected").attr("src",before_src);
-               $(this).attr("src",after_src).addClass("selected");
-            }
+            $(".J-selImg").removeClass("selected").attr("src",before_src);
+            $(this).attr("src",after_src).addClass("selected");
             if($("#J-self").hasClass("selected")){
                $(".u-adress-sel").show();
             }else{
                 $(".u-adress-sel").hide();
             }
+            btnChangeColor();
         });
 //     11.切换详细地址
         $(".u-adress-sel").on("click","li",function(){
@@ -476,6 +477,16 @@
                     MS.popInfo("添加失败!",5);
                 });
            // console.log(JSON.stringify(newAddAddress))
+        });
+//      14.点击提交按钮 进行的后台交互
+        $(".submit-btn").on("click",function(){
+            MS.popSingle("友情提示","订单已提交,请尽快完成支付!",6,function(index){
+                layer.close(index);
+                MS.popInfo("订单提交成功!",1);
+                setTimeout(function(){
+                    MS.PG_jump("newGoods.html");
+                },3000)
+            })
         })
     });
 </script>

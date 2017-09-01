@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>用户登录</title>
+    <title>小卖部 | 用户登录</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="renderer" content="webkit" />
     <meta name="description" content="享受购物的乐趣" />
@@ -36,6 +36,7 @@
 <![endif]-->
 <div class="g-userLogin reset-lay">
     <header class="g-header">
+        <div class="click"></div>
         <img src="images/logo.png" alt="logo">
     </header>
     <section class="g-main">
@@ -48,19 +49,19 @@
                         <span class="next">&nbsp;</span>
                         <ul>
                             <li>
-                                <a href="#"><img width="445" height="308" alt="Photo sharing jq22" src="../test/1.jpg" /></a>
+                                <a href="#"><img width="400" height="400" alt="Photo sharing jq22" src="../test/1.jpg" /></a>
                             </li>
                             <li>
-                                <a href="#"><img width="445" height="308" alt="Photo sharing jq22" src="../test/2.jpg" /></a>
+                                <a href="#"><img width="400" height="400" alt="Photo sharing jq22" src="../test/2.jpg" /></a>
                             </li>
                             <li>
-                                <a href="#"><img width="445" height="308" alt="Photo sharing jq22" src="../test/3.jpg" /></a>
+                                <a href="#"><img width="400" height="400" alt="Photo sharing jq22" src="../test/3.jpg" /></a>
                             </li>
                             <li>
-                                <a href="#"><img width="445" height="308" alt="Photo sharing" src="../test/4.jpg" /></a>
+                                <a href="#"><img width="400" height="400" alt="Photo sharing" src="../test/4.jpg" /></a>
                             </li>
                             <li>
-                                <a href="#"><img width="445" height="308" alt="Photo sharing jq22" src="../test/5.jpg" /></a>
+                                <a href="#"><img width="400" height="400" alt="Photo sharing jq22" src="../test/5.jpg" /></a>
                             </li>
                         </ul>
                     </div>
@@ -189,10 +190,14 @@
         $("#tel").on("blur",function (e) {
             $(".error-info").text("");
         });
-//    立即登录跳转页面
+//   7. 立即登录跳转页面
         $(".forgetLogin input").on("click",function(){
             var name="张三";
-            //MS.PG_jump("newGoods.html?user="+name)
+            MS.PG_jump("newGoods.html?user="+name)
+        });
+//     8.点击图片跳转新品上架
+        $("body").on("click",".click",function (e) {
+            MS.PG_jump("newGoods.html");
         })
     })
 

@@ -225,7 +225,7 @@ var MS=(function (win,doc,$) {
                 objexp = /^((\(\d{2,3}\))|(\d{3}\-))?(\(0\d{2,3}\)|0\d{2,3}-)?[1-9]\d{6,7}(\-\d{1,4})?$/;
                 break;
             case 'mobile': //手机号码
-                objexp = "^(13[0-9]|15[0-9]|18[0-9])([0-9]{8})$";
+                objexp =  "^1[3|4|5|7|8][0-9]{9}$";
                 break;
             case 'decimal': //浮点数
                 objexp = "^[0-9]+([.][0-9]+)?$";
@@ -376,13 +376,13 @@ var MS=(function (win,doc,$) {
             data:reqData||{},
             crossDomain: true,
             contentType:contentType||"application/x-www-form-urlencoded",
-            timeout:reqTime||3000,
-            beforeSend:function (XHR) {
+            timeout:reqTime||3000
+            /*beforeSend:function (XHR) {
                 MS.loadingIndex=MS.LoadingStart();
             },
             complete:function(XHR, TS){
                 MS.LoadingEnd(MS.loadingIndex);
-            }
+            }*/
         });
         return AJAX;
     };

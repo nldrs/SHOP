@@ -19,46 +19,24 @@
 /*
     !购物车结算模块
 */
-.g-userInfo .m-header {
-    position: relative;
-    width: 100%;
+
+@import "tollMixin";
+
+.g-userInfo{
+    @include component-header();
+    @include component-footer();
 }
-.g-userInfo .m-header .logo {
-    width: 100%;
-}
-.g-userInfo .m-header .reset-auto {
-    position: absolute;
-    bottom: 14%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: right;
-    font-size: 24px;
-    color: #fff;
-    cursor: pointer;
-}
-.g-userInfo .m-header .reset-auto .u-username, .g-userInfo .m-header .reset-auto .u-user-out {
-    color: #fff;
-    text-decoration: underline;
-}
-.g-userInfo .m-header .reset-auto i {
-    vertical-align: -4px;
-}
-.g-userInfo .m-header .reset-auto .u-user-out {
-    margin-left: 10px;
-    text-decoration: underline;
+
+.g-main{
+    background-color: $page-bj;
+    padding-top:20px;
+    padding-bottom: 11%;
 }
 .g-userInfo .m-footer {
     margin-top: 24px;
     text-align: center;
     padding-bottom: 30px;
 }
-
-.g-main {
-    padding-top: 20px;
-    background-color: #ebebeb;
-    padding-bottom: 10%;
-}
-
 * {
     box-sizing: content-box;
 }
@@ -357,4 +335,7 @@
             display:none;
         }
     }
+}
+.m-find-pwd{
+  margin-top: 30px !important;
 }

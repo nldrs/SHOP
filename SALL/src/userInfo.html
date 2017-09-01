@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>用户信息</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="renderer" content="webkit" />
-    <meta name="description" content="享受购物的乐趣" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="description" content="享受购物的乐趣"/>
     <meta name="aplus-xplug" content="NONE">
-    <meta name="keyword" content="网上买,网上卖,购物网站,团购,网上贸易,安全购物,电子商务,放心买," />
+    <meta name="keyword" content="网上买,网上卖,购物网站,团购,网上贸易,安全购物,电子商务,放心买,"/>
     <!-- 浏览网站时的小图标 -->
     <link rel="shortcut icon" href="../store.ico" type="/image/x-icon">
     <link rel="stylesheet" href="css/pcReset.css">
@@ -22,9 +22,10 @@
     <script src="plugins/layer/layer.js"></script>
     <script src="plugins/easyForm/easyform.js"></script>
     <!-- 百度地图API -->
-    <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=Yvpgy9pigKUrGoG8pSdcGucGZ0fNnOwO&services=&t=20170803155555"></script>
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/getscript?v=2.0&ak=Yvpgy9pigKUrGoG8pSdcGucGZ0fNnOwO&services=&t=20170803155555"></script>
     <!--[if lte IE 8]>
-    <script  src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!--公用的js-->
@@ -83,8 +84,9 @@
                         <span class="u-edit">编辑</span>
                         <span class="u-del">删除 <i class="icon icon-ljx"></i></span>
                         <div class="def">
-                            <input type="radio" name="def" value="default" checked>
-                            <span>默认</span>
+                            <input class="selectBtn" type="radio" name="def" value="default" style="display:none"
+                                   checked="checked">
+                            <span class="selectText ">默认</span>
                         </div>
                     </li>
                     <li class="u-addCon">
@@ -95,11 +97,12 @@
                             <input type="text" class="addrchild4">
                         </div>
                         <input type="text" class="addrchild5">
+                        <input type="hidden" class="addressDis">
                         <span class="u-edit">编辑</span>
                         <span class="u-del">删除  <i class="icon icon-ljx"></i></span>
                         <div class="def">
-                            <input type="radio" name="def" value="default">
-                            <span>默认</span>
+                            <input class="selectBtn" type="radio" name="def" value="default" style="display:none">
+                            <span class="selectText" style="display:none">默认</span>
                         </div>
                     </li>
                 </ul>
@@ -115,188 +118,226 @@
 <script>
     // 加载首尾
     MS.Ajax_page();
-    window.onload = function(){
+    window.onload = function () {
 
         //个人信息编辑按钮事件绑定
-        function editBasicInfo(){
+        function editBasicInfo() {
             var reBasicInfo = document.getElementsByClassName("u-reBasicInfo")[0];
             var reBasicInfoBtn = reBasicInfo.getElementsByTagName("span")[0];
             var basicIcon = document.getElementsByClassName("u-basicIcon")[0].getElementsByTagName("input");
-            reBasicInfoBtn.addEventListener("onclick",function(){
-                if(reBasicInfoBtn.innerHTML ==="编辑"){
+            reBasicInfoBtn.addEventListener("onclick", function () {
+                if (reBasicInfoBtn.innerHTML === "编辑") {
                     reBasicInfoBtn.innerHTML = "完成";
-                    for(var i = 0;i<basicIcon.length;i++){
+                    for (var i = 0; i < basicIcon.length; i++) {
                         basicIcon[i].removeAttribute("disabled");
                         basicIcon[i].style.border = "1px solid #666";
                     }
                 }
-                else{
+                else {
                     reBasicInfoBtn.innerHTML = "编辑";
-                    for(var i = 0;i<basicIcon.length;i++){
-                        basicIcon[i].setAttribute("disabled","disabled");
+                    for (var i = 0; i < basicIcon.length; i++) {
+                        basicIcon[i].setAttribute("disabled", "disabled");
                         basicIcon[i].style.border = "none";
                     }
                 }
             })
-            /*reBasicInfoBtn.onclick = function(){
-                if(reBasicInfoBtn.innerHTML ==="编辑"){
-                    reBasicInfoBtn.innerHTML = "完成";
-                    for(var i = 0;i<basicIcon.length;i++){
-                        basicIcon[i].removeAttribute("disabled");
-                        basicIcon[i].style.border = "1px solid #666";
-                    }
-                }
-                else{
-                    reBasicInfoBtn.innerHTML = "编辑";
-                    for(var i = 0;i<basicIcon.length;i++){
-                        basicIcon[i].setAttribute("disabled","disabled");
-                        basicIcon[i].style.border = "none";
-                    }
-                }
-            }*/
+
         }
+
         editBasicInfo();
 
 
-
         //地址操作事件绑定
-        function editAddress(item){
-            // var addCon = document.getElementsByClassName("u-addCon")[0];
+        function editAddress(item) {
             var addressName = item.getElementsByClassName("addrchild1")[0];
             var addressPhone = item.getElementsByClassName("addrchild2")[0];
             var address = item.getElementsByClassName("addrchild3")[0];
             var address1 = item.getElementsByClassName("addrchild4")[0];
             var address2 = item.getElementsByClassName("addrchild5")[0];
+            var dis = item.getElementsByClassName("addrchild6")[0];
             var addressEdit = item.getElementsByClassName("u-edit")[0];
             var addressDel = item.getElementsByClassName("u-del")[0];
-            var addressCon = item.getElementsByTagName("input");
+            var addressDef = item.getElementsByClassName("def")[0];
 
+            var addItem = document.getElementsByClassName("u-addressItems")[0];
+            var addItems = addItem.getElementsByClassName("selectBtn");
+            var addItemsText = addItem.getElementsByClassName("selectText");
+
+            var addressDefRatio = addressDef.getElementsByTagName("input")[0];
+            var addressDefText = addressDef.getElementsByTagName("span")[0];
+            var addressCon = item.getElementsByTagName("input");
             //地址编辑按钮事件绑定
-            addressEdit.onclick = function (){
+            addressEdit.onclick = function () {
                 var parent = address.parentNode;
-                if(addressEdit.innerHTML ==="编辑"){
+                if (addressEdit.innerHTML === "编辑") {
                     addressEdit.innerHTML = "完成";
                     address.style.display = "none";
                     address1.parentNode.style.display = "inline-block";
                     address2.style.display = "inline-block";
-                    for(var i = 0;i<addressCon.length-1;i++){
+                    addressDefRatio.style.display = "inline-block";
+                    addressDefText.style.display = "inline-block";
+                    for (var i = 0; i < addressCon.length - 1; i++) {
                         addressCon[i].removeAttribute("disabled");
                         addressCon[i].style.border = "1px solid #666";
                     }
-                    caculDis(address1);
+                    caculDis(address1, dis);
 
                 }
-                else{
-                    addressEdit.innerHTML = "编辑";
-                    address1.parentNode.style.display = "none";
-                    address2.style.display = "none";
-                    address.style.display = "inline-block";
-                    address.value =item.getElementsByClassName("addrchild4")[0].value+item.getElementsByClassName("addrchild5")[0].value;
-                    for(var i = 0;i<addressCon.length-1;i++){
-                        addressCon[i].setAttribute("disabled","disabled");
-                        addressCon[i].style.border = "none";
+                else {
+                    var res = MS.TL_RegExp(addressPhone.value, "mobile");
+                    if (addressName.value != "" && address1.value != ""&&res) {
+                        var url="../test/7777.json";
+                        var obj={
+                            id:1000,
+                            addUser:addressName.value,
+                            addTel:addressPhone.value,
+                            addAdd:address1.value+address2.value,
+                            addDis:dis.value,
+                            isChecked:1,
+                            isNew:1
+                        };
+//                        自己的后台逻辑
+                        MS.TL_ajax(url,obj,"POST")
+                            .done(function(data){
+
+                                addressEdit.innerHTML = "编辑";
+                                address1.parentNode.style.display = "none";
+                                address2.style.display = "none";
+                                address.style.display = "inline-block";
+                                address.value = item.getElementsByClassName("addrchild4")[0].value + item.getElementsByClassName("addrchild5")[0].value;
+                                for (var i = 0; i < addressCon.length - 1; i++) {
+                                    addressCon[i].setAttribute("disabled", "disabled");
+                                    addressCon[i].style.border = "none";
+                                }
+                                for (var i = 0; i < addItems.length; i++) {
+                                    if (addItems[i].checked) {
+                                        addItems[i].style.display = "none";
+                                        addItemsText[i].style.display = "inline-block";
+                                        addItemsText[i].style.color = "#f00";
+                                    }
+                                    else {
+                                        addItems[i].style.display = "none";
+                                        addItemsText[i].style.display = "none";
+                                    }
+                                }
+                            })
+                            .fail(function(){
+                                MS.popInfo("保存错误",5);
+                            });
+
+                    }else{
+                        MS.popInfo("请输入正确的信息",6);
                     }
 
                 }
-            }
+
+            };
 
             //地址删除按钮绑定
-            addressDel.onclick = function (){
+            addressDel.onclick = function () {
                 item.innerHTML = "";
                 item.style.display = "none";
             }
         }
+
         var addCon = document.getElementsByClassName("u-addCon");
-        for(var i = 0;i<addCon.length;i++){
+        for (var i = 0; i < addCon.length; i++) {
             editAddress(addCon[i]);
         }
 
 
         //添加地址事件绑定
-        function addAddress(){
+        function addAddress() {
             var addAddressBtn = document.getElementsByClassName("u-addAddress")[0];
             var addressItems = document.getElementsByClassName("u-addressItems")[0].getElementsByTagName("ul")[0];
-            addAddressBtn.onclick = function (){
+            addAddressBtn.onclick = function () {
                 var newAddress = document.createElement("li");
                 newAddress.className = "u-addCon";
-                newAddress.innerHTML+='<input type="text" class="addrchild1 addnew" style="margin-left:10px">';
-                newAddress.innerHTML+='<input type="text" class="addrchild2 addnew" style="margin-left:15px">';
-                newAddress.innerHTML+='<input type="text" class="addrchild3 addnew" style="display:none">';
-                newAddress.innerHTML+='<div class="autoComplete" style="display:inline-block"><input type="text" class="addrchild4 addnew"></div>';
-                newAddress.innerHTML+='<input type="text" class="addrchild5 addnew" style="display:inline-block">';
-                newAddress.innerHTML+='<span class="u-edit" style="margin-left:2px">完成</span>';
-                newAddress.innerHTML+='<span class="u-del" style="margin-left:3px">删除 <i class="icon icon-ljx"></i></span>';
-                newAddress.innerHTML+='<div class="def" style="margin-left:3px"><input type="radio" name="def" value="default" style="margin-right:7px"><span>默认</span>';
-                newAddress.innerHTML+='</div>';
+                newAddress.innerHTML += '<input type="text" class="addrchild1 addnew" style="margin-left:10px" placeholder="请输入姓名(必填)">';
+                newAddress.innerHTML += '<input type="text" class="addrchild2 addnew" style="margin-left:15px" placeholder="请输入手机号(必填)">';
+                newAddress.innerHTML += '<input type="text" class="addrchild3 addnew" style="display:none">';
+                newAddress.innerHTML += '<div class="autoComplete" style="display:inline-block"><input type="text" class="addrchild4 addnew" placeholder="请输入地址(必填)"></div>';
+
+                newAddress.innerHTML += '<input type="text" class="addrchild5 addnew" style="display:inline-block" placeholder="请输入详细地址(选填)">';
+                newAddress.innerHTML += '<input type="hidden" class="addrchild6">';
+                newAddress.innerHTML += '<span class="u-edit" style="margin-left:2px">完成</span>';
+                newAddress.innerHTML += '<span class="u-del" style="margin-left:3px">删除 <i class="icon icon-ljx"></i></span>';
+                newAddress.innerHTML += '<div class="def" style="margin-left:3px"><input class="selectBtn" type="radio" name="def" value="default" style="margin-right:7px"><span  class="selectText">默认</span>';
+                newAddress.innerHTML += '</div>';
                 addressItems.appendChild(newAddress);
                 editAddress(newAddress);
-                caculDis(newAddress.getElementsByClassName("addrchild4")[0]);
+                caculDis(newAddress.getElementsByClassName("addrchild4")[0], newAddress.getElementsByClassName("addrchild6")[0]);
+
             }
         }
+
         addAddress();
 
 
         //计算距离
-        function caculDis(suggestId){
+        function caculDis(suggestId, distance) {
             var map = new BMap.Map("allmap");
             var ps;
             var myValue;
             var parent = suggestId.parentNode;
-            var pannel=document.createElement("div");
+            var pannel = document.createElement("div");
             pannel.style.display = "none";
             pannel.style.zIndex = "9999";
-            parent.insertBefore(pannel,suggestId.nextSibling);
+            parent.insertBefore(pannel, suggestId.nextSibling);
             // 创建地址解析器实例
             var myGeo = new BMap.Geocoder();
-            myGeo.getPoint("杭州市紫荆花路386号", function(point){
-                ps = new BMap.Point(point.lng,point.lat);
+            myGeo.getPoint("杭州市紫荆花路386号", function (point) {
+                ps = new BMap.Point(point.lng, point.lat);
             }, "杭州市");
 
             //建立一个自动完成的对象
             var ac = new BMap.Autocomplete(
                 {
-                    "input" : suggestId,
-                    "location" : "杭州"
+                    "input": suggestId,
+                    "location": "杭州"
                 });
             //鼠标放在下拉列表上的事件
-            ac.addEventListener("onhighlight",function (e){
+            ac.addEventListener("onhighlight", function (e) {
                 onhighlight(e);
             });
-            function onhighlight(e){
+            function onhighlight(e) {
                 var str = "";
                 var _value = e.fromitem.value;
                 var value = "";
                 if (e.fromitem.index > -1) {
-                    value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+                    value = _value.province + _value.city + _value.district + _value.street + _value.business;
                 }
                 str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
 
                 value = "";
                 if (e.toitem.index > -1) {
                     _value = e.toitem.value;
-                    value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+                    value = _value.province + _value.city + _value.district + _value.street + _value.business;
                 }
                 str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
                 pannel.innerHTML = str;
             }
+
             //鼠标点击下拉列表后的事件
-            ac.addEventListener("onconfirm", function (e){
+            ac.addEventListener("onconfirm", function (e) {
                 onconfirm(e);
             });
-            function onconfirm(e){
+            function onconfirm(e) {
                 var _value = e.item.value;
-                myValue = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
-                pannel.innerHTML ="onconfirm<br />index = " + e.item.index + "<br />myValue = " + myValue;
+                myValue = _value.province + _value.city + _value.district + _value.street + _value.business;
+                pannel.innerHTML = "onconfirm<br />index = " + e.item.index + "<br />myValue = " + myValue;
 
                 setPlace();
             }
-            function setPlace(){
+
+            function setPlace() {
                 map.clearOverlays();
-                function myFun(){
-                    var pp = local.getResults().getPoi(0).point;    //获取第一个智能搜索的结果
-                    var distance1 = map.getDistance(ps,pp);
-                    // distance.innerHTML = (distance1/1000).toFixed(2)+"km";
+                function myFun() {
+                    var pp = local.getResults().getPoi(0).point;           //获取第一个智能搜索的结果
+                    var distance1 = map.getDistance(ps, pp);
+                    distance.value = (distance1 / 1000).toFixed(2);
                 }
+
                 var local = new BMap.LocalSearch(map, { //智能搜索
                     onSearchComplete: myFun
                 });
@@ -305,87 +346,83 @@
         }
 
     };
-    $(function(){
+    $(function () {
 // 1.单机忘记密码弹框
-        var str='<div class="m-find-pwd reset-lay-padding">'
-            +'<form  action=""  method="post" id="alert-form">'
-            +'<div>'
-            +'<p>账&nbsp;&nbsp;&nbsp;&nbsp;号:</p>'
-            +'<p><input type="text" placeholder="请输入手机号码" id="alert-user"></p>'
-            +'<p><a  class="button button-caution  button-rounded" id="getPwd">点击获取验证码&nbsp;<i>60</i>s</a></p>'
-            +'</div>'
-            +'<div>'
-            +'<p>验证码:</p>'
-            +'<p><input type="text" placeholder="请输入验证码" id="alert-reg"></p>'
-            +'<p><a  class="button button-caution  button-rounded" id="alert-regBut">验证</a></p>'
-            +'</div>'
-            +'<div>'
-            +'<p>旧密码:</p>'
-            +'<p><input type="password" disabled placeholder="请输入旧密码" id="alert-oldPwd"></p>'
-            +'</div>'
-            +'<div>'
-            +'<p>新密码:</p>'
-            +'<p><input type="password" disabled placeholder="请输入新密码" id="alert-newPwd" data-easyform="length:6 16;char-normal;real-time;" data-message="密码必须为6—16位数字字母或下划线" data-easytip="position:right;class:easy-blue;"></p>'
-            +'</div>'
-            +'<div>'
-            +'<p>确认密码:</p>'
-            +'<p><input type="password" disabled placeholder="请重新输入新密码" id="alert-newPwd2" data-easyform="length:6 16;char-normal;real-time;equal:#alert-newPwd;" data-message="两次密码输入要一致" data-easytip="class:easy-blue;""></p>'
-            +'</div>'
-            +'<h2 class="findPwd-info">地方哈吉发顺丰货到付款撒大家回复看撒娇</h2>'
-            +'<h3 class="m-find-submit"><input type="button" class="button button-action button-rounded disabled" value="提交"></h3>'
-            +'</form>'
-            +'</div>';
+        var str = '<div class="m-find-pwd reset-lay-padding">'
+            + '<form  action=""  method="post" id="alert-form">'
+            + '<div>'
+            + '<p>账&nbsp;&nbsp;&nbsp;&nbsp;号:</p>'
+            + '<p><input type="text" placeholder="请输入手机号码" id="alert-user"></p>'
+            + '<p><a  class="button button-caution  button-rounded" id="getPwd">点击获取验证码&nbsp;<i>60</i>s</a></p>'
+            + '</div>'
+            + '<div>'
+            + '<p>验证码:</p>'
+            + '<p><input type="text" placeholder="请输入验证码" id="alert-reg"></p>'
+            + '<p><a  class="button button-caution  button-rounded" id="alert-regBut">验证</a></p>'
+            + '</div>'
+            + '<div>'
+            + '<p>新密码:</p>'
+            + '<p><input type="password" disabled placeholder="请输入新密码" id="alert-newPwd" data-easyform="length:6 16;char-normal;real-time;" data-message="密码必须为6—16位数字字母或下划线" data-easytip="position:right;class:easy-blue;"></p>'
+            + '</div>'
+            + '<div>'
+            + '<p>确认密码:</p>'
+            + '<p><input type="password" disabled placeholder="请重新输入新密码" id="alert-newPwd2" data-easyform="length:6 16;char-normal;real-time;equal:#alert-newPwd;" data-message="两次密码输入要一致" data-easytip="class:easy-blue;""></p>'
+            + '</div>'
+            + '<h2 class="findPwd-info">地方哈吉发顺丰货到付款撒大家回复看撒娇</h2>'
+            + '<h3 class="m-find-submit"><input type="button" class="button button-action button-rounded disabled" value="提交"></h3>'
+            + '</form>'
+            + '</div>';
 //   1.单机修改密码
-        $(".u-rePassword").on("click",function (e) {
-            MS.popAlert(str,"修改密码","660px","500px");
-            $("#alert-form").easyform( );
+        $(".u-rePassword").on("click", function (e) {
+            MS.popAlert(str, "修改密码", "660px", "430px");
+            $("#alert-form").easyform();
         });
 
 
 // 3.点击获取验证码
-        var playing=false;//判断标示
-        $("body").on("click","#getPwd",function(e){
+        var playing = false;//判断标示
+        $("body").on("click", "#getPwd", function (e) {
             e.preventDefault();
             $(this).addClass("disabled");
-            var targetDom=$(this).find('i');
-            if(playing) return;
-            playing=true;
-            var timeNum=60;
-            var timemr=null;
-            timer=setInterval(function(){
-                timeNum>0?targetDom.text(timeNum--):targetDom.text("0");
-                if(timeNum==0){
+            var targetDom = $(this).find('i');
+            if (playing) return;
+            playing = true;
+            var timeNum = 60;
+            var timemr = null;
+            timer = setInterval(function () {
+                timeNum > 0 ? targetDom.text(timeNum--) : targetDom.text("0");
+                if (timeNum == 0) {
                     $("#getPwd").removeClass("disabled");
                     $("#getPwd").html("点击重新获取验证码 <i>60</i>s");
-                    timeNum=60;
-                    playing=false;
+                    timeNum = 60;
+                    playing = false;
                     clearInterval(timer);
                 }
-            },300);
+            }, 300);
         });
 // 4.激活提交按钮
         //公共事件
-        function active(){
-            var oldPwd_v=$("#alert-oldPwd").val();
-            var newPwd_v=$("#alert-newPwd").val();
-            var newPwd_v2=$("#alert-newPwd2").val();
-            if(newPwd_v!=""&&newPwd_v2!=""&&oldPwd_v!=""&&newPwd_v==newPwd_v2){
+        function active() {
+            var newPwd_v = $("#alert-newPwd").val();
+            var newPwd_v2 = $("#alert-newPwd2").val();
+            if (newPwd_v != "" && newPwd_v2 != "" && newPwd_v == newPwd_v2) {
                 $(".button-action").removeClass("disabled");
-                $(".button-action").attr("disabled",false);
-            }else{
+                $(".button-action").attr("disabled", false);
+            } else {
                 $(".button-action").addClass("disabled");
-                $(".button-action").attr("disabled",true);
+                $(".button-action").attr("disabled", true);
             }
         }
-        $("body").on("blur","#alert-reg,#alert-user,#alert-oldPwd,#alert-newPwd,#alert-newPwd2",function(e){
+
+        $("body").on("blur", "#alert-reg,#alert-user#alert-newPwd,#alert-newPwd2", function (e) {
             active();
         });
 //  5. 点击验证的时候激活下面的按钮
-        $("body").on("click","#alert-regBut",function(){
-            var reg_v=$("#alert-reg").val();
-            var target="123";
-            if(target==reg_v){
-                $("#alert-newPwd,#alert-newPwd2,#alert-oldPwd").attr("disabled",false);
+        $("body").on("click", "#alert-regBut", function () {
+            var reg_v = $("#alert-reg").val();
+            var target = "123";
+            if (target == reg_v) {
+                $("#alert-newPwd,#alert-newPwd2").attr("disabled", false);
             }
         });
 //   6.点击提交后台发送数据

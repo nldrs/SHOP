@@ -76,6 +76,7 @@
             .m-newsShow{
                 background-color: #fff;
                 border:1px solid #DADADB;
+                min-height:600px;
                 h1{
                     font-size: $fs18;
                     font-weight: 600;
@@ -147,7 +148,17 @@
                     }
                 }
                 .g-fenye{
+                    position: relative;
                     padding:4% 20% 10% 20%;
+                    >ul{
+                        position: absolute;
+                        left:50%;
+                        -webkit-transform:translateX(-50%);
+                        -moz-transform:translateX(-50%);
+                        -ms-transform:translateX(-50%);
+                        -o-transform:translateX(-50%);
+                        transform:translateX(-50%);
+                    }
                 }
             }
         }

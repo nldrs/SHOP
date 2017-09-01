@@ -115,6 +115,12 @@ var MS=(function (win,doc,$) {
             content: html
         });
     };
+    MS.popSingle=function(title,msg,icon,fn){
+        layer.alert(msg,{
+            icon:1||icon,
+            title:title
+        },fn);
+    };
     MS.popLoadingStart=function(icon){
         var index = layer.load(0, {
             shade: [0.2, '#393D49']
@@ -455,6 +461,9 @@ var MS=(function (win,doc,$) {
             MS.userEdit();
         });
         $(".Ajax-footer").load("tpl/tplFooter.html");
+        $("body").on("click",".click",function (e) {
+            MS.PG_jump("newGoods.html");
+        })
     };
 /* 7.定义模板函数*/
     MS.template=function(templateSel,htmlSel,data){

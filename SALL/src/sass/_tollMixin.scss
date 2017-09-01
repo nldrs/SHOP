@@ -9,6 +9,16 @@
     .m-header{
         position: relative;
         width:100%;
+        .click{
+            position: absolute;
+            width:40%;
+            height:100%;
+            background-color:transparent;
+            top:0;
+            left:20%;
+            z-index:200;
+            cursor: pointer;
+        }
         .logo{
             width:100%;
         }
@@ -20,10 +30,10 @@
             text-align:right;
             font-size: $fs24;
             color:#fff;
-            cursor: pointer;
             .u-username,.u-user-out{
                 color:#fff;
                 text-decoration: underline;
+                cursor: pointer;
             }
             i{
                 vertical-align:-4px;
