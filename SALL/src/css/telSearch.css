@@ -1,0 +1,142 @@
+@charset "UTF-8";
+/*
+    ! 字体方面相关
+      背景颜色方面相关
+      颜色方面相关
+*/
+/*字体*/
+/*背景(网页的基础色调是浅灰 #ebebeb)*/
+/*
+    !新品上架的模块
+*/
+/*
+    !购物车结算模块
+*/
+/*
+    !组件的抽象样式
+    1.公共的header   component-header
+    2.公共的footer   component-footer
+    3.新品上架 的种类 component-kind
+*/
+.g-telSearch .m-com-header {
+  text-align: center;
+  height: 1.12rem;
+  width: 100%;
+  position: relative;
+  line-height: 1.12rem;
+  font-size: .44rem;
+  background-color: #CB1F46;
+  color: #fff;
+}
+
+.g-main {
+  background-color: #f2f2f2;
+  padding-top: .1rem;
+  padding-bottom: .3rem;
+}
+.g-main .u-com-search {
+  padding: 0 .2rem;
+  background-color: #fff;
+}
+.g-main .u-com-search form {
+  display: flex;
+  align-items: center;
+  height: 1.04rem;
+}
+.g-main .u-com-search form .u-com-id {
+  width: 2.34rem;
+}
+.g-main .u-com-search form .u-com-input {
+  position: relative;
+  width: 2.8rem;
+  border: 1px solid #DBDBDB;
+  border-radius: .08rem;
+  background: #f7f7f7;
+}
+.g-main .u-com-search form .u-com-input .u-ph {
+  position: absolute;
+  left: 0.1rem;
+  top: .2rem;
+  width: .24rem;
+}
+.g-main .u-com-search form .u-com-input input {
+  width: 2.4rem;
+  height: .74rem;
+  font-size: .22rem;
+  padding-left: .4rem;
+  background-color: #f7f7f7;
+  border: none;
+}
+.g-main .u-com-search form .u-com-input i {
+  position: absolute;
+  top: .22rem;
+  right: .16rem;
+  z-index: 10;
+  color: #666;
+}
+.g-main .u-com-search form .u-com-btn {
+  width: 1.68rem;
+  padding-left: .28rem;
+}
+.g-main .u-com-search form .u-com-btn button {
+  width: 1.64rem;
+  height: .7rem;
+  line-height: .7rem;
+  font-size: .28rem;
+  padding: 0;
+}
+.g-main .u-order {
+  background-color: #fff;
+  height: .78rem;
+  padding-left: .2rem;
+  line-height: .78rem;
+}
+.g-main .u-com-result {
+  font-size: .32rem;
+}
+.g-main .u-com-result li {
+  margin-bottom: .14rem;
+  background-color: #fff;
+}
+.g-main .u-com-result .u-com-msg {
+  padding-top: .28rem;
+  padding-bottom: .28rem;
+}
+.g-main .u-com-result .u-com-msg > div {
+  display: flex;
+  align-items: center;
+}
+.g-main .u-com-result .u-com-msg > div p:first-child {
+  width: 1.44rem;
+}
+.g-main .u-com-result .u-com-msg > div p:last-child {
+  margin-left: .4rem;
+}
+.g-main .u-com-result .u-com-msg .u-price {
+  margin: .28rem 0;
+}
+.g-main .u-com-result .u-com-state {
+  display: flex;
+  align-items: center;
+  padding: .3rem 0.2rem;
+}
+.g-main .u-com-result .u-com-state .u-changeState {
+  margin-left: .22rem;
+}
+.g-main .u-com-result .u-com-state .u-changeState span:first-child {
+  border-right: 2px solid #000;
+  padding-right: .16rem;
+}
+.g-main .u-com-result .u-com-state .u-changeState .activeRed {
+  color: #CB1F46;
+}
+.g-main .u-com-result .u-com-state .u-changeState .activeGreen {
+  color: #0cb70a;
+}
+.g-main .u-com-result .u-com-state .u-changeState button:last-child {
+  font-size: .32rem;
+  height: .5rem;
+  line-height: .5rem;
+  padding: 0 .3rem;
+  margin-left: .06rem;
+}

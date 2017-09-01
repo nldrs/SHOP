@@ -1,0 +1,203 @@
+@charset "UTF-8";
+/*
+    !组件的抽象样式
+    1.公共的header   component-header
+    2.公共的footer   component-footer
+    3.新品上架 的种类 component-kind
+*/
+/*
+    ! 字体方面相关
+      背景颜色方面相关
+      颜色方面相关
+*/
+/*字体*/
+/*背景(网页的基础色调是浅灰 #ebebeb)*/
+/*
+    !新品上架的模块
+*/
+/*
+    !购物车结算模块
+*/
+.g-orderInfo .m-header {
+  position: relative;
+  width: 100%;
+}
+.g-orderInfo .m-header .click {
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  background-color: transparent;
+  top: 0;
+  left: 20%;
+  z-index: 200;
+  cursor: pointer;
+}
+.g-orderInfo .m-header .logo {
+  width: 100%;
+}
+.g-orderInfo .m-header .reset-auto {
+  position: absolute;
+  bottom: 14%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: right;
+  font-size: 24px;
+  color: #fff;
+}
+.g-orderInfo .m-header .reset-auto .u-username, .g-orderInfo .m-header .reset-auto .u-user-out {
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.g-orderInfo .m-header .reset-auto i {
+  vertical-align: -4px;
+}
+.g-orderInfo .m-header .reset-auto .u-user-out {
+  margin-left: 10px;
+  text-decoration: underline;
+}
+.g-orderInfo .m-footer {
+  margin-top: 24px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+* {
+  box-sizing: content-box;
+}
+
+.g-main {
+  padding-top: 20px;
+  background-color: #ebebeb;
+  margin-bottom: 20px;
+}
+
+.u-orderInfoBox {
+  width: 1198px;
+  border: 1px solid #DBDBDC;
+  margin: 0 auto;
+  background-color: #fff;
+  padding-bottom: 30px;
+}
+
+.u-title {
+  height: 35px;
+  padding: 23px 34px;
+  border-bottom: 1px solid #DBDBDC;
+  position: relative;
+  background-color: #F1F1F1;
+  margin-bottom: 21px;
+}
+
+.u-title span {
+  width: 98px;
+  height: 24px;
+  border-bottom: 2px solid #797979;
+  font-size: 24px;
+  padding: 3px 3px 6px 3px;
+}
+
+.u-tab {
+  height: 38px;
+  margin-left: 13px;
+}
+
+.u-tabItem {
+  width: 145px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  border: 1px solid #DBDBDC;
+  border-bottom: none;
+  margin-right: 9px;
+  float: left;
+  font-size: 17px;
+  border-radius: 3px 3px 0 0;
+  cursor: pointer;
+}
+
+.active {
+  border: 1px solid #cc1d46;
+  border-bottom: none;
+  background-color: #cc1d46;
+  color: #fff;
+}
+
+.u-orders {
+  margin-left: 13px;
+  margin-top: -1px;
+  width: 1171px;
+  border: 1px solid #DBDBDC;
+  border-bottom: none;
+}
+
+.u-ordersTitle {
+  padding-left: 15px;
+  height: 35px;
+  border-bottom: 1px solid #DBDBDC;
+  line-height: 35px;
+  background-color: #f2f2f2;
+}
+
+.u-orders span {
+  display: inline-block;
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+.u-orderNo {
+  width: 40px;
+}
+
+.u-orderRef {
+  width: 96px;
+}
+
+.u-orderSub {
+  width: 160px;
+}
+
+.u-orderPay {
+  width: 160px;
+}
+
+.u-orderSum {
+  width: 88px;
+}
+
+.u-orderGet {
+  width: 94px;
+}
+
+.u-orderPhone {
+  width: 141px;
+}
+
+.u-orderDistrib {
+  width: 147px;
+}
+
+.u-orderProducts {
+  width: 180px;
+  line-height: 18px;
+  vertical-align: middle;
+}
+
+.u-orderProducts b {
+  margin-left: 3px;
+}
+
+.u-ordersItems {
+  height: 70px;
+  line-height: 70px;
+  padding-left: 15px;
+  border-bottom: 1px solid #DBDBDC;
+}
+
+.u-tabCon {
+  display: none;
+}
+
+.selected {
+  display: block;
+}

@@ -1,0 +1,417 @@
+@charset "UTF-8";
+/*
+    !组件的抽象样式
+    1.公共的header   component-header
+    2.公共的footer   component-footer
+    3.新品上架 的种类 component-kind
+*/
+/*
+    ! 字体方面相关
+      背景颜色方面相关
+      颜色方面相关
+*/
+/*字体*/
+/*背景(网页的基础色调是浅灰 #ebebeb)*/
+/*
+    !新品上架的模块
+*/
+/*
+    !购物车结算模块
+*/
+.g-account .m-header {
+  position: relative;
+  width: 100%;
+}
+.g-account .m-header .click {
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  background-color: transparent;
+  top: 0;
+  left: 20%;
+  z-index: 200;
+  cursor: pointer;
+}
+.g-account .m-header .logo {
+  width: 100%;
+}
+.g-account .m-header .reset-auto {
+  position: absolute;
+  bottom: 14%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: right;
+  font-size: 24px;
+  color: #fff;
+}
+.g-account .m-header .reset-auto .u-username, .g-account .m-header .reset-auto .u-user-out {
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.g-account .m-header .reset-auto i {
+  vertical-align: -4px;
+}
+.g-account .m-header .reset-auto .u-user-out {
+  margin-left: 10px;
+  text-decoration: underline;
+}
+.g-account .m-footer {
+  margin-top: 24px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.g-main {
+  background-color: #ebebeb;
+  padding: 20px 0;
+}
+.g-main .g-area {
+  background-color: #fff;
+  border: 1px solid #DBDBDB;
+  padding: 14px;
+}
+.g-main .g-area .m-account .u-good-title {
+  font-size: 28px;
+}
+.g-main .g-area .m-account .u-good-title span {
+  color: #CB1F46;
+}
+.g-main .g-area .m-account .u-good-action {
+  height: 54px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 20px;
+  border: 1px solid #DBDBDB;
+  background-color: #F2F2F2;
+  margin-top: 32px;
+  padding-left: 14px;
+}
+.g-main .g-area .m-account .u-good-action p:nth-child(1) {
+  width: 50px;
+  cursor: pointer;
+}
+.g-main .g-area .m-account .u-good-action p:nth-child(2) {
+  width: 70px;
+  cursor: pointer;
+}
+.g-main .g-area .m-account .u-good-action p:nth-child(3) {
+  width: 730px;
+}
+.g-main .g-area .m-account .u-good-action p:nth-child(4) {
+  width: 222px;
+}
+.g-main .g-area .m-account .u-good-action p:nth-child(5) {
+  width: 88px;
+}
+.g-main .g-area .m-account .u-good-detail {
+  margin-top: 46px;
+}
+.g-main .g-area .m-account .u-good-detail .u-good-detail-single {
+  border: 1px solid #DBDBDB;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 22px 14px;
+}
+.g-main .g-area .m-account .u-good-detail .u-good-detail-single:first-child ~ .u-good-detail-single {
+  border-top: none;
+}
+.g-main .g-area .m-account .u-good-detail .u-icon {
+  width: 120px;
+}
+.g-main .g-area .m-account .u-good-detail .u-icon img {
+  cursor: pointer;
+}
+.g-main .g-area .m-account .u-good-detail .u-imgShow {
+  width: 730px;
+  display: flex;
+  justify-content: flex-start;
+}
+.g-main .g-area .m-account .u-good-detail .u-imgShow .u-imgShow-box {
+  width: 184px;
+  height: 184px;
+  border: 1px solid #dbdbdb;
+  padding: 4px;
+}
+.g-main .g-area .m-account .u-good-detail .u-imgShow .u-imgShow-box img {
+  width: 100%;
+  height: 100%;
+}
+.g-main .g-area .m-account .u-good-detail .u-imgShow .u-imgShow-detail {
+  margin-left: 32px;
+}
+.g-main .g-area .m-account .u-good-detail .u-imgShow .u-imgShow-detail h1 {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+.g-main .g-area .m-account .u-good-detail .u-imgShow .u-imgShow-detail .u-imgShow-area > div {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 14px;
+  color: #707070;
+  margin-bottom: 4px;
+}
+.g-main .g-area .m-account .u-good-detail .u-imgShow .u-imgShow-detail .u-imgShow-area > div p:first-child {
+  width: 86px;
+}
+.g-main .g-area .m-account .u-good-detail .u-imgShow .u-imgShow-detail .u-imgShow-area > div .icon-rmb {
+  font-size: 16px;
+  margin-right: 2px;
+}
+.g-main .g-area .m-account .u-good-detail .u-imgShow .u-imgShow-detail .u-imgShow-area > div .u-changAmount {
+  display: flex;
+  background-color: #F2F2F2;
+  cursor: pointer;
+}
+.g-main .g-area .m-account .u-good-detail .u-imgShow .u-imgShow-detail .u-imgShow-area > div .u-changAmount span {
+  display: inline-block;
+  width: 32px;
+  height: 22px;
+  text-align: center;
+}
+.g-main .g-area .m-account .u-good-detail .u-imgShow .u-imgShow-detail .u-imgShow-area > div .u-changAmount .minus {
+  border: 1px solid #dbdbdb;
+  border-right: none;
+}
+.g-main .g-area .m-account .u-good-detail .u-imgShow .u-imgShow-detail .u-imgShow-area > div .u-changAmount .plus {
+  border: 1px solid #dbdbdb;
+  border-left: none;
+}
+.g-main .g-area .m-account .u-good-detail .u-imgShow .u-imgShow-detail .u-imgShow-area > div .u-changAmount input {
+  width: 52px;
+  border: 1px solid #dbdbdb;
+  text-align: center;
+  background-color: #F2F2F2;
+}
+.g-main .g-area .m-account .u-good-detail .u-money {
+  width: 222px;
+  align-self: flex-start;
+  font-size: 28px;
+  color: #CB1F46;
+  padding-left: 10px;
+}
+.g-main .g-area .m-account .u-good-detail .u-del {
+  width: 88px;
+  align-self: flex-start;
+}
+.g-main .g-area .m-account .u-good-detail .u-del i {
+  font-size: 28px;
+  color: #000000;
+  font-weight: bold;
+  padding-left: 20px;
+  position: relative;
+  top: 4px;
+  cursor: pointer;
+}
+.g-main .g-area .m-account .u-good-submit {
+  height: 76px;
+  margin: 12px 0;
+  border: 1px solid #DBDBDB;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 54px;
+  background-color: #F2F2F2;
+}
+.g-main .g-area .m-account .u-good-submit .u-good-seled {
+  font-size: 22px;
+}
+.g-main .g-area .m-account .u-good-submit .u-good-total {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+}
+.g-main .g-area .m-account .u-good-submit .u-good-total p:first-child {
+  padding-right: 74px;
+}
+.g-main .g-area .m-account .u-good-submit .u-good-total p:first-child b, .g-main .g-area .m-account .u-good-submit .u-good-total p:first-child span:last-child {
+  margin-left: 2px;
+  font-size: 30px;
+  color: #CB1F46;
+}
+.g-main .g-area .m-account .u-good-submit .u-good-total .submit-btn {
+  width: 168px;
+  flex: 0 0 168px;
+  height: 76px;
+  line-height: 76px;
+  font-size: 24px;
+  padding: 0;
+}
+.g-main .g-area .m-account .u-good-address {
+  padding: 12px 52px;
+  padding-right: 0;
+  border: 1px solid #DBDBDB;
+  font-size: 14px;
+}
+.g-main .g-area .m-account .u-good-address .u-sendPay {
+  display: flex;
+}
+.g-main .g-area .m-account .u-good-address .u-sendPay h1 {
+  font-size: 16px;
+}
+.g-main .g-area .m-account .u-good-address .u-sendPay .u-sendPay-detail .send-desc {
+  cursor: pointer;
+}
+.g-main .g-area .m-account .u-good-address .u-sendPay .u-sendPay-detail > div {
+  display: flex;
+  margin-bottom: 32px;
+}
+.g-main .g-area .m-account .u-good-address .u-sendPay .u-sendPay-detail > div > p:first-child {
+  padding-left: 20px;
+}
+.g-main .g-area .m-account .u-good-address .u-sendPay .u-sendPay-detail > div > p:first-child img {
+  width: 20px;
+  cursor: pointer;
+}
+.g-main .g-area .m-account .u-good-address .u-sendPay .u-sendPay-detail > div .u-sendPay-common {
+  padding-left: 18px;
+  margin-top: 2px;
+}
+.g-main .g-area .m-account .u-good-address .u-sendPay .u-sendPay-detail > div .u-free p:last-child, .g-main .g-area .m-account .u-good-address .u-sendPay .u-sendPay-detail > div .u-unfree p:last-child {
+  margin-top: 2px;
+}
+.g-main .g-area .m-account .u-good-address .u-sendPay .u-sendPay-detail > div .u-free .u-sendPay-sign, .g-main .g-area .m-account .u-good-address .u-sendPay .u-sendPay-detail > div .u-unfree .u-sendPay-sign {
+  color: #CB1F46;
+  cursor: pointer;
+}
+.g-main .g-area .m-account .u-good-address .u-adress-sel {
+  display: none;
+}
+.g-main .g-area .m-account .u-good-address .u-adress-sel ul {
+  width: 654px;
+  margin: 0 auto;
+  border: 1px solid #DBDBDB;
+  border-bottom: none;
+  font-size: 14px;
+}
+.g-main .g-area .m-account .u-good-address .u-adress-sel ul li {
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #DBDBDB;
+}
+.g-main .g-area .m-account .u-good-address .u-adress-sel ul li:first-child {
+  text-align: center;
+  font-size: 20px;
+  background-color: #F2F2F2;
+}
+.g-main .g-area .m-account .u-good-address .u-adress-sel ul li span {
+  margin-left: 12px;
+}
+.g-main .g-area .m-account .u-good-address .u-adress-sel ul li button {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  margin: 0 12px;
+  position: relative;
+  top: 4px;
+}
+.g-main .g-area .m-account .u-good-address .u-adress-sel #address {
+  position: relative;
+  width: 654px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 auto;
+  cursor: pointer;
+  text-align: center;
+  font-size: 20px;
+  background-color: #F2F2F2;
+  border: 1px solid #DBDBDB;
+  border-top: none;
+}
+.g-main .g-area .m-account .u-good-address .u-adress-sel #address .u-addAddress {
+  position: absolute;
+  top: 5px;
+  left: 220px;
+}
+.g-main .g-area .m-account .u-good-address .u-consultation {
+  width: 640px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.m-alert-send {
+  font-size: 14px;
+  width: 660px;
+  margin: 10px auto;
+}
+.m-alert-send > span {
+  font-size: 22px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 2px;
+  color: #CB1F46;
+}
+.m-alert-send > span + p {
+  margin-top: 20px;
+}
+.m-alert-send .m-alert-info {
+  margin: 12px;
+  padding: 12px 22px;
+  border: 1px solid #DBDBDB;
+  width: 620px;
+}
+.m-alert-send .m-alert-info p {
+  margin-bottom: 6px;
+}
+.m-alert-send .m-alert-info p span {
+  color: #CB1F46;
+}
+.m-alert-send .m-alert-info p .order-account, .m-alert-send .m-alert-info p .order-user, .m-alert-send .m-alert-info p .order-tel {
+  margin-left: 6px;
+}
+
+.address-alert {
+  width: 900px;
+  padding: 20px;
+  background-color: #fff;
+}
+.address-alert .address-title {
+  font-size: 22px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 2px;
+  color: #CB1F46;
+}
+.address-alert .address-tx {
+  padding: 20px;
+}
+.address-alert .address-tx > div {
+  display: flex;
+  margin-top: 20px;
+  font-size: 14px;
+  align-items: center;
+}
+.address-alert .address-tx > div input {
+  padding-left: 24px;
+}
+.address-alert .address-tx > div p:first-child {
+  width: 86px;
+}
+.address-alert .address-tx > div .address-user, .address-alert .address-tx > div .address-tel {
+  width: 266px;
+  height: 36px;
+}
+.address-alert .address-tx > div .address-hz {
+  vertical-align: -3px;
+}
+.address-alert .address-tx > div .address-xq {
+  width: 400px;
+  height: 36px;
+  margin-left: 24px;
+}
+.address-alert .address-tx > div .address-ld {
+  width: 200px;
+  height: 36px;
+  margin-left: 12px;
+}
+.address-alert h2 {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.tangram-suggestion-main {
+  z-index: 99999999999999999;
+}

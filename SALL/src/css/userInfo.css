@@ -1,0 +1,401 @@
+@charset "UTF-8";
+/*
+    ! 字体方面相关
+      背景颜色方面相关
+      颜色方面相关
+*/
+/*字体*/
+/*背景(网页的基础色调是浅灰 #ebebeb)*/
+/*
+    !新品上架的模块
+*/
+/*
+    !购物车结算模块
+*/
+/*
+    !组件的抽象样式
+    1.公共的header   component-header
+    2.公共的footer   component-footer
+    3.新品上架 的种类 component-kind
+*/
+/*
+    ! 字体方面相关
+      背景颜色方面相关
+      颜色方面相关
+*/
+/*字体*/
+/*背景(网页的基础色调是浅灰 #ebebeb)*/
+/*
+    !新品上架的模块
+*/
+/*
+    !购物车结算模块
+*/
+/*
+    !组件的抽象样式
+    1.公共的header   component-header
+    2.公共的footer   component-footer
+    3.新品上架 的种类 component-kind
+*/
+.g-userInfo .m-header {
+  position: relative;
+  width: 100%;
+}
+.g-userInfo .m-header .click {
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  background-color: transparent;
+  top: 0;
+  left: 20%;
+  z-index: 200;
+  cursor: pointer;
+}
+.g-userInfo .m-header .logo {
+  width: 100%;
+}
+.g-userInfo .m-header .reset-auto {
+  position: absolute;
+  bottom: 14%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: right;
+  font-size: 24px;
+  color: #fff;
+}
+.g-userInfo .m-header .reset-auto .u-username, .g-userInfo .m-header .reset-auto .u-user-out {
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.g-userInfo .m-header .reset-auto i {
+  vertical-align: -4px;
+}
+.g-userInfo .m-header .reset-auto .u-user-out {
+  margin-left: 10px;
+  text-decoration: underline;
+}
+.g-userInfo .m-footer {
+  margin-top: 24px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.g-main {
+  background-color: #ebebeb;
+  padding-top: 20px;
+  padding-bottom: 11%;
+}
+
+.g-userInfo .m-footer {
+  margin-top: 24px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+* {
+  box-sizing: content-box;
+}
+
+.u-userInfoBox {
+  width: 1198px;
+  border: 1px solid #DBDBDC;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  background-color: #fff;
+}
+
+.u-title {
+  height: 35px;
+  padding: 23px 34px;
+  border-bottom: 1px solid #DBDBDC;
+  position: relative;
+  background-color: #F1F1F1;
+  margin-bottom: 28px;
+}
+
+.u-title span {
+  width: 98px;
+  height: 24px;
+  border-bottom: 2px solid #797979;
+  font-size: 24px;
+  padding: 3px 3px 6px 3px;
+}
+
+.u-rePassword {
+  width: 84px;
+  height: 20px;
+  font-size: 14px;
+  border: 1px solid #CB1D46;
+  text-align: center;
+  position: absolute;
+  right: 24px;
+  top: 25px;
+  background-color: #DBD7D8;
+  color: #CB1D46;
+  border-radius: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.u-basicInfoTitle, .u-address {
+  height: 22px;
+  padding-left: 34px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.u-basicInfoTitle span:before {
+  content: url(../images/basicInfo.png);
+  margin-right: 11px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 2px;
+}
+
+.u-address span:before {
+  content: url(../images/address.png);
+  margin-right: 11px;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  top: 2px;
+}
+
+.u-basicInfo {
+  width: 1155px;
+  height: 142px;
+  border: 1px solid #DBDBDC;
+  padding-left: 16px;
+  margin-left: 13px;
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.u-basicIcon {
+  width: 300px;
+  margin-top: 18px;
+  line-height: 26px;
+}
+
+.u-basicIcon span {
+  display: inline-block;
+  width: 62px;
+  text-align: justify;
+  font-size: 14px;
+}
+
+.u-basicIcon input {
+  border: none;
+  background: none;
+  padding-left: 10px;
+  color: #000;
+  vertical-align: baseline;
+}
+
+.u-reBasicInfo {
+  width: 60px;
+  height: 20px;
+  background-color: #CB1D46;
+  color: #fff;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  border-radius: 10px;
+}
+
+.u-reBasicInfo span {
+  font-size: 14px;
+  position: absolute;
+  right: 6px;
+  cursor: pointer;
+}
+
+.u-reBasicInfo span:before {
+  content: url(../images/reBasicInfo.png);
+  margin-right: 11px;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  position: relative;
+  top: 2px;
+  left: 6px;
+}
+
+.u-addressItems {
+  width: 100%;
+  border-top: 1px solid #DBDBDC;
+  border-bottom: 1px solid #DBDBDC;
+  margin-top: 16px;
+}
+
+.u-addressItems ul li {
+  list-style: none;
+}
+
+.u-addTop {
+  line-height: 36px;
+  width: 100%;
+  height: 36px;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #DBDBDC;
+}
+
+.u-addTop span {
+  font-size: 14px;
+  margin-left: 15px;
+  display: inline-block;
+}
+
+.addrchild1 {
+  width: 128px;
+  margin-left: 10px;
+}
+
+.addrchild2 {
+  width: 118px;
+  margin-left: 10px;
+}
+
+.addrchild3 {
+  width: 451px;
+  margin-left: 10px;
+}
+
+.autoComplete {
+  display: inline-block;
+  width: 220px;
+  margin-left: 10px;
+  display: none;
+  height: 20px;
+  z-index: 1999;
+  margin-bottom: 10px;
+}
+
+.addrchild4 {
+  width: 210px;
+  /* margin-left: 10px; */
+  /* display: none; */
+}
+
+.addrchild5 {
+  width: 221px;
+  margin-left: 10px;
+  display: none;
+}
+
+.u-addCon {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+}
+
+.u-addCon input {
+  border: none;
+  font-size: 14px;
+  color: #000;
+  background-color: transparent;
+}
+
+.u-addCon .addnew {
+  border: 1px solid #666;
+  margin-left: 13px;
+}
+
+.u-addCon span {
+  font-size: 14px;
+  color: #000;
+}
+
+.u-edit {
+  padding-right: 10px;
+  border-right: 2px solid #474747;
+}
+
+.u-del {
+  padding-left: 10px;
+}
+
+.u-del i {
+  font-weight: bold;
+}
+
+.u-edit:before {
+  content: url(../images/edit.png);
+  margin-right: 11px;
+  display: inline-block;
+  width: 13px;
+  height: 15px;
+  position: relative;
+  top: 3px;
+  left: 8px;
+}
+
+.def {
+  display: inline-block;
+  padding-left: 91px;
+  cursor: pointer;
+}
+
+.def span, .u-edit, .u-del {
+  vertical-align: -3px;
+  cursor: pointer;
+}
+
+.u-addAddress {
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #706F6E;
+  border-bottom: 1px solid #DBDBDC;
+  cursor: pointer;
+}
+
+.u-addAddress img {
+  width: 20px;
+  vertical-align: -4px;
+}
+
+.g-header, .g-main, .g-footer {
+  z-index: 0;
+}
+
+.m-find-pwd {
+  margin-top: 80px;
+}
+.m-find-pwd form > div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.m-find-pwd form > div p:first-child {
+  width: 94px;
+  font-size: 20px;
+}
+.m-find-pwd form > div p:nth-child(2) input {
+  width: 230px;
+  height: 38px;
+  padding-left: 12px;
+}
+.m-find-pwd form > div .button-caution {
+  margin-left: 20px;
+}
+.m-find-pwd form .m-find-submit {
+  text-align: right;
+}
+.m-find-pwd form .findPwd-info {
+  margin-top: 40px;
+  font-size: 16px;
+  color: #CB1D46;
+  display: none;
+}
+
+.m-find-pwd {
+  margin-top: 30px !important;
+}
