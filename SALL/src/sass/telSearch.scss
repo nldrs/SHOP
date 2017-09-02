@@ -37,6 +37,10 @@
                     padding-left:.4rem;
                     background-color: #f7f7f7;
                     border:none;
+                    border-radius: .08rem;
+                }
+                .searchCode2{
+                    padding-left:.1rem !important;
                 }
                 i{
                     position: absolute;
@@ -95,7 +99,7 @@
             .u-changeState{
                 margin-left:.22rem;
                 span:first-child{
-                    border-right:2px solid #000;
+                    border-right:2px solid #c2c2c2;
                     padding-right:.16rem;
                 }
                 .activeRed{

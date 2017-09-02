@@ -39,10 +39,12 @@
             <form action="">
                 <p class="u-com-id">请输入订单编号</p>
                 <p class="u-com-input">
-                    <input type="text" placeholder="输入查询编号">
+                    <input type="text" placeholder="输入编号(8位数字)" class="searchCode2" autofocus autocomplete="true">
                     <i class="icon icon-wrong"></i>
                 </p>
-                <p class="u-com-btn"><a href="javascript:;" class="button button-highlight button-rounded search-btn">搜&nbsp;&nbsp;索</a></p>
+                <p class="u-com-btn">
+                    <button type="button" disabled class="button button-highlight button-rounded search-btn">搜&nbsp;&nbsp;索</button>
+                </p>
             </form>
         </div>
         <div class="u-com-result">
@@ -100,9 +102,6 @@
               })
       }
 
-      $(".search-btn").on("click",function(){
-         render("../test/8888.json");
-      });
         //模板helper
         Handlebars.registerHelper("ispay",function(value){
             if(value=="未支付"||value=="未验收"){
@@ -122,6 +121,39 @@
            $(this).prev().text("已支付").removeClass("activeRed").addClass("activeGreen");
         });
 
+        //    3.点击完成切换状态
+
+        $(".order-template").on("click",".button-action",function(){
+            var me=$(this);
+            me.attr("disabled",true);
+            //    和后台交互改变状态
+            var url="../test/7777.json";
+            var code=$(this).parents("li").data("code");
+            MS.TL_ajax(url,{id:code})
+                .done(function(){
+                    me.prev("span").text("已支付").removeClass("activeRed").addClass("activeGreen");
+                    MS.autoHide("支付成功");
+                })
+                .fail(function(){
+                    MS.autoHide("支付失败");
+                });
+        });
+//     4.激活搜索的按钮
+        $(".searchCode2").on("input",function(){
+            var input=$(this).val().trim();
+            var reg=/^\d{8}$/.test(input);
+            if(reg){
+                $(".search-btn").attr("disabled",false);
+            }else{
+                $(".search-btn").attr("disabled",true);
+            }
+        });
+//    5. 点击搜索显示搜索结果
+        $(".search-btn").on("click",function(){
+            var yanVal=$(".searchCode2").val();
+            var code=yanVal.trim();
+            render("../test/8888.json",{code:code});
+        });
 
     })
 </script>

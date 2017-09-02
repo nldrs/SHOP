@@ -54,7 +54,7 @@
                 <p class="u-com-userInput"><input type="tel" placeholder="请输入密码" id="u-pwd" data-easyform="length:6 16;real-time;" data-message="密码必须为6—16位" data-easytip="position:top;class:easy-blue;"></p>
                 <p class="u-com-userIcon"><i class="icon icon-wrong"></i></p>
             </div>
-            <h1 class="u-loginInfo">密码错误发士大夫撒和代发货</h1>
+            <h1 class="u-loginInfo"></h1>
             <input type="submit" class="login-btn button button-block button-rounded button-highlight button-large" value="登录">
             </form>
         </div>
@@ -66,7 +66,30 @@
 <script>
     $(function(){
         $("#tel-login").easyform();
-
+//   点击登录进行验证
+        $(".login-btn").on("click",function(){
+            var telVal=$("#u-tel").val().trim();
+            var pwdVal=$("#u-pwd").val().trim();
+            var regTel=MS.TL_RegExp(telVal,"mobile");
+            var url="";
+            if(pwdVal!=""&&regTel){
+                MS.TL_ajax(url,{user:telVal,pwd:pwdVal},"POST")
+                    .done(function(data){
+                        if(data.status){
+                            MS.PG_jump("telSearchPay.html");
+                        }else{
+                            $(".u-loginInfo").text(data.errorMsg);
+                        }
+                    })
+                    .fail(function(msg){
+                        MS.autoHide("发生错误!请重新登录!");
+                    })
+            }
+        });
+//  2.点击清除的图标清空输入框
+        $(".icon-wrong").on("click",function(){
+            $(this).parents("p").prev().find("input").val(null).focus();
+        })
     })
 </script>
 </body>
