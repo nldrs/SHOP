@@ -186,6 +186,23 @@ body {
 .g-main{
   padding-bottom: 20px;
 }
+.browserupgrade{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.infoRed{
+    color:#FF0000;
+}
 
+.infoRedLine{
+    text-decoration: underline;
+}
 
+.browserupgrade span{
+    margin-right:10px;
+}
 

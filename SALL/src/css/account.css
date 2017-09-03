@@ -39,6 +39,7 @@
   position: absolute;
   bottom: 14%;
   left: 50%;
+  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   text-align: right;
   font-size: 24px;
@@ -79,8 +80,14 @@
 }
 .g-main .g-area .m-account .u-good-action {
   height: 54px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   font-size: 20px;
   border: 1px solid #DBDBDB;
@@ -110,8 +117,14 @@
 }
 .g-main .g-area .m-account .u-good-detail .u-good-detail-single {
   border: 1px solid #DBDBDB;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding: 22px 14px;
 }
@@ -126,7 +139,11 @@
 }
 .g-main .g-area .m-account .u-good-detail .u-imgShow {
   width: 730px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
 }
 .g-main .g-area .m-account .u-good-detail .u-imgShow .u-imgShow-box {
@@ -148,7 +165,11 @@
   margin-bottom: 6px;
 }
 .g-main .g-area .m-account .u-good-detail .u-imgShow .u-imgShow-detail .u-imgShow-area > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
   font-size: 14px;
   color: #707070;
@@ -162,6 +183,8 @@
   margin-right: 2px;
 }
 .g-main .g-area .m-account .u-good-detail .u-imgShow .u-imgShow-detail .u-imgShow-area > div .u-changAmount {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background-color: #F2F2F2;
   cursor: pointer;
@@ -188,6 +211,7 @@
 }
 .g-main .g-area .m-account .u-good-detail .u-money {
   width: 222px;
+  -ms-flex-item-align: start;
   align-self: flex-start;
   font-size: 28px;
   color: #CB1F46;
@@ -195,6 +219,7 @@
 }
 .g-main .g-area .m-account .u-good-detail .u-del {
   width: 88px;
+  -ms-flex-item-align: start;
   align-self: flex-start;
 }
 .g-main .g-area .m-account .u-good-detail .u-del i {
@@ -210,8 +235,14 @@
   height: 76px;
   margin: 12px 0;
   border: 1px solid #DBDBDB;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding-left: 54px;
   background-color: #F2F2F2;
@@ -220,13 +251,28 @@
   font-size: 22px;
 }
 .g-main .g-area .m-account .u-good-submit .u-good-total {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
 }
 .g-main .g-area .m-account .u-good-submit .u-good-total p:first-child {
+  font-size: 24px;
   padding-right: 74px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 .g-main .g-area .m-account .u-good-submit .u-good-total p:first-child b, .g-main .g-area .m-account .u-good-submit .u-good-total p:first-child span:last-child {
   margin-left: 2px;
@@ -235,6 +281,8 @@
 }
 .g-main .g-area .m-account .u-good-submit .u-good-total .submit-btn {
   width: 168px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 168px;
   flex: 0 0 168px;
   height: 76px;
   line-height: 76px;
@@ -248,6 +296,8 @@
   font-size: 14px;
 }
 .g-main .g-area .m-account .u-good-address .u-sendPay {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .g-main .g-area .m-account .u-good-address .u-sendPay h1 {
@@ -257,6 +307,8 @@
   cursor: pointer;
 }
 .g-main .g-area .m-account .u-good-address .u-sendPay .u-sendPay-detail > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-bottom: 32px;
 }
@@ -330,7 +382,10 @@
 .g-main .g-area .m-account .u-good-address .u-consultation {
   width: 640px;
   margin: 10px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
 }
 
@@ -379,9 +434,13 @@
   padding: 20px;
 }
 .address-alert .address-tx > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-top: 20px;
   font-size: 14px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 .address-alert .address-tx > div input {

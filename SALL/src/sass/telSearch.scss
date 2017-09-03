@@ -12,8 +12,12 @@
         padding: 0 .2rem;
         background-color: #fff;
         form{
+             display: -webkit-box;
+             display: -ms-flexbox;
              display: flex;
-            align-items: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             height:1.04rem;
             .u-com-id{
                width:2.34rem;
@@ -79,8 +83,12 @@
             padding-top: .28rem;
             padding-bottom: .28rem;
             >div{
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
-                align-items: center;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
                 p:first-child{
                     width:1.44rem;
                 }
@@ -93,8 +101,12 @@
             }
         }
         .u-com-state{
+            display:-webkit-box;
+            display:-ms-flexbox;
             display:flex;
-            align-items: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             padding:.3rem 0.2rem;
             .u-changeState{
                 margin-left:.22rem;

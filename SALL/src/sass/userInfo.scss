@@ -249,8 +249,12 @@
 }
 
 .u-edit {
-    padding-right: 10px;
+    padding: 0 10px 0 0;
+    border: none;
     border-right: 2px solid #474747;
+    margin: 0;
+    background-color: #fff;
+
 }
 
 .u-del {
@@ -306,9 +310,15 @@
     margin-top: 80px;
     form{
         >div{
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: flex-start;
-            align-items: center;
+            -webkit-box-pack: start;
+                -ms-flex-pack: start;
+                    justify-content: flex-start;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             margin-bottom:20px;
             p:first-child{
                 width:94px;

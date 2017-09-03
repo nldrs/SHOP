@@ -154,7 +154,10 @@
             var code=yanVal.trim();
             render("../test/8888.json",{code:code});
         });
-
+//  6.点击清除的图标清空输入框
+        $(".icon-wrong").on("click",function(){
+            $(".searchCode2").val(null).focus();
+        })
     })
 </script>
 </body>

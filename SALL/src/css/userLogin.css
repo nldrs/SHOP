@@ -42,7 +42,11 @@
 }
 .g-main .m-login .u-area {
   padding-top: 54px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 .g-main .m-login .u-area .u-slide {
@@ -70,17 +74,23 @@
   margin-right: 4px;
 }
 .g-main .m-login .u-area .u-logins .login-area #login > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .g-main .m-login .u-area .u-logins .login-area #login > div p:first-child {
   width: 60px;
   font-size: 14px;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
   align-self: center;
   color: #AAACB0;
   margin-top: 18px;
 }
 .g-main .m-login .u-area .u-logins .login-area #login > div p:last-child {
   margin-top: 22px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
 }
 .g-main .m-login .u-area .u-logins .login-area #login > div p:last-child input {
@@ -90,8 +100,14 @@
   padding-left: 24px;
 }
 .g-main .m-login .u-area .u-logins .login-area #login > p {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin-top: 42px;
 }
@@ -123,8 +139,14 @@
   margin-top: 80px;
 }
 .m-find-pwd form > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin-bottom: 20px;
 }

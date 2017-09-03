@@ -58,6 +58,7 @@
   position: absolute;
   bottom: 14%;
   left: 50%;
+  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   text-align: right;
   font-size: 24px;
@@ -311,8 +312,11 @@
 }
 
 .u-edit {
-  padding-right: 10px;
+  padding: 0 10px 0 0;
+  border: none;
   border-right: 2px solid #474747;
+  margin: 0;
+  background-color: #fff;
 }
 
 .u-del {
@@ -369,8 +373,14 @@
   margin-top: 80px;
 }
 .m-find-pwd form > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin-bottom: 20px;
 }

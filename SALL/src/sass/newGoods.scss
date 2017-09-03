@@ -10,13 +10,20 @@
     background-color: $page-bj;
     .g-content{
         .g-search{
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: space-around;
+            -ms-flex-pack: distribute;
+                justify-content: space-around;
             cursor: pointer;
             .m-search{
                 width: 534px;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
-                justify-content: flex-start;
+                -webkit-box-pack: start;
+                    -ms-flex-pack: start;
+                        justify-content: flex-start;
                 input{
                     width: 432px;
                     height:38px;
@@ -85,9 +92,14 @@
                 }
                 .u-goodShow{
                     >.u-goodsArea{
+                        display: -webkit-box;
+                        display: -ms-flexbox;
                         display: flex;
-                        flex-flow: wrap;
-                        justify-content: flex-start;
+                        -ms-flex-flow: wrap;
+                            flex-flow: wrap;
+                        -webkit-box-pack: start;
+                            -ms-flex-pack: start;
+                                justify-content: flex-start;
                         >div{
                             width:290px;
                             height: 354px;
@@ -113,9 +125,14 @@
                                 height:64px;
                                 background-color: $newGoods-main;
                                 color:#fff;
+                                display: -webkit-box;
+                                display: -ms-flexbox;
                                 display: flex;
-                                justify-content: space-around;
-                                align-items: center;
+                                -ms-flex-pack: distribute;
+                                    justify-content: space-around;
+                                -webkit-box-align: center;
+                                    -ms-flex-align: center;
+                                        align-items: center;
                                 .u-title{
                                     width:160px;
                                     p:first-child{
@@ -154,9 +171,6 @@
                         position: absolute;
                         left:50%;
                         -webkit-transform:translateX(-50%);
-                        -moz-transform:translateX(-50%);
-                        -ms-transform:translateX(-50%);
-                        -o-transform:translateX(-50%);
                         transform:translateX(-50%);
                     }
                 }
@@ -176,14 +190,8 @@
     background-image: url(../images/top.png);
     background-repeat: no-repeat;
     -webkit-transition: background-position 1s linear;
-    -moz-transition: background-position 1s linear;
-    -o-transition: background-position 1s linear;
-    -ms-transition: background-position 1s linear;
     transition: background-position 1s linear;
     -webkit-transition: background-position 1s;
-    -moz-transition: background-position 1s;
-    -ms-transition: background-position 1s;
-    -o-transition: background-position 1s;
     transition: background-position 1s;
     background-position: 0 -266px;
     &:hover{
