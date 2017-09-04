@@ -21,7 +21,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/fastclick.js"></script>
     <script src="plugins/layer/layer.js"></script>
-   <script src="plugins/slide/ZoomPic.js"></script>
+   <script src="plugins/slide/carousel.js"></script>
     <script src="plugins/easyForm/easyform.js"></script>
     <!--[if lte IE 8]>
     <script  src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -46,26 +46,12 @@
             <h1 class="u-title">新品上架</h1>
             <div class="u-area">
                 <div class="u-slide">
-                    <div id="focus_Box">
-                        <span class="prev">&nbsp;</span>
-                        <span class="next">&nbsp;</span>
-                        <ul>
-                            <li>
-                                <a href="#"><img width="400" height="400" alt="Photo sharing jq22" src="../test/1.jpg" /></a>
-                            </li>
-                            <li>
-                                <a href="#"><img width="400" height="400" alt="Photo sharing jq22" src="../test/2.jpg" /></a>
-                            </li>
-                            <li>
-                                <a href="#"><img width="400" height="400" alt="Photo sharing jq22" src="../test/3.jpg" /></a>
-                            </li>
-                            <li>
-                                <a href="#"><img width="400" height="400" alt="Photo sharing" src="../test/4.jpg" /></a>
-                            </li>
-                            <li>
-                                <a href="#"><img width="400" height="400" alt="Photo sharing jq22" src="../test/5.jpg" /></a>
-                            </li>
-                        </ul>
+                    <div id="carousel">
+                        <img width="400" height="400" alt="Photo" src="../test/1.jpg" />
+                        <img width="400" height="400" alt="Photo" src="../test/2.jpg" />
+                        <img width="400" height="400" alt="Photo" src="../test/3.jpg" />
+                        <img width="400" height="400" alt="Photo" src="../test/4.jpg" />
+                        <img width="400" height="400" alt="Photo" src="../test/4.jpg" />
                     </div>
                 </div>
                 <div class="u-logins">
@@ -102,6 +88,7 @@
 </div>
 <script>
     $(".Ajax-footer").load("tpl/tplFooter.html");
+    $('#carousel').carousel({curDisplay: 0, autoPlay: true, interval: 3000});
     $(function(){
 // 1.单机忘记密码弹框
         var str='<div class="m-find-pwd reset-lay-padding">'

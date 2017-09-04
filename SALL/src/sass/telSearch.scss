@@ -37,11 +37,23 @@
                 input{
                     width: 2.4rem;
                     height:.74rem;
-                    font-size: .22rem;
+                    font-size: .4rem;
                     padding-left:.4rem;
                     background-color: #f7f7f7;
                     border:none;
                     border-radius: .08rem;
+                    &::-webkit-input-placeholder { /* WebKit browsers */
+                        font-size:.24rem;
+                    }
+                    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+                        font-size:.24rem;
+                    }
+                    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+                        font-size:.24rem;
+                    }
+                    &:-ms-input-placeholder { /* Internet Explorer 10+ */
+                        font-size:.24rem;
+                    }
                 }
                 .searchCode2{
                     padding-left:.1rem !important;
