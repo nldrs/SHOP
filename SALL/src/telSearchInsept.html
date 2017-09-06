@@ -121,6 +121,7 @@
 
         $(".order-template").on("click",".button-action",function(){
             var me=$(this);
+            var parentDom=me.parents("li");
            me.attr("disabled",true);
                 //    和后台交互改变状态
             var url="../test/8888.json";
@@ -129,6 +130,7 @@
                 .done(function(){
                     me.prev("span").text("已验收").removeClass("activeRed").addClass("activeGreen");
                     MS.autoHide("验收成功");
+                    parentDom.remove();
                 })
                 .fail(function(){
                     MS.autoHide("验收失败");

@@ -95,6 +95,16 @@ var MS=(function (win,doc,$) {
             btn:[btn_suc,btn_err]
         },suc,error)
     };
+    MS.popUp=function(title,content,btn_suc,btn_err,suc){
+        layer.open({
+            content:content,
+            title: title,
+            shade: !1,
+            area: ["900px","500px"],
+            btn:[btn_suc,btn_err],
+            yes:suc
+        })
+    };
     MS.popTip=function (content,sel,time) {
         layer.tips(content,sel, {
             tips: [1, '#CB1F46'],
@@ -410,7 +420,7 @@ var MS=(function (win,doc,$) {
             }
         });
         $(".go-top").click(function(){
-            $("html,body").animate({scrollTop:"0px"},1000);
+            $("html,body").animate({scrollTop:"0px"},500);
         });
         $(".go-bottom").click(function(){
             $("body,html").stop().animate({scrollTop:bottom},1000);
@@ -459,6 +469,7 @@ var MS=(function (win,doc,$) {
     MS.Ajax_page=function() {
         $(".Ajax-header").load("tpl/tplHeader.html",function () {
             MS.userEdit();
+            MS.jumpHome();
         });
         $(".Ajax-footer").load("tpl/tplFooter.html");
         $("body").on("click",".click",function (e) {
@@ -481,6 +492,11 @@ var MS=(function (win,doc,$) {
             }else{
                 MS.PG_jump("userInfo.html");
             }
+        })
+    };
+    MS.jumpHome=function(){
+        $(".u-home").click(function(){
+            MS.PG_jump("newGoods.html");
         })
     };
     return MS;

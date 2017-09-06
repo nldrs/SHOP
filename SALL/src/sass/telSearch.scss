@@ -25,23 +25,29 @@
             .u-com-input{
                 position: relative;
                 width:2.8rem;
+                height:.74rem;
                 border: 1px solid #DBDBDB;
                 border-radius: .08rem;
                 background: #f7f7f7;
+                padding:.04rem 0;
                 .u-ph{
                     position: absolute;
                     left: 0.1rem;
                     top: .2rem;
                     width: .24rem;
+                    z-index: 10;
                 }
                 input{
                     width: 2.4rem;
-                    height:.74rem;
                     font-size: .4rem;
+                    height:100%;
                     padding-left:.4rem;
                     background-color: #f7f7f7;
                     border:none;
                     border-radius: .08rem;
+                    position: relative;
+                    z-index: 2;
+                    vertical-align: baseline;
                     &::-webkit-input-placeholder { /* WebKit browsers */
                         font-size:.24rem;
                     }

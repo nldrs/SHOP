@@ -238,6 +238,7 @@
                 padding-right: 0;
                 border:1px solid #DBDBDB;
                 font-size: $fs14;
+                margin-top: 12px;
                 .u-sendPay{
                     display: -webkit-box;
                     display: -ms-flexbox;
@@ -365,6 +366,17 @@
             .order-account,.order-user,.order-tel{
                 margin-left:6px;
             }
+        }
+    }
+    .upInfo{
+        margin:20px 0 20px 0;
+        font-size: 18px;
+        font-weight: 500;
+        span,b{
+            color:$page-mainColor;
+        }
+        span{
+            font-size: 22px;
         }
     }
 }

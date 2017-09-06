@@ -78,6 +78,7 @@
 </div>
 </section>
 <footer class="g-footer Ajax-footer"></footer>
+<i class="top_back go-top"></i>
 </div>
 </body>
 <script id="order-template" type="text/x-handlebars-template">
@@ -104,6 +105,7 @@
 <script>
    $(function(){
        MS.Ajax_page();
+       MS.TL_scroll();
        $(".u-tabItem").on("click",function(){
            $(this).addClass("active").siblings("li").removeClass("active");
            var orderStatus=$(this).data("orderstatus");

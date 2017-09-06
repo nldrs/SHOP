@@ -87,7 +87,7 @@
     MS.Ajax_page();
     window.onload = function(){
 
-        //个人信息编辑按钮事件绑定
+//个人信息编辑按钮事件绑定
         function editBasicInfo(){
             var reBasicInfo = document.getElementsByClassName("u-reBasicInfo")[0];
             var reBasicInfoBtn = reBasicInfo.getElementsByTagName("span")[0];
@@ -110,11 +110,8 @@
             }
         }
         editBasicInfo();
-
-
-
-        //地址操作事件绑定
-        function editAddress(item){
+//地址操作事件绑定
+        function adrEdit(item){
             var addressName = item.getElementsByClassName("addrchild1")[0];
             var addressPhone = item.getElementsByClassName("addrchild2")[0];
             var address = item.getElementsByClassName("addrchild3")[0];
@@ -135,124 +132,121 @@
             var addressDefRatio = addressDef.getElementsByTagName("input")[0];
             var addressDefText = addressDef.getElementsByTagName("span")[0];
             var addressCon = item.getElementsByTagName("input");
-            //地址编辑按钮事件绑定
-            addressEdit.onclick = function (){
-                var parent = address.parentNode;
-                if(addressEdit.innerHTML ==="编辑"){
-                    addressEdit.innerHTML = "完成";
-                    address.style.display = "none";
-                    address1.parentNode.style.display = "inline-block";
-                    address2.style.display = "inline-block";
-                    addressDefRatio.style.display = "inline-block";
-                    addressDefText.style.display = "inline-block";
-                    for(var i = 0;i<addressCon.length-1;i++){
-                        addressCon[i].removeAttribute("disabled");
-                        addressCon[i].style.border = "1px solid #666";
-                    }
-                    caculDis(address1,dis);
-                    // 9.1添加禁用点击事件功能---------6行
-                    for(var i=0;i<edits.length;i++){
-                        if(edits[i].innerHTML==="编辑"){
-                            edits[i].setAttribute("disabled","true");
-                        }
-                    }
-                    addAddressBtn.onclick = null;
-                    // 9.1添加禁用点击事件功能---------6行
+
+
+            var parent = address.parentNode;
+            if(addressEdit.innerHTML ==="编辑"){
+                addressEdit.innerHTML = "完成";
+                address.style.display = "none";
+                address1.parentNode.style.display = "inline-block";
+                address2.style.display = "inline-block";
+                addressDefRatio.style.display = "inline-block";
+                addressDefText.style.display = "inline-block";
+                for(var i = 0;i<addressCon.length-1;i++){
+                    addressCon[i].removeAttribute("disabled");
+                    addressCon[i].style.border = "1px solid #666";
                 }
-                else{
-                    var res = MS.TL_RegExp(addressPhone.value, "mobile");
-                    if (addressName.value != "" && address1.value != ""&&res) {
-                        var url="../test/7777.json";
-                        var obj={
-                            id:1000,
-                            addUser:addressName.value,
-                            addTel:addressPhone.value,
-                            addAdd:address1.value+address2.value,
-                            addDis:dis.value,
-                            isChecked:1,
-                            isNew:1
-                        };
-//                        自己的后台逻辑
-                        MS.TL_ajax(url,obj,"POST")
-                            .done(function(data){
-
-                                addressEdit.innerHTML = "编辑";
-                                address1.parentNode.style.display = "none";
-                                address2.style.display = "none";
-                                address.style.display = "inline-block";
-                                address.value = item.getElementsByClassName("addrchild4")[0].value + item.getElementsByClassName("addrchild5")[0].value;
-                                for (var i = 0; i < addressCon.length - 1; i++) {
-                                    addressCon[i].setAttribute("disabled", "disabled");
-                                    addressCon[i].style.border = "none";
-                                }
-                                for (var i = 0; i < addItems.length; i++) {
-                                    if (addItems[i].checked) {
-                                        addItems[i].style.display = "none";
-                                        addItemsText[i].style.display = "inline-block";
-                                        addItemsText[i].style.color = "#f00";
-                                    }
-                                    else {
-                                        if( addItems.length=="1"){
-                                            addItems[0].style.display = "none";
-                                            addItemsText[0].style.display = "inline-block";
-                                            addItemsText[0].style.color = "#f00";
-                                            addItems[0].setAttribute("checked",true);
-                                        }else{
-                                            addItems[i].style.display = "none";
-                                            addItemsText[i].style.display = "none";
-                                        }
-                                    }
-
-
-                                }
-                                MS.popInfo("保存成功",6);
-                                // 9.1添加禁用点击事件功能---------4行
-                                for(var i=0;i<edits.length;i++){
-                                    edits[i].removeAttribute("disabled");
-                                }
-
-                                addAddress();
-                            })
-                            .fail(function(){
-                                MS.popInfo("保存错误",5);
-                            });
-
-                    }else{
-                        MS.popInfo("请输入正确的信息",6);
+                caculDis(address1,dis);
+                // 9.1添加禁用点击事件功能---------6行
+                for(var i=0;i<edits.length;i++){
+                    if(edits[i].innerHTML==="编辑"){
+                        edits[i].setAttribute("disabled","true");
                     }
                 }
-            };
-
-            //地址删除按钮绑定
-            addressDel.onclick = function (){
-                MS.popAbout("询问框","您确定要删除地址吗?",3,"确定","取消",function(){
-                    //自己的逻辑代码
+                addAddressBtn.onclick = null;
+                // 9.1添加禁用点击事件功能---------6行
+            }
+            else{
+                var res = MS.TL_RegExp(addressPhone.value, "mobile");
+                if (addressName.value != "" && address1.value != ""&&res) {
                     var url="../test/7777.json";
-                    var id="1";
-                    MS.TL_ajax(url,{id:id},"POST")
-                     .done(function(){
-                    /* item.innerHTML = "";
-                     item.style.display = "none";*/
-                    $(item).remove();
-                     if($(".u-addressItems li").size()=="2"){
-                         $(".u-addressItems li:eq(1)").find(".selectBtn").attr("checked",true).hide();
-                        $(".u-addressItems li:eq(1)").find(".selectText").text("默认").show();
-                     }
-                     MS.popInfo("删除成功",6);
-                     })
-                     .fail(function(){
-                     MS.popInfo("删除失败",5);
-                     })
-                });
+                    var obj={
+                        id:1000,
+                        addUser:addressName.value,
+                        addTel:addressPhone.value,
+                        addAdd:address1.value+address2.value,
+                        addDis:dis.value,
+                        isChecked:1,
+                        isNew:1
+                    };
+//                        自己的后台逻辑
+                    MS.TL_ajax(url,obj,"POST")
+                        .done(function(data){
+
+                            addressEdit.innerHTML = "编辑";
+                            address1.parentNode.style.display = "none";
+                            address2.style.display = "none";
+                            address.style.display = "inline-block";
+                            address.value = item.getElementsByClassName("addrchild4")[0].value + item.getElementsByClassName("addrchild5")[0].value;
+                            for (var i = 0; i < addressCon.length - 1; i++) {
+                                addressCon[i].setAttribute("disabled", "disabled");
+                                addressCon[i].style.border = "none";
+                            }
+                            for (var i = 0; i < addItems.length; i++) {
+                                if (addItems[i].checked) {
+                                    addItems[i].style.display = "none";
+                                    addItemsText[i].style.display = "inline-block";
+                                    addItemsText[i].style.color = "#f00";
+                                }
+                                else {
+                                    if( addItems.length=="1"){
+                                        addItems[0].style.display = "none";
+                                        addItemsText[0].style.display = "inline-block";
+                                        addItemsText[0].style.color = "#f00";
+                                        addItems[0].setAttribute("checked",true);
+                                    }else{
+                                        addItems[i].style.display = "none";
+                                        addItemsText[i].style.display = "none";
+                                    }
+                                }
+                            }
+                            MS.popInfo("保存成功",6);
+                            // 9.1添加禁用点击事件功能---------4行
+                            for(var i=0;i<edits.length;i++){
+                                edits[i].removeAttribute("disabled");
+                            }
+
+                            addAddress();
+                        })
+                        .fail(function(){
+                            MS.popInfo("保存错误",5);
+                        });
+
+                }else{
+                    MS.popInfo("请输入正确的信息",6);
+                }
             }
         }
-        var addCon = document.getElementsByClassName("u-addCon");
-        for(var i = 0;i<addCon.length;i++){
-            editAddress(addCon[i]);
+        function adrDel(item){
+            MS.popAbout("询问框","您确定要删除地址吗?",3,"确定","取消",function(){
+                //自己的逻辑代码
+                var url="../test/7777.json";
+                var id="1";
+                MS.TL_ajax(url,{id:id},"POST")
+                    .done(function(){
+                        $(item).remove();
+                        if($(".u-addressItems li").size()=="2"){
+                            $(".u-addressItems li:eq(1)").find(".selectBtn").attr("checked",true).hide();
+                            $(".u-addressItems li:eq(1)").find(".selectText").text("默认").show();
+                        }
+                        MS.popInfo("删除成功",6);
+                    })
+                    .fail(function(){
+                        MS.popInfo("删除失败",5);
+                    })
+            });
         }
 
+        $(".u-addressItems").on("click",".u-edit",function(e){
+            var dom=$(this).parents(".u-addCon").get(0);
+            adrEdit(dom);
+        });
 
-        //添加地址事件绑定
+        $(".u-addressItems").on("click",".u-del",function(e){
+            var dom=$(this).parents(".u-addCon").get(0);
+            adrDel(dom);
+        });
+//添加地址事件绑定
         function addAddress(){
             var addAddressBtn = document.getElementsByClassName("u-addAddress")[0];
             var addressItems = document.getElementsByClassName("u-addressItems")[0].getElementsByTagName("ul")[0];
@@ -271,7 +265,6 @@
                 newAddress.innerHTML+='<div class="def" style="margin-left:3px"><input class="selectBtn" type="radio" name="def" value="default" style="margin-right:7px"><span  class="selectText">默认</span>';
                 newAddress.innerHTML+='</div>';
                 addressItems.appendChild(newAddress);
-                editAddress(newAddress);
                 caculDis(newAddress.getElementsByClassName("addrchild4")[0],newAddress.getElementsByClassName("addrchild6")[0]);
 
                 // 9.1添加禁用点击事件功能---------7行
@@ -288,7 +281,7 @@
         addAddress();
 
 
-        //计算距离
+//计算距离
         function caculDis(suggestId,distance){
             var map = new BMap.Map("allmap");
             var ps;

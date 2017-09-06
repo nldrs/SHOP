@@ -57,6 +57,14 @@
   margin-left: 10px;
   text-decoration: underline;
 }
+.g-account .m-header .reset-auto s {
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 6px;
+  font-size: 32px;
+  vertical-align: -4px;
+  cursor: pointer;
+}
 .g-account .m-footer {
   margin-top: 24px;
   text-align: center;
@@ -294,6 +302,7 @@
   padding-right: 0;
   border: 1px solid #DBDBDB;
   font-size: 14px;
+  margin-top: 12px;
 }
 .g-main .g-area .m-account .u-good-address .u-sendPay {
   display: -webkit-box;
@@ -417,6 +426,17 @@
 }
 .m-alert-send .m-alert-info p .order-account, .m-alert-send .m-alert-info p .order-user, .m-alert-send .m-alert-info p .order-tel {
   margin-left: 6px;
+}
+.m-alert-send .upInfo {
+  margin: 20px 0 20px 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+.m-alert-send .upInfo span, .m-alert-send .upInfo b {
+  color: #CB1F46;
+}
+.m-alert-send .upInfo span {
+  font-size: 22px;
 }
 
 .address-alert {

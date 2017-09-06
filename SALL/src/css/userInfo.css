@@ -76,6 +76,14 @@
   margin-left: 10px;
   text-decoration: underline;
 }
+.g-userInfo .m-header .reset-auto s {
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 6px;
+  font-size: 32px;
+  vertical-align: -4px;
+  cursor: pointer;
+}
 .g-userInfo .m-footer {
   margin-top: 24px;
   text-align: center;

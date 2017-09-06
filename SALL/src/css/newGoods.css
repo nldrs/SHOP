@@ -200,6 +200,14 @@
   margin-left: 10px;
   text-decoration: underline;
 }
+.g-newGoods .m-header .reset-auto s {
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 6px;
+  font-size: 32px;
+  vertical-align: -4px;
+  cursor: pointer;
+}
 .g-newGoods .m-footer {
   margin-top: 24px;
   text-align: center;
@@ -404,6 +412,7 @@
 .g-main .g-content .g-newsShow .m-newsShow .u-goodShow > .u-goodsArea > div .u-singleGood-box {
   text-align: center;
   height: 286px;
+  background: #fff;
 }
 .g-main .g-content .g-newsShow .m-newsShow .u-goodShow > .u-goodsArea > div .u-singleGood-box img {
   width: 100%;
@@ -462,24 +471,4 @@
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
-}
-
-.top_back {
-  display: block;
-  width: 52px;
-  height: 52px;
-  position: fixed;
-  right: 30px;
-  bottom: 120px;
-  z-index: 99999;
-  background-image: url(../images/top.png);
-  background-repeat: no-repeat;
-  -webkit-transition: background-position 1s linear;
-  transition: background-position 1s linear;
-  -webkit-transition: background-position 1s;
-  transition: background-position 1s;
-  background-position: 0 -266px;
-}
-.top_back:hover {
-  background-position: 0 -328px;
 }
