@@ -94,7 +94,35 @@
     {{#each result}}
     <div class="u-singleGood" data-id="{{goodsCode}}">
         <div class="u-singleGood-box">
+            <img src="images/detail_know.png" alt="了解更多" class="icon-moreDetail">
             <img src="{{url}}" alt="商品" class="J-dx animated">
+            <div class="animated showOther">
+                <div class="newDetail-item">
+                    <div class="newDetail-item-img">
+                        <a href="javascript:;">
+                            <img src="{{url}}" alt="商品" class="rotateImg">
+                        </a>
+                    </div>
+                    <div class="newDetail-item-text">
+                        <p>
+                            <span>产地:</span>
+                            <span>{{origin}}</span>
+                        </p>
+                        <p>
+                            <span>规格:</span>
+                            <span>{{spec}}</span>
+                        </p>
+                        <p>
+                            <span>商品代码:</span>
+                            <span>{{goodsCode}}</span>
+                        </p>
+                        <p>
+                            <span>国际代码:</span>
+                            <span>{{interCode}}</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="u-desc">
             <div class="u-title">
@@ -205,6 +233,22 @@
         });
         $(".u-goodShow").on("mouseenter mouseleave",".newGoodsLogo-ljgm",function (e) {
             $(this).toggleClass("tada")
+        });
+//     13.鼠标移入到动图显示旋转
+        $(".u-goodShow").on("mouseenter mouseleave",".rotateImg",function (e) {
+            $(this).toggleClass("on")
+        });
+        $(".u-goodShow").on("click",".icon-moreDetail",function (e) {
+            $(this).toggleClass("active")
+            var dom=$(this).parents(".u-singleGood-box").find(".showOther");
+            if($(this).hasClass("rotateFlag")){
+                $(this).removeClass("rotateFlag");
+                dom.removeClass("flipInY").addClass("flipOutY");
+            }else{
+                dom.removeClass("flipOutY").addClass("flipInY").show();
+                $(this).addClass("rotateFlag");
+            }
+
         })
     })
 </script>
