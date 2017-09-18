@@ -499,6 +499,7 @@ var MS=(function (win,doc,$) {
             MS.PG_jump("newGoods.html");
         })
     };
+
     return MS;
 })(window,document,jQuery);
 

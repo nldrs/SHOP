@@ -133,7 +133,7 @@
                 </p>
             </div>
             <p class="u-buy newGoodsLogo-ljgm animated"></p>
-            <p class="u-addGwc newGoodsLogo-tjgwc"></p>
+            <p class="u-addGwc newGoodsLogo-tjgwc animated"></p>
         </div>
     </div>
     {{/each}}
@@ -231,7 +231,7 @@
         $(".u-goodShow").on("mouseenter mouseleave",".J-dx",function (e) {
             $(this).toggleClass("pulse")
         });
-        $(".u-goodShow").on("mouseenter mouseleave",".newGoodsLogo-ljgm",function (e) {
+        $(".u-goodShow").on("mouseenter mouseleave",".newGoodsLogo-ljgm,.newGoodsLogo-tjgwc",function (e) {
             $(this).toggleClass("tada")
         });
 //     13.鼠标移入到动图显示旋转
@@ -239,7 +239,7 @@
             $(this).toggleClass("on")
         });
         $(".u-goodShow").on("click",".icon-moreDetail",function (e) {
-            $(this).toggleClass("active")
+            $(this).toggleClass("active");
             var dom=$(this).parents(".u-singleGood-box").find(".showOther");
             if($(this).hasClass("rotateFlag")){
                 $(this).removeClass("rotateFlag");
@@ -249,8 +249,28 @@
                 $(this).addClass("rotateFlag");
             }
 
-        })
+        });
+        $(".u-goodShow").on("click",".J-dx,.showOther",function(){
+            var me=$(this);
+            var dom=$(this).parents(".u-singleGood-box").find(".icon-moreDetail");
+            dom.trigger("click");
+        });
+        jQuery(window).load(function(){
+            /*对图片的操作，可获取img高度，宽度，进行一些列操作等！*/
+            var h=$(".m-kind").position().top;
+            console.log(h)
+            $(".m-kind").css("top",h);
+            $(window).scroll(function () {
+                var top=$(this).scrollTop();
+                if(top>=h){
+                    $(".m-kind").css("top",0);
+                }else{
+                    $(".m-kind").css("top",h);
+                }
+            })
+        });
     })
+
 </script>
 </body>
 </html>
